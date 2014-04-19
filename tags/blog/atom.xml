@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Octopress | CyberLuc's Blog]]></title>
-  <link href="http://cyberLuc.github.io/blog/categories/octopress/atom.xml" rel="self"/>
+  <title><![CDATA[Tag:Blog | CyberLuc's Blog]]></title>
+  <link href="http://cyberLuc.github.io/tags/blog/atom.xml" rel="self"/>
   <link href="http://cyberLuc.github.io/"/>
   <updated>2014-04-19T12:51:57+08:00</updated>
   <id>http://cyberLuc.github.io/</id>
