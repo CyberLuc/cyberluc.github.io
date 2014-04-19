@@ -17,6 +17,8 @@ published: true
 
 另外，实在想吐槽`Professor Tim`的用词和语速，还有那糟糕的板书——写的还没我好呢～
 
+<!-- more -->
+
 ## 一、算法分析基本符号
 
 ### Big-Oh Notation

@@ -11,7 +11,9 @@ tags: [Archlinux]
 不知不觉已经使用了Archlinux好几个月的时间了，期间也记录了一些安装使用中遇到的问题，最近又把arch重新装了一遍，这里把整理后的安装记录发上来。
 
 Arch的安装过程是全命令行的，连Debian那样的字符模拟图形界面也不会提供，不过安装过程还是相当简单的。
+
 <!-- more -->
+
 我是从Debian下转到Archlinux，手头正好有一个不用的U盘，于是便按照ArchWiki的说明将U盘写入archlinux的iso镜像。用`syslinux`的那个方法我试了，但是记得没用，以后哪天再去研究一下吧。
 
 `lsblk`找到u盘的设备名，比如我的是`/dev/sdb`

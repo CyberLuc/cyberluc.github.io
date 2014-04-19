@@ -1,0 +1,24 @@
+  // You can freely create SCSS files within this Custom directory
+  // and they will be imported into the end of the theme's output CSS.
+  // The directory is loaded to increase abstraction and reduce the amount of
+  // changes to be made to the Oscailte theme itself.
+
+// THESE FILES AREA LOADED ALPHABETICALLY
+div.grid__item.two-thirds.lap-one-whole.palm-one-whole{
+    width:75%;
+}
+aside#sidebar{
+    width:25%;
+}
+section#recent-posts a{
+    font-size: 14px;
+}
+li.tagcld{
+    float:left;
+}
+ul.tag-cloud{
+    margin-left:0px;
+}
+ul.divided > li, ol.divided{
+    padding: 0.2em 0px;
+}

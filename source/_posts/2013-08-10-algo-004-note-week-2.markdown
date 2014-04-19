@@ -15,6 +15,8 @@ published: true
 
 利用`Master Method`，可以快速、准确地判断D&C类算法的时间复杂度，不过它的应用也有限制，比如只能用在划分的子问题大小相等的情况下。下面就来详细看看`Master Method`：
 
+<!-- more -->
+
 首先设：
 
 $$

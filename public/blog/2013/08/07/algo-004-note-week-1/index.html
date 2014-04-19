@@ -1,78 +1,71 @@
-
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Algorithms - Week 1 - Note - My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
   
-  <meta name="description" content="零、写在算法学习之前 可能对于一名普通的软件编程人员，对于算法的深入学习不是一件特别必要的事情。不过要是想要提升自己，更深程度的理解计算机的世界，那么算法的学习是必不可少的。作为一名计算机科学与技术的本科生，我以后并不准备当一名算法专家，冗长的数学证明也并不合我口味， &hellip;">
-  <meta name="keywords" content="Algorithm, Coursera">
+    
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Algorithms - Week 1 - Note - CyberLuc's Blog</title>
+    <meta name="author" content="CyberLuc">
+    
+    <meta name="description" content="Algorithms - Week 1 - Note Aug 7th, 2013 Coursera Comments 零、写在算法学习之前
+可能对于一名普通的软件编程人员，对于算法的深入学习不是一件特别必要的事情。不过要是想要提升自己，更深程度的理解计算机的世界，那么算法的学习是必不可少的。 &hellip;">
+    <meta name="keywords" content="Algorithm, Coursera">
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://cyberLuc.github.io/blog/2013/08/07/algo-004-note-week-1">
+    
+    <link href="/favicon.png" rel="icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="CyberLuc's Blog" type="application/atom+xml">
+  </head>
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
-  <link rel="canonical" href="http://CyberLuc.github.io/blog/2013/08/07/algo-004-note-week-1">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <body >
 
-  
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
 
-</head>
+    <div class="grid__item two-fifths lap-four-sixths palm-one-whole">
+  <a href="/" class="site-title">CyberLuc's Blog</a>
+</div>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">My Octopress Blog</a></h1>
-  
-    <h2>A blogging framework for hackers.</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
+<div class="grid__item three-fifths lap-two-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/">Blog</a></li>
 </ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:CyberLuc.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
+  </nav>
+</div>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="post">
   <header>
+  
+  <h1 class="title indent">Algorithms - Week 1 - Note</h1>
+  
+
+  
+  <div class="meta clearfix">
     
-      <h1 class="entry-title">Algorithms - Week 1 - Note</h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -84,58 +77,73 @@
   
 
 
-<time datetime="2013-08-07T21:03:00+08:00" pubdate data-updated="true">Aug 7<span>th</span>, 2013</time>
-        
-      </p>
+<time class="pull-left" datetime="2013-08-07T21:03:00+08:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2013</time>
     
-  </header>
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/coursera/'>Coursera</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
 
 
-<div class="entry-content"><h2>零、写在算法学习之前</h2>
 
+
+  <h2 id="section">零、写在算法学习之前</h2>
 <p>可能对于一名普通的软件编程人员，对于算法的深入学习不是一件特别必要的事情。不过要是想要提升自己，更深程度的理解计算机的世界，那么算法的学习是必不可少的。作为一名计算机科学与技术的本科生，我以后并不准备当一名算法专家，冗长的数学证明也并不合我口味，不过这并不妨碍我深入了解一下算法分析的应用，这无疑会给我能力的提升带来莫大的好处。</p>
 
 <p><code>《Algorithms: Design and Analysis, Part 1》</code>第一周的课程里边有一句话是Professor Tim想要我们记住的：<strong><em>“Can we do better?”</em></strong>，在学习的过程中我们要时刻回想这句话，我们已经做得够好了吗？还能更好吗？</p>
 
 <p>另外，实在想吐槽<code>Professor Tim</code>的用词和语速，还有那糟糕的板书——写的还没我好呢～</p>
 
-<h2>一、算法分析基本符号</h2>
+<!-- more -->
 
-<h3>Big-Oh Notation</h3>
+<h2 id="section-1">一、算法分析基本符号</h2>
 
+<h3 id="big-oh-notation">Big-Oh Notation</h3>
 <p>$T(n)=O(f(n))$</p>
 
-<p>数学定义：$T(n)=O(f(n))$当且仅当存在一个正常数$c$以及正整数$n_0$，使得对于任意$n>n_0$，总有$T(n)\leqslant cf(n)$</p>
+<p>数学定义：$T(n)=O(f(n))$当且仅当存在一个正常数$c$以及正整数$n<em>0$，使得对于任意$n&gt;n</em>0$，总有$T(n)\leqslant cf(n)$</p>
 
 <p>意思是无关于函数在某个具体的点的值（因为$c$可以任意取值），只要$n$足够大，$cf(n)$的值总不会比$T(n)$小，此时$cf(n)$是$T(n)$函数的上界，$T(n)$的值无法超过它。$n_0$的值即为$T(n)=cf(n)$的那个临界点。</p>
 
 <p>也就是说f(n)的增长率大于或等于T(n)，而非某一具体值高于T(n)。</p>
 
-<h3>Omega Notation</h3>
-
+<h3 id="omega-notation">Omega Notation</h3>
 <p>$T(n)=Ω(f(n))$</p>
 
-<p>数学定义：$T(n)=Ω(f(n))$当且仅当存在一个正常数$c$以及正整数$n_0$，使得对于任意$n>n_0$，总有$T(n)\geqslant cf(n)$</p>
+<p>数学定义：$T(n)=Ω(f(n))$当且仅当存在一个正常数$c$以及正整数$n<em>0$，使得对于任意$n&gt;n</em>0$，总有$T(n)\geqslant cf(n)$</p>
 
 <p>即，只要$n$足够大，$T(n)$总会大于或等于$cf(n)$，此时$cf(n)$是它的下界。同样，$n_0$是临界点。</p>
 
 <p>也就是说T(n)的增长率大于或等于f(n)。</p>
 
-<h3>Theta Notation</h3>
-
+<h3 id="theta-notation">Theta Notation</h3>
 <p>$T(n)=Θ(f(n))$</p>
 
-<p>数学定义：$T(n)=Θ(f(n))$当且仅当存在一个正常数$c_1$，$c_2$以及正整数$n_0$，使得对于任意$n>n_0$，总有$c_1f(n)\leqslant T(n)\leqslant cf(n)$。</p>
+<p>数学定义：$T(n)=Θ(f(n))$当且仅当存在一个正常数$c<em>1$，$c</em>2$以及正整数$n<em>0$，使得对于任意$n&gt;n</em>0$，总有$c_1f(n)\leqslant T(n)\leqslant cf(n)$。</p>
 
 <p>这表示，T(n)与f(n)仅相差一个常数项系数大小，也就是说它们的增长率相同。</p>
 
-<h3>o and ω</h3>
-
+<h3 id="o-and-">o and ω</h3>
 <p>此外，还有Little-Oh(o)和ω符号，他们的定义与Big-Oh和Ω相似，但是取消了相等的条件。</p>
 
-<h3>Limits</h3>
-
-<p>用极限的观点来看，这些记号其实就是当$n$趋近于无穷大时两函数导数的比值$\frac{T&#8217;(n)}{f&#8217;(n)}$。</p>
+<h3 id="limits">Limits</h3>
+<p>用极限的观点来看，这些记号其实就是当$n$趋近于无穷大时两函数导数的比值$\frac{T’(n)}{f’(n)}$。</p>
 
 <p>如果比值为<code>无穷大</code>，则T(n)的增长率大于f(n)，即为T(n)=ω(f(n))</p>
 
@@ -143,65 +151,64 @@
 
 <p>如果比值为<code>无穷小</code>，则T(n)的增长率小于f(n)，即为T(n)=o(f(n))</p>
 
-<h2>三、Divide and Conquer Paradigm &ndash; 分治算法</h2>
-
+<h2 id="divide-and-conquer-paradigm---">三、Divide and Conquer Paradigm - 分治算法</h2>
 <p>在解决某一特定问题的时候，递归是一种经常采用的思路，这一类算法不断地调用自身，直到遇到<code>Base Case</code>后停止递归，综合递归结果以得出最后的答案。</p>
 
 <p>但我发现身边的不少同学都对于递归算法存在一定程度上的误解，认为递归调用会导致时间和内存上的多余开销造成浪费，所以要尽量避免使用递归。在《C Primer Plus》里就提到了一个经典的递归算法——Fibonacci算法，当然了，是一个经典的糟糕算法。</p>
 
 <p>因为fibonacci数列规定$Fib(n)=Fib(n-1)+Fib(n-2)$，所以自然就有了下面的算法：</p>
 
-<figure class='code'><figcaption><span>糟糕的Fibonacci递归实现</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">int</span> <span class="nf">Fib</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="n">Fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">Fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
-</span><span class='line'>    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//假设fibonacci前两项均为1</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>糟糕的Fibonacci递归实现</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="kt">int</span> <span class="nf">Fib</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+</span><span class="line">    <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="n">Fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">Fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+</span><span class="line">    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//假设fibonacci前两项均为1</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>从数学意义上来看完全没有问题，不过在计算机上这实在糟糕得不能再糟糕了。有兴趣的同学可以自己运行一下这段程序，记得不要把n定得太高了哦XD，在我的电脑上计算Fib(45)要花7秒的时间，计算Fib(46)用了9.5秒的时间（其实我还计算了一下Fib(50)，只用了76秒哦）。</p>
 
-<p>虽然上面给出了一个糟糕的递归例子，但是通过对算法的学习，我们可以看到经过良好编写的递归程序具有强大的力量，而且形式优雅，给人一种化腐朽为神奇的感觉，Algorithms第一周的课程里边也给出了几个很好的例子，它们的算法复杂度都是$O(nlog_2n)$，对于大数据远比使用常规方法的$(O(n<sup>2</sup>))$要来的高效。那么下面进入正题。</p>
+<p>虽然上面给出了一个糟糕的递归例子，但是通过对算法的学习，我们可以看到经过良好编写的递归程序具有强大的力量，而且形式优雅，给人一种化腐朽为神奇的感觉，Algorithms第一周的课程里边也给出了几个很好的例子，它们的算法复杂度都是$O(nlog_2n)$，对于大数据远比使用常规方法的$(O(n^2))$要来的高效。那么下面进入正题。</p>
 
 <p><code>Divide and Conquer</code>是一种使用递归来解决问题的办法，中文里边叫作<code>分治算法</code>，也就所谓的是<code>分而治之</code>。D&amp;C算法分为三步，一是<code>Divide</code>（分），二是<code>Conquer</code>（治），三是<code>Combine</code>（合）。先把大的复杂的问题分解成小的相对简单的子问题，然后再递归地解决这些相对容易的小问题，再把所有的结果综合起来得出原本问题的解。</p>
 
 <p>在CLRS中对D&amp;C描述到：</p>
 
-<blockquote><p>1 &ndash; <strong>Divide</strong> the problem into a number of subproblems that are smaller instances of the same problem;</p>
+<blockquote>
+  <p>1 - <strong>Divide</strong> the problem into a number of subproblems that are smaller instances of the same problem;</p>
 
-<p>2 &ndash; <strong>Conquer</strong> the subproblems by solving them recursively. If the problem sizes are small enough, however, just solve the subproblems in a straightforward manner;</p>
+  <p>2 - <strong>Conquer</strong> the subproblems by solving them recursively. If the problem sizes are small enough, however, just solve the subproblems in a straightforward manner;</p>
 
-<p>3 &ndash; <strong>Combine</strong> the solutions to the subproblems into the solution for the original problem.</p></blockquote>
+  <p>3 - <strong>Combine</strong> the solutions to the subproblems into the solution for the original problem.</p>
+</blockquote>
 
-<h3>Integer Multiplication</h3>
-
+<h3 id="integer-multiplication">Integer Multiplication</h3>
 <p>对于乘法来说，我们最为熟悉的无非就是所谓的竖式计算法（貌似是叫长乘法？），这种方法直观，简单，从小学二年级开始学习乘法以来，我们就一直使用着竖式计算法，可谓得心应手，已经成了一种本能。</p>
 
-<p>对于两个四位数相乘的计算而言，我们一般会将两个数垂直对齐，然后用下边各位依次乘以上边的数，并按位左移。最后把所得各相乘结果加起来，得到的就是两个四位数的相乘结果。这其中我们每一位的数字都需要进行4次乘法运算，有进位的话可能还有四次加法运算，所以在竖式计算法中总共会用到$(4+4)\times4=32$次个位数的加法乘法运算。如果把乘数的位数设为n，那么竖式计算法所需的操作量就是$2*n<sup>2</sup>$，显然时间复杂度应为$Θ(n<sup>2</sup>)$。</p>
+<p>对于两个四位数相乘的计算而言，我们一般会将两个数垂直对齐，然后用下边各位依次乘以上边的数，并按位左移。最后把所得各相乘结果加起来，得到的就是两个四位数的相乘结果。这其中我们每一位的数字都需要进行4次乘法运算，有进位的话可能还有四次加法运算，所以在竖式计算法中总共会用到$(4+4)\times4=32$次个位数的加法乘法运算。如果把乘数的位数设为n，那么竖式计算法所需的操作量就是$2*n^2$，显然时间复杂度应为$Θ(n^2)$。</p>
 
-<p>$$
+<script type="math/tex; mode=display">% <![CDATA[
+
 \begin{equation}
 \begin{aligned}
-&amp;1234\
-\times&amp;5678\
+&1234\\
+\times&5678\\
 \hline
-&amp;9872\
-8&amp;638\
-74&amp;04\
-617&amp;0\
+&9872\\
+8&638\\
+74&04\\
+617&0\\
 \hline
-700&amp;6652
+700&6652
 \end{aligned}
 \end{equation}
-$$</p>
+ %]]></script>
 
 <p>上Algorithms这门课之前我几乎没怎么想过要对这种乘法计算方法进行优化。它足够好了吗？在我看来是的，不过计算机科学家们并不满足于此。于是有了<code>Karatsuba Multiplication</code>算法。</p>
 
-<h4>Karatsuba Multiplication &ndash; 快速乘法</h4>
-
+<h4 id="karatsuba-multiplication---">Karatsuba Multiplication - 快速乘法</h4>
 <p>这种乘法的时间复杂度为$Θ(n^{log_23})$。</p>
 
 <p>现在假设两个数相乘：$5678\times1234=7006652$</p>
@@ -214,21 +221,22 @@ $$</p>
 
 <p>3：计算$(a+b)(c+d)=134\times46=6164$</p>
 
-<p>4.：计算$(3)&ndash;(2)&ndash;(1)=6164-2652-672=2840$</p>
+<p>4.：计算$(3)-(2)-(1)=6164-2652-672=2840$</p>
 
 <p>5：综合结果$a\times c，(a+b)(c+d)-a\times c-b\times d，b\times d$，也就是：</p>
 
-<p>$$
+<script type="math/tex; mode=display">% <![CDATA[
+
 \begin{equation}
 \begin{aligned}
-6720000&amp;\
-2652&amp;\
-284000&amp;\
+6720000&\\
+2652&\\
+284000&\\
 \hline
-7006652&amp;
+7006652&
 \end{aligned}
 \end{equation}
-$$</p>
+ %]]></script>
 
 <p>上面的过程有些地方难以理解，不过还能看出来是使用了D&amp;C。下面是算法的一些思路：</p>
 
@@ -246,9 +254,9 @@ $$</p>
 
 <p>Base case就是当x和y均为1位数时，这时候仅仅把x和y乘起来就行。</p>
 
-<p>因为每次将$n$切分为两个$\frac{n}{2}$，每个部分需要3次乘法，所以总共需要$3^{log_2n}$次基本乘法，时间复杂度也就是$Θ(n^{log_23})\approxΘ(n^{1.1})$。</p>
+<p>因为每次将$n$切分为两个$\frac{n}{2}$，每个部分需要3次乘法，所以总共需要$3^{log<em>2n}$次基本乘法，时间复杂度也就是$Θ(n^{log</em>23})\approxΘ(n^{1.1})$。</p>
 
-<p>需要注意的是，如果不进行上面这一步，仍旧划分为4个两位数乘法，那么一共需要$4^{log_2n}$次基本乘法，也就是$n<sup>2</sup>$次，复杂度仍为$Θ(n<sup>2</sup>)$没有变化。</p>
+<p>需要注意的是，如果不进行上面这一步，仍旧划分为4个两位数乘法，那么一共需要$4^{log_2n}$次基本乘法，也就是$n^2$次，复杂度仍为$Θ(n^2)$没有变化。</p>
 
 <p>不过呢，计算机做乘法不是利用长乘法，如果仅仅用整型数据来实现这个算法没有任何意义，因为允许的相乘的数字太小了，那么Karatruba算法有何用武之地呢？我查了一下，发现它应该是被用于大数相乘的。比如两个1024位的数字相乘，这个时候就没办法使用两个整型数据进行乘法运算，因为整型存不下如此大的数值，这个时候就只能用数组来模拟大数，比如用一个数组元素代表数字的一位。这个时候大数相乘就只能人为地模拟乘法，而Karatsuba也就派上了用场。</p>
 
@@ -256,12 +264,10 @@ $$</p>
 
 <hr />
 
-<h3>Merge Sort &ndash; 归并排序</h3>
+<h3 id="merge-sort---">Merge Sort - 归并排序</h3>
+<p>这是一个排序算法，在1945年由John von Neumann所提出。和我们熟悉的冒泡排序、插入排序、选择排序相比，这个算法面对大数据的时候占有很大优势，因为它的算法时间复杂度仅为$Θ(n\log<em>2n)$，而冒泡排序等都为$Θ(n^2)$。需要注意，$\log</em>2n$要远小于$n$哦，可以把$2^{20}$代进去看看。</p>
 
-<p>这是一个排序算法，在1945年由John von Neumann所提出。和我们熟悉的冒泡排序、插入排序、选择排序相比，这个算法面对大数据的时候占有很大优势，因为它的算法时间复杂度仅为$Θ(n\log_2n)$，而冒泡排序等都为$Θ(n<sup>2</sup>)$。需要注意，$\log_2n$要远小于$n$哦，可以把$2^{20}$代进去看看。</p>
-
-<h4>算法实现</h4>
-
+<h4 id="section-2">算法实现</h4>
 <p>Merge Sort的思路完全符合D&amp;C：</p>
 
 <p><strong>Divide：</strong>将$n$个元素的数组划分为两个$\frac{n}{2}$个元素的数组；</p>
@@ -272,126 +278,125 @@ $$</p>
 
 <p>不再详解，这里给出C语言的实现代码。</p>
 
-<figure class='code'><figcaption><span>mergeSort.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &lt;stdio.h&gt;</span>
-</span><span class='line'><span class="cp">#define NUM 10</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">L</span><span class="p">[</span><span class="n">NUM</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="n">NUM</span><span class="p">];</span>
-</span><span class='line'><span class="kt">void</span> <span class="nf">merge</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">q</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">){</span>    <span class="cm">/* 合并两个数组 */</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">n1</span> <span class="o">=</span> <span class="n">q</span><span class="o">+</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">;</span>                 <span class="cm">/* 左子数组的长度 */</span>
-</span><span class='line'>    <span class="n">n2</span> <span class="o">=</span> <span class="n">r</span><span class="o">-</span><span class="n">q</span><span class="p">;</span>                   <span class="cm">/* 右子数组的长度 */</span>
-</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n1</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
-</span><span class='line'>        <span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="n">j</span><span class="p">];</span>
-</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">)</span>
-</span><span class='line'>        <span class="n">R</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">q</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">k</span><span class="p">];</span>
-</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n1</span> <span class="o">&amp;&amp;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
-</span><span class='line'>        <span class="k">if</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">R</span><span class="p">[</span><span class="n">k</span><span class="p">]){</span>
-</span><span class='line'>            <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
-</span><span class='line'>            <span class="n">k</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-</span><span class='line'>            <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
-</span><span class='line'>            <span class="n">j</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>    <span class="k">while</span><span class="p">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">n1</span><span class="p">){</span>
-</span><span class='line'>        <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
-</span><span class='line'>        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>        <span class="n">j</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>    <span class="k">while</span><span class="p">(</span><span class="n">k</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">){</span>
-</span><span class='line'>        <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
-</span><span class='line'>        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>        <span class="n">k</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="kt">void</span> <span class="nf">mergeSort</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">){</span>  <span class="cm">/* Merge Sort主函数 */</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">p</span> <span class="o">&gt;=</span> <span class="n">r</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>          <span class="cm">/* Base Case */</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">q</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>            <span class="cm">/* Divide */</span>
-</span><span class='line'>    <span class="n">mergeSort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">);</span>         <span class="cm">/* Conquer */</span>
-</span><span class='line'>    <span class="n">mergeSort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">q</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">);</span>       <span class="cm">/* Conquer */</span>
-</span><span class='line'>    <span class="n">merge</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">);</span>          <span class="cm">/* Combine */</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[]){</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">A</span><span class="p">[</span><span class="n">NUM</span><span class="p">],</span> <span class="n">i</span><span class="p">;</span>
-</span><span class='line'>    <span class="cm">/* freopen(&quot;./input.txt&quot;, &quot;r&quot;, stdin); */</span>
-</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUM</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-</span><span class='line'>        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-</span><span class='line'>    <span class="n">mergeSort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">NUM</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUM</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-</span><span class='line'>        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-</span><span class='line'>    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span class='line'>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>mergeSort.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+<span class="line-number">33</span>
+<span class="line-number">34</span>
+<span class="line-number">35</span>
+<span class="line-number">36</span>
+<span class="line-number">37</span>
+<span class="line-number">38</span>
+<span class="line-number">39</span>
+<span class="line-number">40</span>
+<span class="line-number">41</span>
+<span class="line-number">42</span>
+<span class="line-number">43</span>
+<span class="line-number">44</span>
+<span class="line-number">45</span>
+<span class="line-number">46</span>
+<span class="line-number">47</span>
+<span class="line-number">48</span>
+<span class="line-number">49</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="cp">#include &lt;stdio.h&gt;</span>
+</span><span class="line"><span class="cp">#define NUM 10</span>
+</span><span class="line"><span class="kt">int</span> <span class="n">L</span><span class="p">[</span><span class="n">NUM</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="n">NUM</span><span class="p">];</span>
+</span><span class="line"><span class="kt">void</span> <span class="nf">merge</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">q</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">){</span>    <span class="cm">/* 合并两个数组 */</span>
+</span><span class="line">    <span class="kt">int</span> <span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">;</span>
+</span><span class="line">    <span class="n">n1</span> <span class="o">=</span> <span class="n">q</span><span class="o">+</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">;</span>                 <span class="cm">/* 左子数组的长度 */</span>
+</span><span class="line">    <span class="n">n2</span> <span class="o">=</span> <span class="n">r</span><span class="o">-</span><span class="n">q</span><span class="p">;</span>                   <span class="cm">/* 右子数组的长度 */</span>
+</span><span class="line">    <span class="k">for</span><span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n1</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+</span><span class="line">        <span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="n">j</span><span class="p">];</span>
+</span><span class="line">    <span class="k">for</span><span class="p">(</span><span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">)</span>
+</span><span class="line">        <span class="n">R</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">q</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">k</span><span class="p">];</span>
+</span><span class="line">    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n1</span> <span class="o">&amp;&amp;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span><span class="line">        <span class="k">if</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">R</span><span class="p">[</span><span class="n">k</span><span class="p">]){</span>
+</span><span class="line">            <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+</span><span class="line">            <span class="n">k</span><span class="o">++</span><span class="p">;</span>
+</span><span class="line">        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span><span class="line">            <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span><span class="line">            <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+</span><span class="line">        <span class="p">}</span>
+</span><span class="line">    <span class="p">}</span>
+</span><span class="line">    <span class="k">while</span><span class="p">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">n1</span><span class="p">){</span>
+</span><span class="line">        <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span><span class="line">        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+</span><span class="line">        <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+</span><span class="line">    <span class="p">}</span>
+</span><span class="line">    <span class="k">while</span><span class="p">(</span><span class="n">k</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">){</span>
+</span><span class="line">        <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+</span><span class="line">        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+</span><span class="line">        <span class="n">k</span><span class="o">++</span><span class="p">;</span>
+</span><span class="line">    <span class="p">}</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line"><span class="kt">void</span> <span class="nf">mergeSort</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">){</span>  <span class="cm">/* Merge Sort主函数 */</span>
+</span><span class="line">    <span class="k">if</span><span class="p">(</span><span class="n">p</span> <span class="o">&gt;=</span> <span class="n">r</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>          <span class="cm">/* Base Case */</span>
+</span><span class="line">    <span class="kt">int</span> <span class="n">q</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>            <span class="cm">/* Divide */</span>
+</span><span class="line">    <span class="n">mergeSort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">);</span>         <span class="cm">/* Conquer */</span>
+</span><span class="line">    <span class="n">mergeSort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">q</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">);</span>       <span class="cm">/* Conquer */</span>
+</span><span class="line">    <span class="n">merge</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">);</span>          <span class="cm">/* Combine */</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[]){</span>
+</span><span class="line">    <span class="kt">int</span> <span class="n">A</span><span class="p">[</span><span class="n">NUM</span><span class="p">],</span> <span class="n">i</span><span class="p">;</span>
+</span><span class="line">    <span class="cm">/* freopen(&quot;./input.txt&quot;, &quot;r&quot;, stdin); */</span>
+</span><span class="line">    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUM</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span><span class="line">        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span class="line">    <span class="n">mergeSort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">NUM</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</span><span class="line">    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUM</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span><span class="line">        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span class="line">    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span class="line">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<p>对Merge Sort进行一些小小的修改，还可以用来计算逆序数（Inversions），因为是基于$Θ(n\log<em>2n)$的归并排序，所以计算逆序数的算法同样是$Θ(n\log</em>2n)$的时间复杂度。</p>
 
-<p>对Merge Sort进行一些小小的修改，还可以用来计算逆序数（Inversions），因为是基于$Θ(n\log_2n)$的归并排序，所以计算逆序数的算法同样是$Θ(n\log_2n)$的时间复杂度。</p>
+<h4 id="analysis-of-merge-sort---">Analysis of Merge Sort - 分析归并算法</h4>
 
-<h4>Analysis of Merge Sort &ndash; 分析归并算法</h4>
-
-<p>上面已经提到，Merge Sort的算法时间复杂度是$Θ(n\log_2n)$，对于大数据来说优于插入排序等算法的$Θ(n<sup>2</sup>)$。</p>
+<p>上面已经提到，Merge Sort的算法时间复杂度是$Θ(n\log_2n)$，对于大数据来说优于插入排序等算法的$Θ(n^2)$。</p>
 
 <p>但是为什么呢？为什么排序同样一个数组，把原数组分开成几个数组分别排序就比一起排序要快呢？分开排序不还多了一个Combine的步骤吗？</p>
 
 <p>在继续讲算法分析之前，可以思考一下排序一个$n$个元素的数组，当然是在<code>Worst Case</code>的情况下（设$n$为$2$的幂）：</p>
 
-<p><strong>1.</strong><code>插入排序</code>所需的<code>比较次数</code>为$\frac{n(n-1)}{2}=\frac{1}{2}n<sup>2</sup>-\frac{1}{2}n$。</p>
+<p><strong>1.</strong><code>插入排序</code>所需的<code>比较次数</code>为$\frac{n(n-1)}{2}=\frac{1}{2}n^2-\frac{1}{2}n$。</p>
 
-<p><strong>2.</strong>下面我们还是使用<code>插入排序</code>，但是我们先把原数组分成两个$\frac{n}{2}$的数组来进行排序，然后将两个数组进行合并：显然对于每一个$\frac{n}{2}$个元素的数组来说，所需的<code>比较次数</code>为$\frac{\frac{n}{2}(\frac{n}{2}-1)}{2}=\frac{1}{8}n<sup>2</sup>-\frac{1}{4}n$，因为有两个数组，再加上Combine所需进行的$n$次比较，一共所需的<code>比较次数</code>为$\frac{1}{4}n<sup>2</sup>+\frac{1}{2}n$。</p>
+<p><strong>2.</strong>下面我们还是使用<code>插入排序</code>，但是我们先把原数组分成两个$\frac{n}{2}$的数组来进行排序，然后将两个数组进行合并：显然对于每一个$\frac{n}{2}$个元素的数组来说，所需的<code>比较次数</code>为$\frac{\frac{n}{2}(\frac{n}{2}-1)}{2}=\frac{1}{8}n^2-\frac{1}{4}n$，因为有两个数组，再加上Combine所需进行的$n$次比较，一共所需的<code>比较次数</code>为$\frac{1}{4}n^2+\frac{1}{2}n$。</p>
 
 <p>显然，通过对二次项系数的比较可知：只要$n$足够大，第二种方法是要优于第一种方法的。</p>
 
 <p>你能看出来为什么吗？</p>
 
-<p>其实这一次Divide减少了很多不必要的比较。方法1中，第i个数要和它前面的i-1个数比较，而Divide之后，前$\frac{n}{2}$个数比较次数不变，后$\frac{n}{2}$个数，每个数的比较次数却都减少了$\frac{n}{2}$，所以一共就减少了$\frac{1}{4}n<sup>2</sup>$次比较，而这种方法是否实用，就看减少的比较次数$\frac{1}{4}n<sup>2</sup>$和增加的比较次数$n$谁大谁小了。</p>
+<p>其实这一次Divide减少了很多不必要的比较。方法1中，第i个数要和它前面的i-1个数比较，而Divide之后，前$\frac{n}{2}$个数比较次数不变，后$\frac{n}{2}$个数，每个数的比较次数却都减少了$\frac{n}{2}$，所以一共就减少了$\frac{1}{4}n^2$次比较，而这种方法是否实用，就看减少的比较次数$\frac{1}{4}n^2$和增加的比较次数$n$谁大谁小了。</p>
 
 <p>这下子有点儿感觉了吧，要是继续Divide下去，减少的冗余比较岂不是更多？</p>
 
@@ -401,17 +406,18 @@ $$</p>
 
 <p>设Divide时把问题划分为a个子问题，每一个问题是原本问题大小的$\frac{1}{b}$，c是判断base case的常数，可得：</p>
 
-<p>$$
+<script type="math/tex; mode=display">% <![CDATA[
+
 \begin{equation}
 \begin{aligned}
 T(n)=
 \begin{cases}
-Θ(1) &amp;{n\leqslant c}\
-aT(\frac{n}{b})+D(n)+C(n) &amp;{Otherwise}
+Θ(1) &{n\leqslant c}\\
+aT(\frac{n}{b})+D(n)+C(n) &{Otherwise}
 \end{cases}
 \end{aligned}
 \end{equation}
-$$</p>
+ %]]></script>
 
 <p>所以对于Merge Sort来说，$a=b=2$：</p>
 
@@ -423,39 +429,41 @@ $$</p>
 
 <p>可得：</p>
 
-<p>$$
+<script type="math/tex; mode=display">% <![CDATA[
+
 \begin{equation}
 \begin{aligned}
 T(n)=
 \begin{cases}
-Θ(1) &amp;{n=1}\
-2T(\frac{n}{2})+Θ(n) &amp;{n> 1}
+Θ(1) &{n=1}\\
+2T(\frac{n}{2})+Θ(n) &{n> 1}
 \end{cases}
 \end{aligned}
 \end{equation}
-$$</p>
+ %]]></script>
 
-<p>设c为解决$n=1$时和每个元素操作所需的常数时间，利用<code>Recursion Tree</code>，便可以很直观的进行分析了。因为每一次将数组划分为相等的两部分，所以这棵<code>Recursion Tree</code>是一棵满二叉树，根结点以下第$i$层拥有节点数为$2^{i}$，同时这一层每一个节点拥有的元素数量为$\frac{n}{2<sup>i</sup>}$，已经假设单个元素操作需要常数项时间$c$，相乘即可得每一层要进行<code>Combine</code>阶段的操作量均为$cn$。而这棵满二叉树一共有$log_2n+1$层，所以总共的操作量为：</p>
+<p>设c为解决$n=1$时和每个元素操作所需的常数时间，利用<code>Recursion Tree</code>，便可以很直观的进行分析了。因为每一次将数组划分为相等的两部分，所以这棵<code>Recursion Tree</code>是一棵满二叉树，根结点以下第$i$层拥有节点数为$2^{i}$，同时这一层每一个节点拥有的元素数量为$\frac{n}{2^i}$，已经假设单个元素操作需要常数项时间$c$，相乘即可得每一层要进行<code>Combine</code>阶段的操作量均为$cn$。而这棵满二叉树一共有$log_2n+1$层，所以总共的操作量为：</p>
 
-<p>$$
+<script type="math/tex; mode=display">% <![CDATA[
+
 \begin{equation}
 \begin{aligned}
-&amp;(log_2n+1)\times cn\
-=&amp;cnlog_2n+cn\
-=&amp;Θ(nlog_2n)
+&(log_2n+1)\times cn\\
+=&cnlog_2n+cn\\
+=&Θ(nlog_2n)
 \end{aligned}
 \end{equation}
-$$</p>
+ %]]></script>
 
 <hr />
 
-<h3>Counting Inversions &ndash; 计算逆序数</h3>
+<h3 id="counting-inversions---">Counting Inversions - 计算逆序数</h3>
 
 <p>这个是计算<code>逆序数</code>的算法，学习线性代数时有学到这个概念，不过没想到还能在商品推荐里边应用。在一个排列中，如果一对数的前后位置与大小顺序相反，即前面的数大于后面的数，那么它们就称为一个逆序。逆序数就是一个排列中所有逆序的数量。</p>
 
-<p>用最简单的Brutal Force Algorithm来解决这个问题的话，无疑就是将数列中的每一对数字进行比较，一共需要的比较次数为$\binom{n}{2}=Θ(n<sup>2</sup>)$。</p>
+<p>用最简单的Brutal Force Algorithm来解决这个问题的话，无疑就是将数列中的每一对数字进行比较，一共需要的比较次数为$\binom{n}{2}=Θ(n^2)$。</p>
 
-<p>不过这个算法的实现可以基于<code>Merge Sort</code>，稍作修改即可。因为是基于$Θ(n\log_2n)$的归并排序，多出来的操作为常数项时间，所以计算逆序数的算法同样是$Θ(n\log_2n)$的时间复杂度。</p>
+<p>不过这个算法的实现可以基于<code>Merge Sort</code>，稍作修改即可。因为是基于$Θ(n\log<em>2n)$的归并排序，多出来的操作为常数项时间，所以计算逆序数的算法同样是$Θ(n\log</em>2n)$的时间复杂度。</p>
 
 <p>因为要计算前面的数大于后面的数的数量，我们便可以变相地对数组进行排序，计算要正确排序某个数需要将它左移的总位数——也就是和这个数相关的<code>Inversion</code>。</p>
 
@@ -469,24 +477,23 @@ $$</p>
 
 <p>将其添加到合适的地方后，对<code>Merge Sort</code>进行如下修改：</p>
 
-<figure class='code'><figcaption><span>MergeSortAndCountInversion.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">int</span> <span class="nf">MergeSortAndCountInversion</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">p</span><span class="p">,</span><span class="kt">int</span> <span class="n">r</span><span class="p">){</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="o">==</span><span class="n">r</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span><span class="c1">//New Base Case</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">left</span><span class="p">,</span><span class="n">right</span><span class="p">,</span><span class="n">split</span><span class="p">,</span><span class="n">q</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">left</span> <span class="o">=</span> <span class="n">MergeSortAndCountInversion</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">right</span> <span class="o">=</span> <span class="n">MergeSortAndCountInversion</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">q</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">r</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">split</span> <span class="o">=</span> <span class="n">MergeAndCountSplitInversion</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">r</span><span class="p">);</span>
-</span><span class='line'>    <span class="k">return</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span> <span class="o">+</span> <span class="n">split</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>MergeSortAndCountInversion.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="kt">int</span> <span class="nf">MergeSortAndCountInversion</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">p</span><span class="p">,</span><span class="kt">int</span> <span class="n">r</span><span class="p">){</span>
+</span><span class="line">    <span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="o">==</span><span class="n">r</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span><span class="c1">//New Base Case</span>
+</span><span class="line">    <span class="kt">int</span> <span class="n">left</span><span class="p">,</span><span class="n">right</span><span class="p">,</span><span class="n">split</span><span class="p">,</span><span class="n">q</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+</span><span class="line">    <span class="n">left</span> <span class="o">=</span> <span class="n">MergeSortAndCountInversion</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">);</span>
+</span><span class="line">    <span class="n">right</span> <span class="o">=</span> <span class="n">MergeSortAndCountInversion</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">q</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">r</span><span class="p">);</span>
+</span><span class="line">    <span class="n">split</span> <span class="o">=</span> <span class="n">MergeAndCountSplitInversion</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">r</span><span class="p">);</span>
+</span><span class="line">    <span class="k">return</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span> <span class="o">+</span> <span class="n">split</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>便可以使用MergeSortAndCountInversion函数来得到逆序数了。</p>
 
@@ -496,11 +503,10 @@ $$</p>
 
 <hr />
 
-<h3>Straseen Matrix Multiplication</h3>
-
+<h3 id="straseen-matrix-multiplication">Straseen Matrix Multiplication</h3>
 <p>同<code>Karatsuba Multiplication</code>类似，这个算法也是使用纯数学技巧加上D&amp;C来得到相对较高的效率。</p>
 
-<p>在矩阵乘法的定义中，$A\times B=C$，结果矩阵C的第i行第j列元素$C_{ij}$等于矩阵A的第i行与矩阵B的第j列的对应元素相乘的和，所以一共需要进行$n<sup>3</sup>$次相乘。这是一个立方复杂度的算法。</p>
+<p>在矩阵乘法的定义中，$A\times B=C$，结果矩阵C的第i行第j列元素$C_{ij}$等于矩阵A的第i行与矩阵B的第j列的对应元素相乘的和，所以一共需要进行$n^3$次相乘。这是一个立方复杂度的算法。</p>
 
 <p>而<code>Straseen Matrix Multiplication</code>进行数学变化，利用D&amp;C将复杂度降至了$Θ(n^{2.8})$左右，看似优化不大，但是对于大数据来说已经是极大的改善了。</p>
 
@@ -508,80 +514,80 @@ $$</p>
 
 <hr />
 
-<h3>Closet Pair</h3>
-
+<h3 id="closet-pair">Closet Pair</h3>
 <p>这个算法是求平面坐标系中，距离最短的两点。</p>
 
 <p>这类问题在机器人学、机器视觉、电脑图像里边都占有相当重要的地位，在ACM的竞赛题目中也时有出现。</p>
 
-<p>在平面坐标系中，求两点距离有个很简单的公式$\sqrt{(x_i-x_j)<sup>2</sup>+(y_i-y_j)<sup>2</sup>}$，暴力法当然就是把给出的所有点都进行成对的比较，时间复杂度为$Θ(n<sup>2</sup>)$，当然，我们现在肯定不这么做。同样，我们可以站在<code>Merge Sort</code>的肩上前进。</p>
+<p>在平面坐标系中，求两点距离有个很简单的公式$\sqrt{(x_i-x_j)^2+(y_i-y_j)^2}$，暴力法当然就是把给出的所有点都进行成对的比较，时间复杂度为$Θ(n^2)$，当然，我们现在肯定不这么做。同样，我们可以站在<code>Merge Sort</code>的肩上前进。</p>
 
 <p>当要排序的点都在一条直线上时，我们只需要先将其进行排序，然后找出最近的两点就行，而这可以在线性时间内完成，无需对每一对点进行比较。无疑，一维的情况下求<code>Closet Pair</code>可以在$Θ(nlog_2n)$内完成。</p>
 
 <p>但是点在平面上时，</p>
 
 <p>施工中。。。</p>
-</div>
 
 
   <footer>
     <p class="meta">
-      
-  
-
-<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
-
-      
-
-
-
-
-
-
-
+            
 
   
 
-
-<time datetime="2013-08-07T21:03:00+08:00" pubdate data-updated="true">Aug 7<span>th</span>, 2013</time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/coursera/'>Coursera</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://CyberLuc.github.io/blog/2013/08/07/algo-004-note-week-1/" data-via="" data-counturl="http://CyberLuc.github.io/blog/2013/08/07/algo-004-note-week-1/" >Tweet</a>
-  
-  
-  
+<div class="cryocopyright">
+  <!--<DIV style="MARGIN-TOP: 10px; FLOAT: left; MARGIN-LEFT: 5px; MARGIN-RIGHT: 10px">
+      <IMG alt="" src="http://images.cnblogs.com/cnblogs_com/oec2003/219566/123.jpg" width=90 height=100>
+  </DIV>-->
+  <div id="cryoinfo">
+    作者： <a href="http://cyberLuc.github.io/about">CyberLuc</a> <br/>
+    出处： <a href="http://cyberLuc.github.io">http://cyberLuc.github.io</a><br/>
+    本文基于 <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/" target="_blank">CC 创作共用版权协议(2.5 License)</a> ，要求<font class="cryobold">署名、非商业用途和保持一致</font>。本博未标明[转载]字样的文章均为原创。转载本博原创作品(内容)也必须遵循“署名-非商业用途-保持一致”的创作共用协议，请务必以文字链接的形式标明或保留文章<a href="./" target="_blank" class="cryobold">原始出处</a>和博客作者(<a href="http://cyberLuc.github.io/about" target="_blank"><font class="cryobold">CyberLuc</font></a>)的信息。本博客(原创)内容，一经转载，即表示您已经接受上述声明！
+  </div>
 </div>
 
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2013/08/01/building-octopress-blog/" title="Previous Post: 用Geek的方式来写博客(1)：在Github上搭建Octopress">&laquo; 用Geek的方式来写博客(1)：在Github上搭建Octopress</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2013/08/07/algo-004-note-week-2/" title="Next Post: Algorithms - Week 2 - Note">Algorithms - Week 2 - Note &raquo;</a>
-      
+
     </p>
   </footer>
 </article>
 
-</div>
 
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
+<section id="disqus">
+  <h1 class="indent title">Comments</h1>
+  <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+<!--  
+<section class="social aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">
+    Follow me!
+  </h1>
+  <ul class="unstyled">
+    
+    
+    <li><a class="github" href="//github.com/CyberLuc"><i class="icon-github"></i> Github</a></li>
+    
+    <li><a class="gplus" href="//plus.google.com/cyberluc29@gmail.com"><i class="icon-google-plus-sign"></i> Google+</a></li>
+    
+    
+    
+    
+    
+  </ul>
+</section>
+ -->
+
+  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
     
       <li class="post">
         <a href="/blog/2013/08/07/algo-004-note-week-2/">Algorithms - Week 2 - Note</a>
@@ -605,44 +611,126 @@ $$</p>
     
   </ul>
 </section>
+<section class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Tags</h1>
+  <ul class="tag-cloud unstyled">
+<a style="font-size: 165%" href="/tags/algorithm/">Algorithm</a>
+<a style="font-size: 112%" href="/tags/archlinux/">Archlinux</a>
+<a style="font-size: 60%" href="/tags/blog/">Blog</a>
+<a style="font-size: 112%" href="/tags/clrs/">CLRS</a>
+<a style="font-size: 112%" href="/tags/coursera/">Coursera</a>
+<a style="font-size: 112%" href="/tags/hello-world/">Hello World</a>
+<a style="font-size: 112%" href="/tags/misc/">Misc</a>
+<a style="font-size: 60%" href="/tags/octopress/">Octopress</a>
+<a style="font-size: 60%" href="/tags/test/">Test</a>
+
+  </ul>
+</section>
+<section class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Categories</h1>
+    <ul id="category-list" class="unstyled"><li><a href='/blog/categories/archlinux'>Archlinux (1)</a></li><li><a href='/blog/categories/clrsdu-shu-bi-ji'>CLRS读书笔记 (2)</a></li><li><a href='/blog/categories/coursera'>Coursera (2)</a></li><li><a href='/blog/categories/hello-world'>Hello World (1)</a></li><li><a href='/blog/categories/octopress'>Octopress (1)</a></li><li><a href='/blog/categories/test'>Test (1)</a></li></ul>
+</section>
+<section class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Comments</h1>
+  <div id="dsq-recentcomments" class="dsq-widget"><script type="text/javascript" src="http://disqus.com/forums/cyberluc29/recent_comments_widget.js?hide_avatars=0&num_items=10&excerpt_length=50"></script></div>
+</section>
 
 
+</div>
 
+        </aside>
+        
+      </div>
+    </div>
 
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [ ['$', '$'] ],
+    displayMath: [ ['$$', '$$']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
 
+<p class="copyright" style="text-align:center;">
+  Copyright &copy; 2014
   
-</aside>
+  CyberLuc
+  
 
+</p>
 
     </div>
   </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Your Name -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+</div>
 
-</footer>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+<script defer src="/javascripts/octopress.js"></script>
+
+
+
+
+<script>
+  var disqus_shortname = 'cyberluc29';
   
+    
+    // var disqus_developer = 1;
+    var disqus_identifier = 'http://cyberLuc.github.io/blog/2013/08/07/algo-004-note-week-1/';
+    var disqus_url = 'http://cyberLuc.github.io/blog/2013/08/07/algo-004-note-week-1/';
+    var disqus_script = 'embed.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'CyberLuc',
+      count: 0,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
 
 
 
 
 
 
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
+  </body>
 </html>
