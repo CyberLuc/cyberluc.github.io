@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[CyberLuc's Blog]]></title>
-  <link href="http://cyberLuc.github.io/atom.xml" rel="self"/>
-  <link href="http://cyberLuc.github.io/"/>
-  <updated>2014-04-19T13:44:39+08:00</updated>
-  <id>http://cyberLuc.github.io/</id>
+  <link href="http://blog.cyberluc29.tk/atom.xml" rel="self"/>
+  <link href="http://blog.cyberluc29.tk/"/>
+  <updated>2014-04-19T20:40:56+08:00</updated>
+  <id>http://blog.cyberluc29.tk/</id>
   <author>
     <name><![CDATA[CyberLuc]]></name>
     
@@ -14,10 +14,145 @@
 
   
   <entry>
+    <title type="html"><![CDATA[ACM题型模板总结]]></title>
+    <link href="http://blog.cyberluc29.tk/blog/2014/04/19/acm-problem-type-summary/"/>
+    <updated>2014-04-19T20:06:30+08:00</updated>
+    <id>http://blog.cyberluc29.tk/blog/2014/04/19/acm-problem-type-summary</id>
+    <content type="html"><![CDATA[<h2 id="section">题目题型计划</h2>
+
+<ol>
+  <li>动态规划
+    <ul>
+      <li>双线程DP</li>
+    </ul>
+  </li>
+</ol>
+
+<ul>
+  <li>图论
+    <ul>
+      <li>基础深搜广搜</li>
+      <li>最小生成树
+        <ul>
+          <li>Prim</li>
+          <li>Kruskal</li>
+        </ul>
+      </li>
+      <li>最短路径
+        <ul>
+          <li>单源最短路径</li>
+          <li>多源最短路径</li>
+          <li>Dijkstra</li>
+          <li>Floyd</li>
+          <li>Bellman</li>
+          <li>SPFA</li>
+        </ul>
+      </li>
+      <li>欧拉图
+        <ul>
+          <li>无向图</li>
+          <li>有向图</li>
+        </ul>
+      </li>
+      <li>强连通分量
+        <ul>
+          <li>Tarjan</li>
+          <li>缩点</li>
+        </ul>
+      </li>
+      <li>二分图匹配
+        <ul>
+          <li>Hungary</li>
+          <li>Hungary的Vector邻接表实现（简单、更快）</li>
+          <li>Hopcroft-Carp</li>
+        </ul>
+      </li>
+      <li>关节点</li>
+      <li>关键路径</li>
+    </ul>
+  </li>
+  <li>树
+    <ul>
+      <li>树状数组</li>
+      <li>字典树</li>
+      <li>线段树</li>
+    </ul>
+  </li>
+  <li>搜索
+    <ul>
+      <li></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="section-1">规则</h1>
+<ol>
+  <li>如果发现有人直接在网上copy代码进行提交，直接出局</li>
+</ol>
+
+<h1 id="section-2">题目</h1>
+
+<ol>
+  <li>中文.难度2 - DP - xf
+    <ul>
+      <li>zb的生日</li>
+    </ul>
+  </li>
+</ol>
+
+<ul>
+  <li>中文.难度4 - 割点 - tw
+    <ul>
+      <li>待添加</li>
+    </ul>
+  </li>
+  <li>中文.难度2 - 模拟 - rs
+    <ul>
+      <li>蚂蚁</li>
+    </ul>
+  </li>
+  <li>中文.难度3 - 数据结构 - rs
+    <ul>
+      <li>表达式求值（前后缀式转换）</li>
+    </ul>
+  </li>
+  <li>中文.难度4 - 贪心 - xf
+    <ul>
+      <li>Gone Fishing</li>
+    </ul>
+  </li>
+  <li>英文.难度1 - 字符串 - rs
+    <ul>
+      <li>Substring - 第五届省赛题</li>
+    </ul>
+  </li>
+  <li>英文.难度3 - 并查集 - xf
+    <ul>
+      <li>易爆物 X-Plosives - LA 3644</li>
+    </ul>
+  </li>
+  <li>英文.难度4 - 搜索 - tw
+    <ul>
+      <li>城市平乱 - NYOJ115</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Rebellion of robots
+With the invention of quantum computer, scientists achieved a great advancement in the field of Artificial Intelligence. Millions of robots walk into common families serving their lives.
+However, just as the worry of most people, will robots always be loyal to human?
+Sadly, this worry turned into reality disaster.
+All the robots in City R hijacked the human citizens and declared independence.
+General Wang had N armies around, and he decided to send one special force unit from each army to rescue our citizens.
+Given the time needed to move from one city to another, can you tell General Wang that which special force unit would arrive first?</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Algorithms - Week 2 - Note]]></title>
-    <link href="http://cyberLuc.github.io/blog/2013/08/07/algo-004-note-week-2/"/>
+    <link href="http://blog.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-2/"/>
     <updated>2013-08-07T21:03:00+08:00</updated>
-    <id>http://cyberLuc.github.io/blog/2013/08/07/algo-004-note-week-2</id>
+    <id>http://blog.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-2</id>
     <content type="html"><![CDATA[<h2 id="master-method">一、Master Method</h2>
 <p>前面对算法进行了一定程度的分析，这里要祭出一个分析利器：<code>Master Method</code>。</p>
 
@@ -347,9 +482,9 @@ log_{\frac{1}{1-α}}n&=\frac{log_2n}{log_2{\frac{1}{1-α}}}\\
   
   <entry>
     <title type="html"><![CDATA[Algorithms - Week 1 - Note]]></title>
-    <link href="http://cyberLuc.github.io/blog/2013/08/07/algo-004-note-week-1/"/>
+    <link href="http://blog.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-1/"/>
     <updated>2013-08-07T21:03:00+08:00</updated>
-    <id>http://cyberLuc.github.io/blog/2013/08/07/algo-004-note-week-1</id>
+    <id>http://blog.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-1</id>
     <content type="html"><![CDATA[<h2 id="section">零、写在算法学习之前</h2>
 <p>可能对于一名普通的软件编程人员，对于算法的深入学习不是一件特别必要的事情。不过要是想要提升自己，更深程度的理解计算机的世界，那么算法的学习是必不可少的。作为一名计算机科学与技术的本科生，我以后并不准备当一名算法专家，冗长的数学证明也并不合我口味，不过这并不妨碍我深入了解一下算法分析的应用，这无疑会给我能力的提升带来莫大的好处。</p>
 
@@ -778,9 +913,9 @@ T(n)=
   
   <entry>
     <title type="html"><![CDATA[用Geek的方式来写博客(1)：在Github上搭建Octopress]]></title>
-    <link href="http://cyberLuc.github.io/blog/2013/08/01/building-octopress-blog/"/>
+    <link href="http://blog.cyberluc29.tk/blog/2013/08/01/building-octopress-blog/"/>
     <updated>2013-08-01T10:45:00+08:00</updated>
-    <id>http://cyberLuc.github.io/blog/2013/08/01/building-octopress-blog</id>
+    <id>http://blog.cyberluc29.tk/blog/2013/08/01/building-octopress-blog</id>
     <content type="html"><![CDATA[<p>听说Octopress还是去年的时候，原因是我宿舍隔壁一哥们买了个域名。因为我一直有开个博客的想法，但不知道哪家提供的服务比较好，于是就去问了一下，没想到他说他把他的博客托管在了Github上。没问明白，我回宿舍后就Google了一下，于是发现了Octopress这个Ruby项目。</p>
 
 <p>这种编写博客的方式立即就吸引了我。那段时间还挣扎在VIM和Emacs之间，对于Markdown也是久闻大名，当即决定，就是这货了！</p>
@@ -1033,7 +1168,7 @@ T(n)=
 </span><span class="line"><span class="nt">&lt;/ul&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>在合适的位置添加上<code>&lt;li&gt;&lt;a href="http://cyberLuc.github.io/about"&gt;About&lt;/a&gt;&lt;/li&gt;</code>即可。</p>
+<p>在合适的位置添加上<code>&lt;li&gt;&lt;a href="http://blog.cyberluc29.tk/about"&gt;About&lt;/a&gt;&lt;/li&gt;</code>即可。</p>
 
 <p>另外博客默认是首页显示每一篇博文所有内容的，如果你不想这么做，那么就需要在博文的合适位置加上<code>&lt;!-- more --&gt;</code>，这可以让首页博文的内容在这里截止，并显示<code>Read On</code>，也就是点击继续阅读。</p>
 
@@ -1078,9 +1213,9 @@ T(n)=
   
   <entry>
     <title type="html"><![CDATA[CLRS - Ch2.2 - Analyzing Algorithm]]></title>
-    <link href="http://cyberLuc.github.io/blog/2013/07/31/clrs-2-2-analyzing-algorithm/"/>
+    <link href="http://blog.cyberluc29.tk/blog/2013/07/31/clrs-2-2-analyzing-algorithm/"/>
     <updated>2013-07-31T22:07:00+08:00</updated>
-    <id>http://cyberLuc.github.io/blog/2013/07/31/clrs-2-2-analyzing-algorithm</id>
+    <id>http://blog.cyberluc29.tk/blog/2013/07/31/clrs-2-2-analyzing-algorithm</id>
     <content type="html"><![CDATA[<p>前面的介绍略过不再记录，直接来看对于Insertion Sort的分析。</p>
 
 <h3 id="analysis-of-insertion-sort---">1.Analysis of insertion sort - 对插入排序的分析</h3>
@@ -1182,9 +1317,9 @@ T(n)&=c_1n+c_2(n-1)+c_3(n-1)+c_4(\frac{n(n+1)}{2}-1)+c_5\frac{n(n-1)}{2}+c_6\fra
   
   <entry>
     <title type="html"><![CDATA[CLRS - Ch2.1 - Insertion Sort]]></title>
-    <link href="http://cyberLuc.github.io/blog/2013/07/31/clrs-2-1-note/"/>
+    <link href="http://blog.cyberluc29.tk/blog/2013/07/31/clrs-2-1-note/"/>
     <updated>2013-07-31T19:49:00+08:00</updated>
-    <id>http://cyberLuc.github.io/blog/2013/07/31/clrs-2-1-note</id>
+    <id>http://blog.cyberluc29.tk/blog/2013/07/31/clrs-2-1-note</id>
     <content type="html"><![CDATA[<h3 id="insertion-sort---">1.Insertion Sort - 插入排序</h3>
 <p>插入排序是非常基础的一类排序，它和平时玩扑克牌时摸牌的排序方法几乎一模一样。每当拿到一张牌，我们就从右向左（反向当然也行）依次查看手上的牌的大小，直到找到一张牌比摸到的牌大，就把摸到的牌放到这一张后面。反复摸牌，最后我们就得到了一副从大到小排列的牌。这也符合我个人的打牌习惯。</p>
 
@@ -1247,9 +1382,9 @@ T(n)&=c_1n+c_2(n-1)+c_3(n-1)+c_4(\frac{n(n+1)}{2}-1)+c_5\frac{n(n-1)}{2}+c_6\fra
   
   <entry>
     <title type="html"><![CDATA[测试001]]></title>
-    <link href="http://cyberLuc.github.io/blog/2013/07/31/test001/"/>
+    <link href="http://blog.cyberluc29.tk/blog/2013/07/31/test001/"/>
     <updated>2013-07-31T12:52:00+08:00</updated>
-    <id>http://cyberLuc.github.io/blog/2013/07/31/test001</id>
+    <id>http://blog.cyberluc29.tk/blog/2013/07/31/test001</id>
     <content type="html"><![CDATA[<p>这是Octopress部分功能的测试</p>
 
 <!--more-->
@@ -1306,9 +1441,9 @@ T(n)&=c_1n+c_2(n-1)+c_3(n-1)+c_4(\frac{n(n+1)}{2}-1)+c_5\frac{n(n-1)}{2}+c_6\fra
   
   <entry>
     <title type="html"><![CDATA[Archlinux安装小记]]></title>
-    <link href="http://cyberLuc.github.io/blog/2013/07/31/archlinux-installation/"/>
+    <link href="http://blog.cyberluc29.tk/blog/2013/07/31/archlinux-installation/"/>
     <updated>2013-07-31T10:07:00+08:00</updated>
-    <id>http://cyberLuc.github.io/blog/2013/07/31/archlinux-installation</id>
+    <id>http://blog.cyberluc29.tk/blog/2013/07/31/archlinux-installation</id>
     <content type="html"><![CDATA[<p>不知不觉已经使用了Archlinux好几个月的时间了，期间也记录了一些安装使用中遇到的问题，最近又把arch重新装了一遍，这里把整理后的安装记录发上来。</p>
 
 <p>Arch的安装过程是全命令行的，连Debian那样的字符模拟图形界面也不会提供，不过安装过程还是相当简单的。</p>
@@ -1524,18 +1659,19 @@ T(n)&=c_1n+c_2(n-1)+c_3(n-1)+c_4(\frac{n(n+1)}{2}-1)+c_5\frac{n(n-1)}{2}+c_6\fra
 </span><span class="line"># reboot</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h3 id="xinitrc">17.xinitrc</h3>
-<p>修改<code>.xinitrc</code>，添加<code>exec awesome</code>
-&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;figcaption&gt;<span>我的.xinitrc</span>&lt;/figcaption&gt;&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+<p>修改<code>.xinitrc</code>，添加<code>exec awesome</code></p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>我的.xinitrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
 <span class="line-number">4</span>
 <span class="line-number">5</span>
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class="bash"><span class="line"><span class="c">#!/bin/zsh</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#!/bin/zsh</span>
 </span><span class="line">numlockx
 </span><span class="line">xbacklight -set 0
 </span><span class="line"><span class="c">#setxkbmap -option ctrl:nocaps</span>
 </span><span class="line"><span class="nb">exec </span>awesome
-</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;</p>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h3 id="section-12">关于字体</h3>
 <p>有几个字体是必下，比如community里的<code>wqy-microhei</code>，<code>wqy-zenhei</code>，还有aur里的<code>ttf-dejavusans-yuanti</code>，以及<code>ttf-droid-sans</code>,<code>ttf-microsoft-yahei</code>也可以装上，都是很不错的字体。</p>
@@ -1557,20 +1693,18 @@ T(n)&=c_1n+c_2(n-1)+c_3(n-1)+c_4(\frac{n(n+1)}{2}-1)+c_5\frac{n(n-1)}{2}+c_6\fra
 <span class="line-number">10</span>
 <span class="line-number">11</span>
 <span class="line-number">12</span>
-<span class="line-number">13</span>
-</pre></td><td class="code"><pre><code class="text"><span class="line">firefox //不解释
-</span><span class="line">rdesktop //远程桌面
-</span><span class="line">banshee //听歌还不错，不过ncmpcpp作为字符下的也还可以
+</pre></td><td class="code"><pre><code class="text"><span class="line">firefox                    //不解释
+</span><span class="line">rdesktop                   //远程桌面
+</span><span class="line">banshee                    //听歌还不错，不过ncmpcpp作为字符下的也还可以
 </span><span class="line">mplayer
 </span><span class="line">smplayer
 </span><span class="line">chmsee
-</span><span class="line">foxitreader //比evince好用
-</span><span class="line">gthumb //不错的看图软件
-</span><span class="line">bc //命令行下的计算器
+</span><span class="line">foxitreader                //比evince好用
+</span><span class="line">eof,gthumb                 //不错的看图软件
+</span><span class="line">bc                         //命令行下的计算器
 </span><span class="line">emacs
-</span><span class="line">xbacklight //可以设置笔记本的亮度，对于无法保存亮度的笔记本来说很方便
-</span><span class="line">numlockx //自动打开小键盘
-</span><span class="line">ibus,ibus-sunpinyin //挺不错的，个人觉得比ibus好用
+</span><span class="line">xbacklight    //可以设置笔记本的亮度，对于无法保存亮度的笔记本来说很方便
+</span><span class="line">numlockx      //自动打开小键盘
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>已经安装了好久了，当时也没记录多详细，就这些内容了。</p>
@@ -1581,9 +1715,9 @@ T(n)&=c_1n+c_2(n-1)+c_3(n-1)+c_4(\frac{n(n+1)}{2}-1)+c_5\frac{n(n-1)}{2}+c_6\fra
   
   <entry>
     <title type="html"><![CDATA[Hello World]]></title>
-    <link href="http://cyberLuc.github.io/blog/2013/07/29/hello-world/"/>
+    <link href="http://blog.cyberluc29.tk/blog/2013/07/29/hello-world/"/>
     <updated>2013-07-29T20:12:00+08:00</updated>
-    <id>http://cyberLuc.github.io/blog/2013/07/29/hello-world</id>
+    <id>http://blog.cyberluc29.tk/blog/2013/07/29/hello-world</id>
     <content type="html"><![CDATA[<p>Hello World!</p>
 
 <p>好吧，这是我用Octopress在Github上搭建好博客的第一篇文章。</p>

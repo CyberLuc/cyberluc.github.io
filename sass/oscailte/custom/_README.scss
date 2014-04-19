@@ -20,5 +20,22 @@ ul.tag-cloud{
     margin-left:0px;
 }
 ul.divided > li, ol.divided{
-    padding: 0.2em 0px;
+    padding: 0.1em 0px;
+}
+aside a:hover{
+    color: #2a5caa;
+}
+.marginright{
+    margin-right:20px;
+}
+div.pull-left.marginright{
+    width:auto;
+    min-width:75px;
+    max-width:280px;
+}
+div.pull-left ul.tags a{
+    color: #555;
+}
+div.pull-left ul.tags a:hover{
+    text-decoration: underline;
 }

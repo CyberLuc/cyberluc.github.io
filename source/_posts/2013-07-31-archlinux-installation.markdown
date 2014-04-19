@@ -171,6 +171,7 @@ Archlinux使用ip和netctl工具来进行网络管理，不过以前用惯了ifc
 
 ### 17.xinitrc
 修改`.xinitrc`，添加`exec awesome`
+
 ```bash 我的.xinitrc
 #!/bin/zsh
 numlockx
@@ -187,19 +188,18 @@ exec awesome
 
 ### 常用软件
 ```text 常用软件
-firefox //不解释
-rdesktop //远程桌面
-banshee //听歌还不错，不过ncmpcpp作为字符下的也还可以
+firefox                    //不解释
+rdesktop                   //远程桌面
+banshee                    //听歌还不错，不过ncmpcpp作为字符下的也还可以
 mplayer
 smplayer
 chmsee
-foxitreader //比evince好用
-gthumb //不错的看图软件
-bc //命令行下的计算器
+foxitreader                //比evince好用
+eof,gthumb                 //不错的看图软件
+bc                         //命令行下的计算器
 emacs
-xbacklight //可以设置笔记本的亮度，对于无法保存亮度的笔记本来说很方便
-numlockx //自动打开小键盘
-ibus,ibus-sunpinyin //挺不错的，个人觉得比ibus好用
+xbacklight    //可以设置笔记本的亮度，对于无法保存亮度的笔记本来说很方便
+numlockx      //自动打开小键盘
 ```
 
 已经安装了好久了，当时也没记录多详细，就这些内容了。

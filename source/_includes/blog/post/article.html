@@ -10,6 +10,7 @@
   {% unless post.meta == false %}
   <div class="meta clearfix">
     {% include blog/post/date.html %}{{ time }}
+    {% include blog/post/category.html %}
     {% include blog/post/tags.html %}
     {% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
       <a class="pull-right" href="{% if index %}{{ site.url }}{{ root_url }}{{ post.url }}{% endif %}#disqus_thread">
