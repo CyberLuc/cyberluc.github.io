@@ -1,100 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>My Octopress Blog</title>
-  <meta name="author" content="Your Name">
-
-  
-  <meta name="description" content="一、Master Method 前面对算法进行了一定程度的分析，这里要祭出一个分析利器：Master Method。 利用Master Method，可以快速、准确地判断D&amp;C类算法的时间复杂度，不过它的应用也有限制，比如只能用在划分的子问题大小相等的情况下。下面就来详细看看Master &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://CyberLuc.github.io">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-
-</head>
-
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">My Octopress Blog</a></h1>
-  
-    <h2>A blogging framework for hackers.</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:CyberLuc.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
+  <title><![CDATA[Category: Coursera | My Octopress Blog]]></title>
+  <link href="http://CyberLuc.github.io/blog/categories/coursera/atom.xml" rel="self"/>
+  <link href="http://CyberLuc.github.io/"/>
+  <updated>2014-04-19T09:56:51+08:00</updated>
+  <id>http://CyberLuc.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
     
-      <h1 class="entry-title"><a href="/blog/2013/08/07/algo-004-note-week-2/">Algorithms - Week 2 - Note</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-
-
-<time datetime="2013-08-07T21:03:00+08:00" pubdate data-updated="true">Aug 7<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>一、Master Method</h2>
+  <entry>
+    <title type="html"><![CDATA[Algorithms - Week 2 - Note]]></title>
+    <link href="http://CyberLuc.github.io/blog/2013/08/07/algo-004-note-week-2/"/>
+    <updated>2013-08-07T21:03:00+08:00</updated>
+    <id>http://CyberLuc.github.io/blog/2013/08/07/algo-004-note-week-2</id>
+    <content type="html"><![CDATA[<h2>一、Master Method</h2>
 
 <p>前面对算法进行了一定程度的分析，这里要祭出一个分析利器：<code>Master Method</code>。</p>
 
@@ -220,54 +144,40 @@ $$</p>
 
 <p>下面给出具体的C语言实现代码：</p>
 
-<figure class='code'><figcaption><span>Quick Sort.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">b</span><span class="p">){</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="o">*</span><span class="n">a</span><span class="p">;</span>
-</span><span class='line'>    <span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="o">*</span><span class="n">b</span><span class="p">;</span>
-</span><span class='line'>    <span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="kt">int</span> <span class="nf">partition</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">left</span><span class="p">,</span> <span class="kt">int</span> <span class="n">right</span><span class="p">){</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">pivot</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">pivot</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">];</span>          <span class="cm">/* 选择数组第一个元素作为pivot */</span>
-</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="n">left</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>  <span class="cm">/* i指向当前元素，j指向大于pivot的第一个元素 */</span>
-</span><span class='line'>        <span class="k">if</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">){</span>
-</span><span class='line'>            <span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span> <span class="cm">/* 若当前元素小于pivot，则将其与大于pivot的第一个元素交换 */</span>
-</span><span class='line'>            <span class="n">j</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>    <span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span> <span class="cm">/* 将pivot放到合适的位置 */</span>
-</span><span class='line'>    <span class="k">return</span> <span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="kt">void</span> <span class="nf">quickSort</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">left</span><span class="p">,</span> <span class="kt">int</span> <span class="n">right</span><span class="p">){</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">left</span> <span class="o">&gt;=</span> <span class="n">right</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">pivot</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">quickSort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">quickSort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">right</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>```c Quick Sort.c
+void swap(int <em>a, int </em>b){</p>
 
+<pre><code>int t = *a;
+*a = *b;
+*b = t;
+</code></pre>
+
+<p>}
+int partition(int A[], int left, int right){</p>
+
+<pre><code>int i, j, pivot;
+pivot = A[left];          /* 选择数组第一个元素作为pivot */
+for(i = j = left+1; i &lt;= right; i++){  /* i指向当前元素，j指向大于pivot的第一个元素 */
+    if(A[i] &lt; pivot){
+        swap(&amp;A[i], &amp;A[j]); /* 若当前元素小于pivot，则将其与大于pivot的第一个元素交换 */
+        j++;
+    }
+}
+swap(&amp;A[left], &amp;A[j-1]); /* 将pivot放到合适的位置 */
+return j-1;
+</code></pre>
+
+<p>}
+void quickSort(int A[], int left, int right){</p>
+
+<pre><code>if(left &gt;= right) return;
+int pivot = partition(A, left, right);
+quickSort(A, left, pivot - 1);
+quickSort(A, pivot + 1, right);
+</code></pre>
+
+<p>}
+```</p>
 
 <h3>算法分析</h3>
 
@@ -415,42 +325,15 @@ $$</p>
 <p><strong>Termination：</strong>最后就是循环结束了。当循环结束时<code>i=num+1</code>，此时<code>A[1...i-1]</code>就是<code>A[1...num]</code>，也就是整个数组，可知是处于排好序的状态。</p>
 
 <p>至此，就用类似数学归纳法的Loop Invariant将完全由循环构成的Insertion Sort的算法正确性给证明了。</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/07/algo-004-note-week-1/">Algorithms - Week 1 - Note</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-07T21:03:00+08:00" pubdate data-updated="true">Aug 7<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>零、写在算法学习之前</h2>
+  <entry>
+    <title type="html"><![CDATA[Algorithms - Week 1 - Note]]></title>
+    <link href="http://CyberLuc.github.io/blog/2013/08/07/algo-004-note-week-1/"/>
+    <updated>2013-08-07T21:03:00+08:00</updated>
+    <id>http://CyberLuc.github.io/blog/2013/08/07/algo-004-note-week-1</id>
+    <content type="html"><![CDATA[<h2>零、写在算法学习之前</h2>
 
 <p>可能对于一名普通的软件编程人员，对于算法的深入学习不是一件特别必要的事情。不过要是想要提升自己，更深程度的理解计算机的世界，那么算法的学习是必不可少的。作为一名计算机科学与技术的本科生，我以后并不准备当一名算法专家，冗长的数学证明也并不合我口味，不过这并不妨碍我深入了解一下算法分析的应用，这无疑会给我能力的提升带来莫大的好处。</p>
 
@@ -494,7 +377,7 @@ $$</p>
 
 <h3>Limits</h3>
 
-<p>用极限的观点来看，这些记号其实就是当$n$趋近于无穷大时两函数导数的比值$\frac{T&#8217;(n)}{f&#8217;(n)}$。</p>
+<p>用极限的观点来看，这些记号其实就是当$n$趋近于无穷大时两函数导数的比值$\frac{T'(n)}{f'(n)}$。</p>
 
 <p>如果比值为<code>无穷大</code>，则T(n)的增长率大于f(n)，即为T(n)=ω(f(n))</p>
 
@@ -510,16 +393,15 @@ $$</p>
 
 <p>因为fibonacci数列规定$Fib(n)=Fib(n-1)+Fib(n-2)$，所以自然就有了下面的算法：</p>
 
-<figure class='code'><figcaption><span>糟糕的Fibonacci递归实现</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">int</span> <span class="nf">Fib</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="n">Fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">Fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
-</span><span class='line'>    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//假设fibonacci前两项均为1</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>```c 糟糕的Fibonacci递归实现
+int Fib(int n){</p>
 
+<pre><code>if(n &gt; 2) return Fib(n-1) + Fib(n-2);
+return 1; //假设fibonacci前两项均为1
+</code></pre>
+
+<p>}
+```</p>
 
 <p>从数学意义上来看完全没有问题，不过在计算机上这实在糟糕得不能再糟糕了。有兴趣的同学可以自己运行一下这段程序，记得不要把n定得太高了哦XD，在我的电脑上计算Fib(45)要花7秒的时间，计算Fib(46)用了9.5秒的时间（其实我还计算了一下Fib(50)，只用了76秒哦）。</p>
 
@@ -631,106 +513,69 @@ $$</p>
 
 <p>不再详解，这里给出C语言的实现代码。</p>
 
-<figure class='code'><figcaption><span>mergeSort.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &lt;stdio.h&gt;</span>
-</span><span class='line'><span class="cp">#define NUM 10</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">L</span><span class="p">[</span><span class="n">NUM</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="n">NUM</span><span class="p">];</span>
-</span><span class='line'><span class="kt">void</span> <span class="nf">merge</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">q</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">){</span>    <span class="cm">/* 合并两个数组 */</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">n1</span> <span class="o">=</span> <span class="n">q</span><span class="o">+</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">;</span>                 <span class="cm">/* 左子数组的长度 */</span>
-</span><span class='line'>    <span class="n">n2</span> <span class="o">=</span> <span class="n">r</span><span class="o">-</span><span class="n">q</span><span class="p">;</span>                   <span class="cm">/* 右子数组的长度 */</span>
-</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n1</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
-</span><span class='line'>        <span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="n">j</span><span class="p">];</span>
-</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">)</span>
-</span><span class='line'>        <span class="n">R</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">q</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">k</span><span class="p">];</span>
-</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n1</span> <span class="o">&amp;&amp;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
-</span><span class='line'>        <span class="k">if</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">R</span><span class="p">[</span><span class="n">k</span><span class="p">]){</span>
-</span><span class='line'>            <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
-</span><span class='line'>            <span class="n">k</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-</span><span class='line'>            <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
-</span><span class='line'>            <span class="n">j</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>    <span class="k">while</span><span class="p">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">n1</span><span class="p">){</span>
-</span><span class='line'>        <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
-</span><span class='line'>        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>        <span class="n">j</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>    <span class="k">while</span><span class="p">(</span><span class="n">k</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">){</span>
-</span><span class='line'>        <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
-</span><span class='line'>        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>        <span class="n">k</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="kt">void</span> <span class="nf">mergeSort</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">){</span>  <span class="cm">/* Merge Sort主函数 */</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">p</span> <span class="o">&gt;=</span> <span class="n">r</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>          <span class="cm">/* Base Case */</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">q</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>            <span class="cm">/* Divide */</span>
-</span><span class='line'>    <span class="n">mergeSort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">);</span>         <span class="cm">/* Conquer */</span>
-</span><span class='line'>    <span class="n">mergeSort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">q</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">);</span>       <span class="cm">/* Conquer */</span>
-</span><span class='line'>    <span class="n">merge</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">);</span>          <span class="cm">/* Combine */</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[]){</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">A</span><span class="p">[</span><span class="n">NUM</span><span class="p">],</span> <span class="n">i</span><span class="p">;</span>
-</span><span class='line'>    <span class="cm">/* freopen(&quot;./input.txt&quot;, &quot;r&quot;, stdin); */</span>
-</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUM</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-</span><span class='line'>        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-</span><span class='line'>    <span class="n">mergeSort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">NUM</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUM</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-</span><span class='line'>        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-</span><span class='line'>    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span class='line'>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>```c mergeSort.c</p>
 
+<h1>include &lt;stdio.h></h1>
+
+<h1>define NUM 10</h1>
+
+<p>int L[NUM], R[NUM];
+void merge(int A[], int p, int q, int r){    /<em> 合并两个数组 </em>/</p>
+
+<pre><code>int n1, n2, i, j, k;
+n1 = q+1-p;                 /* 左子数组的长度 */
+n2 = r-q;                   /* 右子数组的长度 */
+for(j = 0; j &lt; n1; ++j)
+    L[j] = A[p+j];
+for(k = 0; k &lt; n2; ++k)
+    R[k] = A[q+1+k];
+for(i = j = k = 0; j &lt; n1 &amp;&amp; k &lt; n2; i++){
+    if(L[j] &gt; R[k]){
+        A[p+i] = R[k];
+        k++;
+    }else{
+        A[p+i] = L[j];
+        j++;
+    }
+}
+while(j &lt; n1){
+    A[p+i] = L[j];
+    i++;
+    j++;
+}
+while(k &lt; n2){
+    A[p+i] = R[k];
+    i++;
+    k++;
+}
+</code></pre>
+
+<p>}
+void mergeSort(int A[], int p, int r){  /<em> Merge Sort主函数 </em>/</p>
+
+<pre><code>if(p &gt;= r) return;          /* Base Case */
+int q = (p+r)/2;            /* Divide */
+mergeSort(A, p, q);         /* Conquer */
+mergeSort(A, q+1, r);       /* Conquer */
+merge(A, p, q, r);          /* Combine */
+</code></pre>
+
+<p>}
+int main(int argc, char *argv[]){</p>
+
+<pre><code>int A[NUM], i;
+/* freopen("./input.txt", "r", stdin); */
+for(i = 0; i &lt; NUM; ++i)
+    scanf("%d", &amp;A[i]);
+mergeSort(A, 0, NUM-1);
+for(i = 0; i &lt; NUM; ++i)
+    printf("%d ", A[i]);
+printf("\n");
+return 0;
+</code></pre>
+
+<p>}
+```</p>
 
 <p>对Merge Sort进行一些小小的修改，还可以用来计算逆序数（Inversions），因为是基于$Θ(n\log_2n)$的归并排序，所以计算逆序数的算法同样是$Θ(n\log_2n)$的时间复杂度。</p>
 
@@ -828,24 +673,19 @@ $$</p>
 
 <p>将其添加到合适的地方后，对<code>Merge Sort</code>进行如下修改：</p>
 
-<figure class='code'><figcaption><span>MergeSortAndCountInversion.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">int</span> <span class="nf">MergeSortAndCountInversion</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">p</span><span class="p">,</span><span class="kt">int</span> <span class="n">r</span><span class="p">){</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="o">==</span><span class="n">r</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span><span class="c1">//New Base Case</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">left</span><span class="p">,</span><span class="n">right</span><span class="p">,</span><span class="n">split</span><span class="p">,</span><span class="n">q</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">left</span> <span class="o">=</span> <span class="n">MergeSortAndCountInversion</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">right</span> <span class="o">=</span> <span class="n">MergeSortAndCountInversion</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">q</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">r</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">split</span> <span class="o">=</span> <span class="n">MergeAndCountSplitInversion</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">r</span><span class="p">);</span>
-</span><span class='line'>    <span class="k">return</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span> <span class="o">+</span> <span class="n">split</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>```c MergeSortAndCountInversion.c
+int MergeSortAndCountInversion(int A[], int p,int r){</p>
 
+<pre><code>if(p==r) return 0;//New Base Case
+int left,right,split,q = (p+r)/2;
+left = MergeSortAndCountInversion(A,p,q);
+right = MergeSortAndCountInversion(A,q+1,r);
+split = MergeAndCountSplitInversion(A,p,q,r);
+return left + right + split;
+</code></pre>
+
+<p>}
+```</p>
 
 <p>便可以使用MergeSortAndCountInversion函数来得到逆序数了。</p>
 
@@ -880,345 +720,7 @@ $$</p>
 <p>但是点在平面上时，</p>
 
 <p>施工中。。。</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/01/building-octopress-blog/">用Geek的方式来写博客(1)：在Github上搭建Octopress</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-01T10:45:00+08:00" pubdate data-updated="true">Aug 1<span>st</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>听说Octopress还是去年的时候，原因是我宿舍隔壁一哥们买了个域名。因为我一直有开个博客的想法，但不知道哪家提供的服务比较好，于是就去问了一下，没想到他说他把他的博客托管在了Github上。没问明白，我回宿舍后就Google了一下，于是发现了Octopress这个Ruby项目。</p>
-
-<p>这种编写博客的方式立即就吸引了我。那段时间还挣扎在VIM和Emacs之间，对于Markdown也是久闻大名，当即决定，就是这货了！</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/08/01/building-octopress-blog/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/31/clrs-2-2-analyzing-algorithm/">CLRS - Ch2.2 - Analyzing Algorithm</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-31T22:07:00+08:00" pubdate data-updated="true">Jul 31<span>st</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>前面的介绍略过不再记录，直接来看对于Insertion Sort的分析。</p>
-
-<h3>1.Analysis of insertion sort &ndash; 对插入排序的分析</h3>
-
-<p>衡量一个算法的好坏，重要的标准之一当然就是解决问题所需的时间的多少了，通常情况下都是希望运行越快越好。而算法的运行时间并不是固定的，它根据输入数据量的大小而变化。所以通常建立一个以输入数据量大小（input size）$$n$$为自变量的函数来表示算法的运行时间（running time）。</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/07/31/clrs-2-2-analyzing-algorithm/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/31/clrs-2-1-note/">CLRS - Ch2.1 - Insertion Sort</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-31T19:49:00+08:00" pubdate data-updated="true">Jul 31<span>st</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>1.Insertion Sort &ndash; 插入排序</h3>
-
-<p>插入排序是非常基础的一类排序，它和平时玩扑克牌时摸牌的排序方法几乎一模一样。每当拿到一张牌，我们就从右向左（反向当然也行）依次查看手上的牌的大小，直到找到一张牌比摸到的牌大，就把摸到的牌放到这一张后面。反复摸牌，最后我们就得到了一副从大到小排列的牌。这也符合我个人的打牌习惯。</p>
-
-<p>这个算法非常基础，CLRS本节中也已经对此讲的很清楚了，这里仅仅列出C语言实现。注意书中是从小到大进行的排列。</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/07/31/clrs-2-1-note/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/31/test001/">测试001</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-31T12:52:00+08:00" pubdate data-updated="true">Jul 31<span>st</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>这是Octopress部分功能的测试</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/07/31/test001/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/31/archlinux-installation/">Archlinux安装小记</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-31T10:07:00+08:00" pubdate data-updated="true">Jul 31<span>st</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>不知不觉已经使用了Archlinux好几个月的时间了，期间也记录了一些安装使用中遇到的问题，最近又把arch重新装了一遍，这里把整理后的安装记录发上来。</p>
-
-<p>Arch的安装过程是全命令行的，连Debian那样的字符模拟图形界面也不会提供，不过安装过程还是相当简单的。</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/07/31/archlinux-installation/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/29/hello-world/">Hello World</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-29T20:12:00+08:00" pubdate data-updated="true">Jul 29<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Hello World!</p>
-
-<p>好吧，这是我用Octopress在Github上搭建好博客的第一篇文章。</p>
-
-<p>作为一名技术宅和未来的IT从业人员，怎么能没有自己的技术博客呢。</p>
-
-<p>这个博客将会记录我在学习、生活中所遇到的一些事，主要是作为一种记录，方便以后查询，也算是一种知识管理吧。</p>
-
-<p>希望这次可以把这个博客给坚持写下去。XD</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2013/08/07/algo-004-note-week-2/">Algorithms - Week 2 - Note</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/07/algo-004-note-week-1/">Algorithms - Week 1 - Note</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/01/building-octopress-blog/">用Geek的方式来写博客(1)：在Github上搭建Octopress</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/07/31/clrs-2-2-analyzing-algorithm/">CLRS - Ch2.2 - Analyzing Algorithm</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/07/31/clrs-2-1-note/">CLRS - Ch2.1 - Insertion Sort</a>
-      </li>
-    
-  </ul>
-</section>
-
-
-
-
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Your Name -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
-</html>
+</feed>
