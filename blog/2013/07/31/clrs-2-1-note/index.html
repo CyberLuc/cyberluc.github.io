@@ -12,8 +12,8 @@
     <title>CLRS - Ch2.1 - Insertion Sort - CyberLuc's Blog</title>
     <meta name="author" content="CyberLuc">
     
-    <meta name="description" content="CLRS - Ch2.1 - Insertion Sort Jul 31st, 2013 CLRS读书笔记 Comments 1.Insertion Sort - 插入排序
-插入排序是非常基础的一类排序，它和平时玩扑克牌时摸牌的排序方法几乎一模一样。每当拿到一张牌，我们就从右向左（反向当然也行） &hellip;">
+    <meta name="description" content="CLRS - Ch2.1 - Insertion Sort Jul 31st, 2013 CLRS读书笔记 Algorithm, CLRS Comments 1.Insertion Sort - 插入排序
+插入排序是非常基础的一类排序，它和平时玩扑克牌时摸牌的排序方法几乎一模一样。每当拿到一张牌 &hellip;">
     <meta name="keywords" content="CLRS">
     <meta name="viewport" content="width=device-width">
     <link rel="canonical" href="http://cyberLuc.github.io/blog/2013/07/31/clrs-2-1-note">
@@ -41,7 +41,9 @@
 <ul class="menu pull-right">
   <li><a href="/">Home</a></li>
   <li><a href="/blog/">Blog</a></li>
+  <li><a href="/archives/">Archives</a></li>
 </ul>
+
   </nav>
 </div>
 
@@ -80,8 +82,8 @@
 <time class="pull-left" datetime="2013-07-31T19:49:00+08:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jul 31<span>st</span>, 2013</time>
     
 
-  <div class="pull-left">
-    <i class="icon-tags"></i>
+  <div class="pull-left marginright">
+    <i class="icon-folder-open"></i>
     <ul class="tags unstyled">
     
       
@@ -90,6 +92,19 @@
     
     </ul>
   </div>
+
+
+    
+
+  <div class="pull-left marginright">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+        <a class='tag' href='/tags/algorithm/'>Algorithm</a>, <a class='tag' href='/tags/clrs/'>CLRS</a>
+    
+    </ul>
+  </div>
+
 
     
       <a class="pull-right" href="#disqus_thread">
@@ -160,6 +175,7 @@
 <p><strong>Termination：</strong>最后就是循环结束了。当循环结束时<code>i=num+1</code>，此时<code>A[1...i-1]</code>就是<code>A[1...num]</code>，也就是整个数组，可知是处于排好序的状态。</p>
 
 <p>至此，就用类似数学归纳法的Loop Invariant将完全由循环构成的Insertion Sort的算法正确性给证明了。</p>
+
 
 
   <footer>
