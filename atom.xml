@@ -4,7 +4,7 @@
   <title><![CDATA[CyberLuc's Blog]]></title>
   <link href="http://blog.cyberluc29.tk/atom.xml" rel="self"/>
   <link href="http://blog.cyberluc29.tk/"/>
-  <updated>2014-04-19T18:19:46+08:00</updated>
+  <updated>2014-04-19T20:09:33+08:00</updated>
   <id>http://blog.cyberluc29.tk/</id>
   <author>
     <name><![CDATA[CyberLuc]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ACM_Problem_Type_Summary]]></title>
+    <link href="http://blog.cyberluc29.tk/blog/2014/04/19/acm-problem-type-summary/"/>
+    <updated>2014-04-19T20:06:30+08:00</updated>
+    <id>http://blog.cyberluc29.tk/blog/2014/04/19/acm-problem-type-summary</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Algorithms - Week 2 - Note]]></title>
@@ -1559,19 +1568,19 @@ T(n)&=c_1n+c_2(n-1)+c_3(n-1)+c_4(\frac{n(n+1)}{2}-1)+c_5\frac{n(n-1)}{2}+c_6\fra
 <span class="line-number">11</span>
 <span class="line-number">12</span>
 <span class="line-number">13</span>
-</pre></td><td class="code"><pre><code class="text"><span class="line">firefox //不解释
-</span><span class="line">rdesktop //远程桌面
-</span><span class="line">banshee //听歌还不错，不过ncmpcpp作为字符下的也还可以
+</pre></td><td class="code"><pre><code class="text"><span class="line">firefox                    //不解释
+</span><span class="line">rdesktop                   //远程桌面
+</span><span class="line">banshee                    //听歌还不错，不过ncmpcpp作为字符下的也还可以
 </span><span class="line">mplayer
 </span><span class="line">smplayer
 </span><span class="line">chmsee
-</span><span class="line">foxitreader //比evince好用
-</span><span class="line">gthumb //不错的看图软件
-</span><span class="line">bc //命令行下的计算器
+</span><span class="line">foxitreader                     //比evince好用
+</span><span class="line">gthumb                          //不错的看图软件
+</span><span class="line">bc                              //命令行下的计算器
 </span><span class="line">emacs
-</span><span class="line">xbacklight //可以设置笔记本的亮度，对于无法保存亮度的笔记本来说很方便
-</span><span class="line">numlockx //自动打开小键盘
-</span><span class="line">ibus,ibus-sunpinyin //挺不错的，个人觉得比ibus好用
+</span><span class="line">xbacklight    //可以设置笔记本的亮度，对于无法保存亮度的笔记本来说很方便
+</span><span class="line">numlockx      //自动打开小键盘
+</span><span class="line">ibus,ibus-sunpinyin             //挺不错的，个人觉得比ibus好用
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>已经安装了好久了，当时也没记录多详细，就这些内容了。</p>
