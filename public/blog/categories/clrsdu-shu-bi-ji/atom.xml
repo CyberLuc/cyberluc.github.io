@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: CLRS读书笔记 | My Octopress Blog]]></title>
-  <link href="http://yoursite.com/blog/categories/clrsdu-shu-bi-ji/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2014-04-19T09:52:32+08:00</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://CyberLuc.github.io/blog/categories/clrsdu-shu-bi-ji/atom.xml" rel="self"/>
+  <link href="http://CyberLuc.github.io/"/>
+  <updated>2014-04-19T09:56:51+08:00</updated>
+  <id>http://CyberLuc.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[CLRS - Ch2.2 - Analyzing Algorithm]]></title>
-    <link href="http://yoursite.com/blog/2013/07/31/clrs-2-2-analyzing-algorithm/"/>
+    <link href="http://CyberLuc.github.io/blog/2013/07/31/clrs-2-2-analyzing-algorithm/"/>
     <updated>2013-07-31T22:07:00+08:00</updated>
-    <id>http://yoursite.com/blog/2013/07/31/clrs-2-2-analyzing-algorithm</id>
+    <id>http://CyberLuc.github.io/blog/2013/07/31/clrs-2-2-analyzing-algorithm</id>
     <content type="html"><![CDATA[<p>前面的介绍略过不再记录，直接来看对于Insertion Sort的分析。</p>
 
 <h3>1.Analysis of insertion sort &ndash; 对插入排序的分析</h3>
@@ -114,9 +114,9 @@ $$</p>
   
   <entry>
     <title type="html"><![CDATA[CLRS - Ch2.1 - Insertion Sort]]></title>
-    <link href="http://yoursite.com/blog/2013/07/31/clrs-2-1-note/"/>
+    <link href="http://CyberLuc.github.io/blog/2013/07/31/clrs-2-1-note/"/>
     <updated>2013-07-31T19:49:00+08:00</updated>
-    <id>http://yoursite.com/blog/2013/07/31/clrs-2-1-note</id>
+    <id>http://CyberLuc.github.io/blog/2013/07/31/clrs-2-1-note</id>
     <content type="html"><![CDATA[<h3>1.Insertion Sort &ndash; 插入排序</h3>
 
 <p>插入排序是非常基础的一类排序，它和平时玩扑克牌时摸牌的排序方法几乎一模一样。每当拿到一张牌，我们就从右向左（反向当然也行）依次查看手上的牌的大小，直到找到一张牌比摸到的牌大，就把摸到的牌放到这一张后面。反复摸牌，最后我们就得到了一副从大到小排列的牌。这也符合我个人的打牌习惯。</p>

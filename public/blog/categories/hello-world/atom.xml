@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Hello World | My Octopress Blog]]></title>
-  <link href="http://yoursite.com/blog/categories/hello-world/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2014-04-19T09:52:32+08:00</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://CyberLuc.github.io/blog/categories/hello-world/atom.xml" rel="self"/>
+  <link href="http://CyberLuc.github.io/"/>
+  <updated>2014-04-19T09:56:51+08:00</updated>
+  <id>http://CyberLuc.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hello World]]></title>
-    <link href="http://yoursite.com/blog/2013/07/29/hello-world/"/>
+    <link href="http://CyberLuc.github.io/blog/2013/07/29/hello-world/"/>
     <updated>2013-07-29T20:12:00+08:00</updated>
-    <id>http://yoursite.com/blog/2013/07/29/hello-world</id>
+    <id>http://CyberLuc.github.io/blog/2013/07/29/hello-world</id>
     <content type="html"><![CDATA[<p>Hello World!</p>
 
 <p>好吧，这是我用Octopress在Github上搭建好博客的第一篇文章。</p>
