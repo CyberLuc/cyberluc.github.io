@@ -1,0 +1,300 @@
+---
+layout: post
+title: "Algorithms - Week 2 - Note"
+date: 2013-08-07 21:03
+comments: true
+keywords: Algorithm, Coursera
+description:
+categories: [Coursera]
+tags: [Algorithm, Coursera]
+published: true
+---
+
+## 一、Master Method
+前面对算法进行了一定程度的分析，这里要祭出一个分析利器：`Master Method`。
+
+利用`Master Method`，可以快速、准确地判断D&C类算法的时间复杂度，不过它的应用也有限制，比如只能用在划分的子问题大小相等的情况下。下面就来详细看看`Master Method`：
+
+首先设：
+
+$$
+\begin{equation}
+\begin{aligned}
+T(n)=aT(\frac{n}{b})+O(n^d)
+\end{aligned}
+\end{equation}
+$$
+
+然后就能够根据a、b、d的值得到如下式子：
+
+$$
+\begin{equation}
+\begin{aligned}
+T(n)=
+\begin{cases}
+O(n^dlogn) &(a=b^d)\\
+O(n^d) &(a<b^d)\\
+O(n^{log_ba}) &(a>b^d)
+\end{cases}
+\end{aligned}
+\end{equation}
+$$
+
+这其中，$a$是每次`Divide`时划分出的子问题数量，$b$是每次`Divide`时子问题相对原问题的大小的倒数，`d`是递归之外的操作的幂。
+
+现在，根据$a$与$b^d$的关系，我们就能够利用`Master Method`来进行算法分析了。
+
+首先来看看`Merge Sort`，它每次将数组划分为两个原大小二分之一的子数组，所以$a=b=2$，此外可知$d=1$。
+所以$2=2^1$，即$a=b^d$。显然，$T(n)=O(nlog_2n)$。
+
+对于`Karatsuba Multiplication`而言，$a=3，b=2，d=0$，所以$T(n)=O(n^{log_23})$。
+
+对于`Binary Search`而言，$a=1，b=2，d=0$，所以$T(n)=O(n^0log_2n)=O(log_2n)$。
+
+### Proof - 证明
+把上面的三种情况给记住就能应付相当一部分的分析了，不过为了更深入的理解`Master Method`，我们看看这三种情况是怎么来的。
+
+首先我们把$T(n)$改写一下：
+
+$$
+\begin{equation}
+\begin{aligned}
+T(n)=aT(\frac{n}{b})+cn^d
+\end{aligned}
+\end{equation}
+$$
+
+前面对`Merge Sort`的分析时已经提到了在`Recursion Tree`中每一层的节点数与子问题大小以及树的深度的问题，将$2$等数字用对应的字母替换，得到`第j层节点数`$a^j$，`第j层子问题大小`为$\frac{n}{b^j}$，`树的深度`也就是层数为$log_bn+1$。
+
+那么可以得到`第j层的操作量`$ a^j \times c(\frac{n}{b^j})^d=cn^d\times (\frac{a}{b^d})^j$。
+
+将每一层的操作量加起来，得到`总的操作量`$cn^d \sum_{j=0}^{log_bn}{(\frac{a}{b^d})^j}$。
+
+很明显，可以看出这个式子右边部分是一个`等比数列`，公比就为$\frac{a}{b^d}$，而它的大小对于原式的大小有很大的影响。
+
+Tim教授提到：
+
+$a$ = `Rate of Subproblem Proliferation - (RSP)`，也就是`子问题的增长率`，这个数越大当然算法就运行得越慢。
+
+$b^d$ = `Rate of Work Shrinkage - (RWS)`，也就是`操作量的收缩率`，这个数当然越大越好了。至于为什么这个数是$b^d$而不是$b$，原因是仅知道$b$的大小在这里对于我们用处不大，我们真正需要的不是子问题大小的收缩率，而是解决子问题所需进行的递归操作之外的操作量的收缩率。对于`Merge Sort`而言，$b=2，d=1$，所以子问题的收缩率为$\frac{1}{2}$，解决子问题的操作量的收缩率也为$\frac{1}{2}$。而假如$b=2，d=2$，那么每次divide后的子问题只有原本的$\frac{1}{2}$大小，而需要进行的操作量为原本的$\frac{1}{4}$。
+
+所以，公比$\frac{a}{b^d}$就是`子问题增长率（RSP）`与`解决子问题所需操作量的收缩率（RWS）`的比值。如果比值`大于1`，那么增长率大于收缩率，`Recursion Tree`每一级所需要的操作量处于递增状态；如果比值`等于1`，那么每一级所要的操作量不变；而如果比值`小于1`，每一级所需要的操作量处于递减状态。
+
+首先来看第一种情况，`RSP=RWS`，即$a=b^d$。此时`Recursion Tree`各级操作量不变。原式右半部分等比数列的和显然为$log_bn+1$，所以原式等于$cn^d(log_bn+1)$，即为$O(n^dlog_2n)$。注意，无论$log_bn$中$b$为多少，它始终为$clog_2n=Θ(log_2n)$，使用换底公式即可推得。
+
+第二种情况，`RSP<RWS`，即$a<b^d$。此时`Recursion Tree`各级操作量递减。对于原式右边的等比数列，因为a、b、d是与n无关的常数，且$\frac{a}{b^d}<1$，由求和公式可得：
+
+$$
+\begin{equation}
+\begin{aligned}
+\sum_{j=0}^{log_bn}{(\frac{a}{b^d})^j}&=\frac{1-{\frac{a}{b^d}}^{log_bn+1}}{1-\frac{a}{b^d}}\\
+& \leqslant \frac{1}{1-\frac{a}{b^d}}
+\end{aligned}
+\end{equation}
+$$
+
+等比数列和小于等于一个常数，所以时间复杂度为$O(cn^d\times \frac{1}{1-\frac{a}{b^d}})=O(n^d)$。在整个递归调用的过程中，根一级的操作数量最大，为$cn^d$，因为各级操作量呈等比递减，其它各级相加无非是增加了$cn^d$的常数项系数，即为$O(n^d)$。
+
+第三种情况，`RSP>RWS`，即$a>b^d$。此时`Recursion Tree`各级操作量递增。对于原式右边的等比数列，因为a、b、d是与n无关的常数，且$\frac{a}{b^d}>1$，由求和公式可得：
+
+$$
+\begin{equation}
+\begin{aligned}
+\sum_{j=0}^{log_bn}{(\frac{a}{b^d})^j}&=\frac{ {\frac{a}{b^d}}^{log_bn+1}-1}{\frac{a}{b^d}-1}\\
+& \leqslant \frac{ {\frac{a}{b^d}}^{log_bn+1}}{\frac{a}{b^d}-1}\\
+& = {\frac{a}{b^d}}^{log_bn}\times \frac{\frac{a}{b^d}}{\frac{a}{b^d}-1}\\
+
+∵\frac{\frac{a}{b^d}}{\frac{a}{b^d}-1}为常数\\
+∴O(cn^d \sum_{j=0}^{log_bn}{(\frac{a}{b^d})^j})&=O(n^d\times {\frac{a}{b^d}}^{log_bn})\\
+&=O(n^d \times \frac{n^{log_ba}}{n^d})\\
+&=O(n^{log_ba})
+\end{aligned}
+\end{equation}
+$$
+
+这种情况下，在整个递归调用的过程中，叶子一级的操作量最大，因为各级操作量呈等比递增，其它各级相加也无非是增加了叶子节点操作量的常数项系数。又因为每个叶子节点的操作量为常数$c$，所以时间复杂度为$O(c\times叶子节点数)=O(a^{log_bn})=O(n^{log_ba})$。
+
+了解了上面的过程后，我们就可以方便地使用`Master Method`来分析算法的复杂度了～
+
+## 二、Quick Sort - 快速排序
+快速排序是在实际情况中较常使用的一种排序算法，在C++的STL中就提供了qsort函数。不过我们还是来看看快速排序算法究竟是如何实现的。
+
+`Quick Sort`算法同样采用了D&C的设计思路，不过它的排序方法相较`Merge Sort`来说更为奇特。在`Worst Case`下，快速排序算法的算法时间复杂度为$Θ(n^2)$，而在`Best Case`下为$Θ(n)$，平均复杂度为$Θ(nlog_2n)$。虽然它的平均运行时间才为$Θ(nlog_2n)$，而归并排序的`Worst Case`下运行时间就为$Θ(nlog_2n)$，但是快排在实际中一般仍然优于归并，这是因为算法时间复杂度并不能直接代表算法运行的快慢——只能表示运行时间增长的速度而已，毕竟常数项系数已经被隐去了。而快排在排序中是`In-Place`的，不需要额外建立数组并且复制回原数组，所以它的常数项系数要比归并小，总的来说仍然比归并快。
+
+### 算法实现
+快速排序算法的思路也很清晰，如下：
+
+***Divide：***选定`pivot`，将比`pivot`小的元素排列在`pivot`左边，比`pivot`大的元素排列在其右边。
+
+***Conquer：***对于不包含`pivot`的左右两个数组分别递归地调用自身解决问题。
+
+***Combine：***很幸运，这一步可以省略掉，因为此时原数组已经排好序了。
+
+下面给出具体的C语言实现代码：
+
+```c Quick Sort.c
+void swap(int *a, int *b){
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+int partition(int A[], int left, int right){
+    int i, j, pivot;
+    pivot = A[left];          /* 选择数组第一个元素作为pivot */
+    for(i = j = left+1; i <= right; i++){  /* i指向当前元素，j指向大于pivot的第一个元素 */
+        if(A[i] < pivot){
+            swap(&A[i], &A[j]); /* 若当前元素小于pivot，则将其与大于pivot的第一个元素交换 */
+            j++;
+        }
+    }
+    swap(&A[left], &A[j-1]); /* 将pivot放到合适的位置 */
+    return j-1;
+}
+void quickSort(int A[], int left, int right){
+    if(left >= right) return;
+    int pivot = partition(A, left, right);
+    quickSort(A, left, pivot - 1);
+    quickSort(A, pivot + 1, right);
+}
+```
+
+### 算法分析
+由上面的算法描述可知，每一次partition时，都将选定的pivot排到了正确的位置，并进一步缩小待排序的数组大小，减少可能的比较次数。
+
+快速排序的运行时间取决于partition的步骤时分出的左右两个数组是否平衡。分析时的情况时选取pivot为数组第一个元素。
+
+#### Worst Case
+`Worst Case`是快速排序算法Partition时最不平衡的一种情况，在这种情况下，每次partition都将现有n个元素的数组分为大小为0和n-1的两个数组，于是这个算法的运行时间递推式就和线性搜索的递归实现的分析类似了，不同的是快速排序算法每一次partition是线性复杂度。所以可以得到：
+
+$$
+\begin{equation}
+\begin{aligned}
+T(n)&=T(n-1)+T(0)+Θ(n)\\
+&=T(n-1)+Θ(n)\\
+&=Θ(n^2)
+\end{aligned}
+\end{equation}
+$$
+
+这个时候数组的元素为已经排好序的状态，不过进一步可以验证得到，无论输入数组是正向排好序还是逆向排好序，快速排序的运行时间均为$Θ(n^2)$，这一点和插入排序等算法存在差异，后者此时对于按要求排好序的数组的运行时间反而仅为$Θ(n)$。所以，当需要排序的元素已经一定程度上排好序的时候，选择快排还需谨慎啊。
+
+#### Best Case
+最为理想的平衡情况就是每次pivot都选取到中间大小的元素，所以每一次partition都将数组分为两个近似$\frac{n}{2}$大小的子数组（要排除pivot这个元素）。我们忽略一些细节，可以得到：
+
+$$
+\begin{equation}
+\begin{aligned}
+T(n)&=2T(\frac{n}{2})+Θ(n)\\
+&=Θ(nlog_2n)
+\end{aligned}
+\end{equation}
+$$
+
+#### Balenced Partitioning
+如果不按照$1:1$的比例划分数组而是按照其它的比例划分，那么partition还是平衡的吗？
+
+下面假设每次partition将数组划分为$\frac{1}{10}$和$\frac{9}{10}$的两个部分，我们可以得到递推式：
+
+$$
+\begin{equation}
+\begin{aligned}
+T(n)&=T(\frac{9n}{10})+T(\frac{n}{10})+cn
+\end{aligned}
+\end{equation}
+$$
+
+粗看上去是一个极不平衡的划分，不过我们可以来仔细的看一下，用`Recursion Tree`进行分析。因为每次将数组划分为9:1的比例，所以划分为$\frac{1}{10}$的数组肯定比另一部分要先到达叶子部分，此时每一层的消耗均为cn，从这一层开始，因为不再是满二叉树了，每一层节点数减少，所以每一层的消耗已经小于cn，综合起来每一层消耗即$O(n)$。
+
+所以Recursion Tree的`Minimum Depth`为$log_{10}n=Θ(log_2n)$。
+
+而`Maximum Depth`则为$log_{\frac{10}{9}}n=Θ(log_2n)$。
+
+综上可得，$T(n)=O(nlog_2n)$，可见这仍旧是一个平衡的划分。
+
+我们将其一般化，假设常数$0<α\leqslant\frac{1}{2}$作为左子数组的划分大小，那么右子数组则划分为$1-α$，可得：
+
+$$
+\begin{equation}
+\begin{aligned}
+T(n)&=T(αn)+T((1-α)n)+cn
+\end{aligned}
+\end{equation}
+$$
+
+`Minimum Depth`为：
+
+$$
+\begin{equation}
+\begin{aligned}
+log_{\frac{1}{α}}n&=\frac{log_2n}{log_2{\frac{1}{α}}}\\
+&=Θ(log_2n)
+\end{aligned}
+\end{equation}
+$$
+
+`Maximum Depth`则为：
+
+$$
+\begin{equation}
+\begin{aligned}
+log_{\frac{1}{1-α}}n&=\frac{log_2n}{log_2{\frac{1}{1-α}}}\\
+&=Θ(log_2n)
+\end{aligned}
+\end{equation}
+$$
+
+可知每层的消耗还是不变，仍旧为$O(n)$，所以这几个量没有任何变化，$T(n)$仍旧为$O(nlog_2n)$。
+
+所以，无关划分的大小，只要每一次partition时进行的划分是`固定比例`的，运行时间总是$O(nlog_2n)$，只是被Big-Oh隐藏住的常数项系数可能会大一点。
+
+### Random Pivots
+上面分析了各种比例下的时间复杂度，不过在实际的情况中几乎不可能每一次partition都是固定比例。为了使算法的复杂度充分靠近$(nlog_2n)$，我们采用随机的方法选取pivot。
+
+
+## Correctness of Quick Sort
+前面我们已经学习了归并和快速排序算法，通常情况下从算法的实现原理与步骤上我们就能看出算法可以正确无误地运行，事实上这两个算法也确实如此。不过这两个算法到底为什么是正确的呢？如果严谨一点儿的话，就不能仅仅凭借直觉来判断算法正确与否了，所以`Professor Tim`介绍了使用归纳法来进行正确性证明的方法。
+
+数学归纳法可以概括为以下三步：
+
+>(1)归纳奠基：证明n=1时命题成立；
+>
+>(2)归纳假设：假设n=k时命题成立；
+>
+>(3)归纳递推：由归纳假设推出n=k+1时命题也成立。
+
+当用它来进行算法正确性证明的时候，也是采用类似的步骤，但是稍有不同。
+
+设$p(n)$为`快速排序算法能够正确排序大小为n的数组`。
+
+为了证明$p(n)$对于所有的$n\geqslant 1$都成立，我们进行以下两个步骤：
+
+***Base Case：***证明$p(1)$为真，这一步很容易，大小为1的数组当然是排好序的。
+
+***Inductive Step：***对于$所有n\geqslant2$，证明：如果对于$任意k<n，p(k)$均成立，那么$p(n)$也成立。
+
+当这两个步骤完成后，算法的正确性自然就证明了。这也就是一步一步地递推，从2一直推到n，自然就把p(n)给证明了。
+
+因为`Quick Sort`的实质是用partition对数组进行划分，每次将数组划分为左右两个数组，因为`pivot`元素不被包括在其中，所以两个数组的大小都严格小于n。由`Inductive Hypothesis`（$p(k)对于所有k<n$均成立）可得，划分的两个子数组都能够被正确排列，继而整个数组处于排好序的状态。还可以继续对这两个子数组进行归纳证明，直到`base case`。不过根据`Inductive Hypothesis`，`Quick Sort`的正确性已经被证明了。
+
+### Loop Invariant - 循环不变式
+在CLRS中还提出了**Loop Invariant**的概念，从数学上对算法中循环的正确性进行证明。
+
+**Loop Invariant**是数学归纳法的一种变体，它和数学归纳法几乎完全相同，都是先证明一个初始条件为真，然后逐条递推，唯一的区别在于数学归纳法是将归纳步骤无限进行下去，证明了第n步再继续证明第n+1步，而Loop Invariant则是要在某一步停止，也就是当完成了循环的条件时。
+
+书中列出了应用Loop Invariant的三个步骤：
+
+>**Initialization**: It is true prior to the first iteration of the loop.
+>
+>**Maintenance**: If it is true before an iteration of the loop, it remains true before the next iteration.
+>
+>**Termination**: When the loop terminates, the invariant gives us a useful property that hepls show that the algorithm is correct.
+
+然后这里就用循环不变式对上面提到的Insertion Sort进行检验。
+
+**Initializaton：**首先，循环的初始条件是`i=2`，这个时候i指向数组中第2个元素，此时数组`A[1...i-1]`也就是`A[1]`仅包含1个元素，所以trivially，这一个元素的数组肯定是排好序的。
+
+**Maintenance：**接着，`i=2`，循环进行第一次iteration。在进行这次循环之前，算法肯定是已经正确排序了`A[1]`。而注意每次的循环都是从选定的位置开始向左遍历，依次把比它小的牌右移一位，直到找到自己合适的位置。所以第1次循环结束后，数组的前两个元素`A[1...2]`处于排好序的状态。以此递推，可知第i次循环开始前，`A[1...i-1]`处于排好序的状态，而当次循环结束以后，第i个数已经被放到了正确的位置，数组`A[1...i]`无疑包含了已经正确排序的数组，而`A[i+1...num]`仍旧处于未排序状态。
+
+**Termination：**最后就是循环结束了。当循环结束时`i=num+1`，此时`A[1...i-1]`就是`A[1...num]`，也就是整个数组，可知是处于排好序的状态。
+
+至此，就用类似数学归纳法的Loop Invariant将完全由循环构成的Insertion Sort的算法正确性给证明了。

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Hello World | My Octopress Blog]]></title>
+  <link href="http://yoursite.com/blog/categories/hello-world/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2014-04-19T09:52:32+08:00</updated>
+  <id>http://yoursite.com/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World]]></title>
+    <link href="http://yoursite.com/blog/2013/07/29/hello-world/"/>
+    <updated>2013-07-29T20:12:00+08:00</updated>
+    <id>http://yoursite.com/blog/2013/07/29/hello-world</id>
+    <content type="html"><![CDATA[<p>Hello World!</p>
+
+<p>好吧，这是我用Octopress在Github上搭建好博客的第一篇文章。</p>
+
+<p>作为一名技术宅和未来的IT从业人员，怎么能没有自己的技术博客呢。</p>
+
+<p>这个博客将会记录我在学习、生活中所遇到的一些事，主要是作为一种记录，方便以后查询，也算是一种知识管理吧。</p>
+
+<p>希望这次可以把这个博客给坚持写下去。XD</p>
+]]></content>
+  </entry>
+  
+</feed>

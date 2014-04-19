@@ -1,0 +1,56 @@
+---
+layout: post
+title: "CLRS - Ch2.1 - Insertion Sort"
+date: 2013-07-31 19:49
+comments: true
+keywords: CLRS
+description:
+categories: CLRS读书笔记
+tags: [Algorithm, CLRS]
+published: true
+---
+
+### 1.Insertion Sort - 插入排序
+插入排序是非常基础的一类排序，它和平时玩扑克牌时摸牌的排序方法几乎一模一样。每当拿到一张牌，我们就从右向左（反向当然也行）依次查看手上的牌的大小，直到找到一张牌比摸到的牌大，就把摸到的牌放到这一张后面。反复摸牌，最后我们就得到了一副从大到小排列的牌。这也符合我个人的打牌习惯。
+
+这个算法非常基础，CLRS本节中也已经对此讲的很清楚了，这里仅仅列出C语言实现。注意书中是从小到大进行的排列。
+
+<!--more-->
+
+```c Insertion Sort
+void insertionSort(int A[], int num){
+    int i, j, key;
+    for(i = 2; i <= num; i++){  /* 为了便于理解，这里设数组大小为num+1，数组从1开始计算下标 */
+        key = A[i];
+        j = i - 1;
+        while(j>0 && A[j]<key){
+            A[j+1] = A[j];      /* 如果前一张牌比当前的牌大则交换两者 */
+            j--;
+        }
+        A[j+1] = key;
+    }
+}
+```
+
+### 2.Loop Invariant - 循环不变式
+有时候为了解决某个问题而设计了某个算法后，虽然直觉上觉得这个算法应该能用，而实际的运行也确实能够正确解决这个问题，不过这个算法到底为什么是正确的呢？严谨一点儿的话，就不能仅仅靠直觉来判断了，所以CLRS中引入了**Loop Invariant**的概念，从数学上对算法中循环的正确性进行证明。
+
+**Loop Invariant**是数学归纳法的一种变体，它和数学归纳法几乎完全相同，都是先证明一个初始条件为真，然后逐条递推，唯一的区别在于数学归纳法是将归纳步骤无限进行下去，证明了第n步再继续证明第n+1步，而Loop Invariant则是要在某一步停止，也就是当完成了循环的条件时。
+
+书中列出了应用Loop Invariant的三个步骤：
+
+>**Initialization**: It is true prior to the first iteration of the loop.
+>
+>**Maintenance**: If it is true before an iteration of the loop, it remains true before the next iteration.
+>
+>**Termination**: When the loop terminates, the invariant gives us a useful property that hepls show that the algorithm is correct.
+
+然后这里就用循环不变式对上面提到的Insertion Sort进行检验。
+
+**Initializaton：**首先，循环的初始条件是`i=2`，这个时候i指向数组中第2个元素，此时数组`A[1...i-1]`也就是`A[1]`仅包含1个元素，所以trivially，这一个元素的数组肯定是排好序的。
+
+**Maintenance：**接着，`i=2`，循环进行第一次iteration。在进行这次循环之前，算法肯定是已经正确排序了`A[1]`。而注意每次的循环都是从选定的位置开始向左遍历，依次把比它小的牌右移一位，直到找到自己合适的位置。所以第1次循环结束后，数组的前两个元素`A[1...2]`处于排好序的状态。以此递推，可知第i次循环开始前，`A[1...i-1]`处于排好序的状态，而当次循环结束以后，第i个数已经被放到了正确的位置，数组`A[1...i]`无疑包含了已经正确排序的数组，而`A[i+1...num]`仍旧处于未排序状态。
+
+**Termination：**最后就是循环结束了。当循环结束时`i=num+1`，此时`A[1...i-1]`就是`A[1...num]`，也就是整个数组，可知是处于排好序的状态。
+
+至此，就用类似数学归纳法的Loop Invariant将完全由循环构成的Insertion Sort的算法正确性给证明了。

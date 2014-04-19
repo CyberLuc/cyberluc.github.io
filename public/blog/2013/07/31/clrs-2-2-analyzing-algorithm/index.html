@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>CLRS - Ch2.2 - Analyzing Algorithm - My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="前面的介绍略过不再记录，直接来看对于Insertion Sort的分析。 1.Analysis of insertion sort &ndash; 对插入排序的分析 衡量一个算法的好坏，重要的标准之一当然就是解决问题所需的时间的多少了，通常情况下都是希望运行越快越好。而算法的运行时间并不是固定的， &hellip;">
+  <meta name="keywords" content="CLRS">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://yoursite.com/blog/2013/07/31/clrs-2-2-analyzing-algorithm">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Octopress Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:yoursite.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">CLRS - Ch2.2 - Analyzing Algorithm</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-31T22:07:00+08:00" pubdate data-updated="true">Jul 31<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>前面的介绍略过不再记录，直接来看对于Insertion Sort的分析。</p>
+
+<h3>1.Analysis of insertion sort &ndash; 对插入排序的分析</h3>
+
+<p>衡量一个算法的好坏，重要的标准之一当然就是解决问题所需的时间的多少了，通常情况下都是希望运行越快越好。而算法的运行时间并不是固定的，它根据输入数据量的大小而变化。所以通常建立一个以输入数据量大小（input size）$$n$$为自变量的函数来表示算法的运行时间（running time）。</p>
+
+<!-- more -->
+
+
+<p><code>Input size</code>的定义并不是固定不变的，对于前面提到的插入排序来说，$$n$$无非就是数组的大小。对于乘法来说，由于计算机的电子特性，一般用乘数的二进制位数作为衡量。而对于一个图论算法来讲，输入的数据量可能同时由图的节点(Vertices)和边(Edges)两个量组成。</p>
+
+<p><code>Running time</code>在这里暂时被定义为算法对于某一特定输入所需要执行的<code>操作数量</code>，或者说是所需执行的<code>步数</code>，这就把算法的运行时间和具体的计算机独立了开来，所以并不以算法在某一特定电脑上的运行时间为标准来定义算法的运行时间。</p>
+
+<p>假设每一行的操作都需要花费常数项的时间$$c_i$$，接下来我们就可以来分析一下插入排序了。</p>
+
+<p>其实CLRS这里的定义略显繁琐，比我在《Data Structure and Algorithm Analysis in C》中看到的描述要复杂上一些，因为其书中将每一个基本操作定义为相同的常数项时间（当然其实乘法所需的时间远大于加法），每一行可以含有多个基本操作，比如for循环的那一行就含有一次赋值，一次比较，与一次自增。而CLRS将每一行所需时间定义为一个常数项，那么有多少行就得有多少个常数项。</p>
+
+<figure class='code'><figcaption><span>void insertionSort(int A[], int num)</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">num</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>     <span class="c1">//c1</span>
+</span><span class='line'>    <span class="n">key</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>                <span class="c1">//c2</span>
+</span><span class='line'>    <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>                 <span class="c1">//c3</span>
+</span><span class='line'>    <span class="k">while</span><span class="p">(</span><span class="n">j</span><span class="o">&gt;</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">&lt;</span><span class="n">key</span><span class="p">){</span>    <span class="c1">//c4</span>
+</span><span class='line'>        <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>         <span class="c1">//c5</span>
+</span><span class='line'>        <span class="n">j</span><span class="o">--</span><span class="p">;</span>                   <span class="c1">//c6</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span><span class="p">;</span>              <span class="c1">//c8</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>设$T(n)$为插入排序的运行时间，每行所需时间$c_i$如上所示，另设每一次while循环执行的次数为$t_i$，也即根据$i$的数值而变化。</p>
+
+<p>显然第1行for执行次数为$n$，但循环体内部代码只执行$n-1$次，因为条件判断会比循环体内部代码多执行1次以判断结束条件。所以，第2、3、8行都执行$n-1$次。第四行所需执行的总次数应该为$\sum_{i=2}^{n}t_i$。</p>
+
+<p>和上面for循环同理，每当while执行了$t_i$次时，它的内部代码只执行了$t_i-1$次，所以第5、6行的总执行次数应该均为$\sum_{i=2}^{n}(t_i-1)$。</p>
+
+<p>综上所述：</p>
+
+<p>$$
+\begin{equation}
+\begin{aligned}
+T(n)=c_1n+c_2(n-1)+c_3(n-1)+c_4\sum<em>{i=2}^{n}t_i+c_5\sum</em>{i=2}^{n}(t_i-1)+c_6\sum_{i=2}^{n}(t_i-1)+c_8(n-1)
+\end{aligned}
+\end{equation}
+$$</p>
+
+<p>分析算法的时候是根据算法的输入数据量进行的分析，不过就算是同样的数据输入量，输入数据的不同仍旧会造成算法运行时间的天差地别。</p>
+
+<p>就像这里的插入排序，一副已经洗好的从大到小排列的牌是所谓的Best Case，因为已经排好序了，每一次while循环都会在第一次条件判断时中断。所以第1、2、3、8行的执行时间不变，但是第5、6行根本就得不到执行，第4行将总共执行n-1次。</p>
+
+<p>也就是：</p>
+
+<p>$$
+\begin{equation}
+\begin{aligned}
+T(n)&amp;=c_1n+c_2(n-1)+c_3(n-1)+c_4(n-1)+c_8(n-1)\
+&amp;=(c_1+c_2+c_3+c_4+c_8)n+(c_2+c_3+c_4+c_8)
+\end{aligned}
+\end{equation}
+$$</p>
+
+<p>显然这是个一次多项式，是一个线性方程，也把这时候的时间复杂度称为线性复杂度。</p>
+
+<p>而一副从小到大排序的扑克对于这里的插入排序来说，就是一个噩梦了，Worst Case。</p>
+
+<p>对于第4行来说，$t_i$正好等于$i$的值，执行总次数为$\sum_{i=2}^{n}i=\frac{n(n+1)}{2}-1$。</p>
+
+<p>第5、6行的执行总次数为$\sum_{i=2}^{n}(i-1)=\frac{n(n-1)}{2}$。</p>
+
+<p>所以：</p>
+
+<p>$$
+\begin{equation}
+\begin{aligned}
+T(n)&amp;=c_1n+c_2(n-1)+c_3(n-1)+c_4(\frac{n(n+1)}{2}-1)+c_5\frac{n(n-1)}{2}+c_6\frac{n(n-1)}{2}+c_8(n-1)\
+&amp;=(\frac{c_4}{2}+\frac{c_5}{2}+\frac{c_6}{2})n<sup>2</sup>+(c_1+c_2+c_3+\frac{c_4}{2}&ndash;\frac{c_5}{2}&ndash;\frac{c_6}{2}+c_8)n-(c_2+c_3+c_4+c_8)
+\end{aligned}
+\end{equation}
+$$</p>
+
+<p>嗯，挺长的一串的，其实也就是一个二次多项式而已，也把此时的时间复杂度称为平方复杂度。</p>
+
+<p>因为无法预先确定输入数据的质量，所以一般在算法分析中给算法定出一个上限，采用worst case的分析方式。也就是不管输入数据怎么样变化，算法的运行时间总不会超过某个相应的量，只少不多。</p>
+
+<p>Average case的分析方式个人感觉在实际应用中有一定优势，不过书上说这种分析方式比起worst case来说要麻烦太多了，而且对于某些特定问题来说一个”平均“的定义也不是特别的清晰。但是average case对于随机算法来说却是一个很好的分析方法，用概率的方法给出运行时间，比如快速排序算法。</p>
+
+<p>因为比较两个算法时，像上面那样的具体分析往往是不必要的，所以一般用算法运行时间的增长率为标准判断算法优劣。前面插入排序的worst case运行时间就是$Θ(n<sup>2</sup>)$。</p>
+
+<p>&mdash;未完待续&mdash;</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-31T22:07:00+08:00" pubdate data-updated="true">Jul 31<span>st</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/clrsdu-shu-bi-ji/'>CLRS读书笔记</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://yoursite.com/blog/2013/07/31/clrs-2-2-analyzing-algorithm/" data-via="" data-counturl="http://yoursite.com/blog/2013/07/31/clrs-2-2-analyzing-algorithm/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/07/31/clrs-2-1-note/" title="Previous Post: CLRS - Ch2.1 - Insertion Sort">&laquo; CLRS - Ch2.1 - Insertion Sort</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/08/01/building-octopress-blog/" title="Next Post: 用Geek的方式来写博客(1)：在Github上搭建Octopress">用Geek的方式来写博客(1)：在Github上搭建Octopress &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/07/algo-004-note-week-2/">Algorithms - Week 2 - Note</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/07/algo-004-note-week-1/">Algorithms - Week 1 - Note</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/01/building-octopress-blog/">用Geek的方式来写博客(1)：在Github上搭建Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/31/clrs-2-2-analyzing-algorithm/">CLRS - Ch2.2 - Analyzing Algorithm</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/31/clrs-2-1-note/">CLRS - Ch2.1 - Insertion Sort</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Your Name -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,1224 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="一、Master Method 前面对算法进行了一定程度的分析，这里要祭出一个分析利器：Master Method。 利用Master Method，可以快速、准确地判断D&amp;C类算法的时间复杂度，不过它的应用也有限制，比如只能用在划分的子问题大小相等的情况下。下面就来详细看看Master &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://yoursite.com">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Octopress Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:yoursite.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/07/algo-004-note-week-2/">Algorithms - Week 2 - Note</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-07T21:03:00+08:00" pubdate data-updated="true">Aug 7<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>一、Master Method</h2>
+
+<p>前面对算法进行了一定程度的分析，这里要祭出一个分析利器：<code>Master Method</code>。</p>
+
+<p>利用<code>Master Method</code>，可以快速、准确地判断D&amp;C类算法的时间复杂度，不过它的应用也有限制，比如只能用在划分的子问题大小相等的情况下。下面就来详细看看<code>Master Method</code>：</p>
+
+<p>首先设：</p>
+
+<p>$$
+\begin{equation}
+\begin{aligned}
+T(n)=aT(\frac{n}{b})+O(n<sup>d</sup>)
+\end{aligned}
+\end{equation}
+$$</p>
+
+<p>然后就能够根据a、b、d的值得到如下式子：</p>
+
+<p>$$
+\begin{equation}
+\begin{aligned}
+T(n)=
+\begin{cases}
+O(n<sup>dlogn</sup>) &amp;(a=b<sup>d</sup>)\
+O(n<sup>d</sup>) &amp;(a&lt;b<sup>d</sup>)\
+O(n^{log_ba}) &amp;(a>b<sup>d</sup>)
+\end{cases}
+\end{aligned}
+\end{equation}
+$$</p>
+
+<p>这其中，$a$是每次<code>Divide</code>时划分出的子问题数量，$b$是每次<code>Divide</code>时子问题相对原问题的大小的倒数，<code>d</code>是递归之外的操作的幂。</p>
+
+<p>现在，根据$a$与$b<sup>d</sup>$的关系，我们就能够利用<code>Master Method</code>来进行算法分析了。</p>
+
+<p>首先来看看<code>Merge Sort</code>，它每次将数组划分为两个原大小二分之一的子数组，所以$a=b=2$，此外可知$d=1$。
+所以$2=2<sup>1</sup>$，即$a=b<sup>d</sup>$。显然，$T(n)=O(nlog_2n)$。</p>
+
+<p>对于<code>Karatsuba Multiplication</code>而言，$a=3，b=2，d=0$，所以$T(n)=O(n^{log_23})$。</p>
+
+<p>对于<code>Binary Search</code>而言，$a=1，b=2，d=0$，所以$T(n)=O(n<sup>0log</sup>_2n)=O(log_2n)$。</p>
+
+<h3>Proof &ndash; 证明</h3>
+
+<p>把上面的三种情况给记住就能应付相当一部分的分析了，不过为了更深入的理解<code>Master Method</code>，我们看看这三种情况是怎么来的。</p>
+
+<p>首先我们把$T(n)$改写一下：</p>
+
+<p>$$
+\begin{equation}
+\begin{aligned}
+T(n)=aT(\frac{n}{b})+cn<sup>d</sup>
+\end{aligned}
+\end{equation}
+$$</p>
+
+<p>前面对<code>Merge Sort</code>的分析时已经提到了在<code>Recursion Tree</code>中每一层的节点数与子问题大小以及树的深度的问题，将$2$等数字用对应的字母替换，得到<code>第j层节点数</code>$a<sup>j</sup>$，<code>第j层子问题大小</code>为$\frac{n}{b<sup>j</sup>}$，<code>树的深度</code>也就是层数为$log_bn+1$。</p>
+
+<p>那么可以得到<code>第j层的操作量</code>$ a<sup>j</sup> \times c(\frac{n}{b<sup>j</sup>})<sup>d</sup>=cn<sup>d</sup>\times (\frac{a}{b<sup>d</sup>})<sup>j</sup>$。</p>
+
+<p>将每一层的操作量加起来，得到<code>总的操作量</code>$cn<sup>d</sup> \sum_{j=0}^{log_bn}{(\frac{a}{b<sup>d</sup>})<sup>j</sup>}$。</p>
+
+<p>很明显，可以看出这个式子右边部分是一个<code>等比数列</code>，公比就为$\frac{a}{b<sup>d</sup>}$，而它的大小对于原式的大小有很大的影响。</p>
+
+<p>Tim教授提到：</p>
+
+<p>$a$ = <code>Rate of Subproblem Proliferation - (RSP)</code>，也就是<code>子问题的增长率</code>，这个数越大当然算法就运行得越慢。</p>
+
+<p>$b<sup>d</sup>$ = <code>Rate of Work Shrinkage - (RWS)</code>，也就是<code>操作量的收缩率</code>，这个数当然越大越好了。至于为什么这个数是$b<sup>d</sup>$而不是$b$，原因是仅知道$b$的大小在这里对于我们用处不大，我们真正需要的不是子问题大小的收缩率，而是解决子问题所需进行的递归操作之外的操作量的收缩率。对于<code>Merge Sort</code>而言，$b=2，d=1$，所以子问题的收缩率为$\frac{1}{2}$，解决子问题的操作量的收缩率也为$\frac{1}{2}$。而假如$b=2，d=2$，那么每次divide后的子问题只有原本的$\frac{1}{2}$大小，而需要进行的操作量为原本的$\frac{1}{4}$。</p>
+
+<p>所以，公比$\frac{a}{b<sup>d</sup>}$就是<code>子问题增长率（RSP）</code>与<code>解决子问题所需操作量的收缩率（RWS）</code>的比值。如果比值<code>大于1</code>，那么增长率大于收缩率，<code>Recursion Tree</code>每一级所需要的操作量处于递增状态；如果比值<code>等于1</code>，那么每一级所要的操作量不变；而如果比值<code>小于1</code>，每一级所需要的操作量处于递减状态。</p>
+
+<p>首先来看第一种情况，<code>RSP=RWS</code>，即$a=b<sup>d</sup>$。此时<code>Recursion Tree</code>各级操作量不变。原式右半部分等比数列的和显然为$log_bn+1$，所以原式等于$cn<sup>d</sup>(log_bn+1)$，即为$O(n<sup>dlog</sup>_2n)$。注意，无论$log_bn$中$b$为多少，它始终为$clog_2n=Θ(log_2n)$，使用换底公式即可推得。</p>
+
+<p>第二种情况，<code>RSP&lt;RWS</code>，即$a&lt;b<sup>d</sup>$。此时<code>Recursion Tree</code>各级操作量递减。对于原式右边的等比数列，因为a、b、d是与n无关的常数，且$\frac{a}{b<sup>d</sup>}&lt;1$，由求和公式可得：</p>
+
+<p>$$
+\begin{equation}
+\begin{aligned}
+\sum_{j=0}^{log_bn}{(\frac{a}{b<sup>d</sup>})<sup>j</sup>}&amp;=\frac{1-{\frac{a}{b<sup>d</sup>}}^{log_bn+1}}{1-\frac{a}{b<sup>d</sup>}}\
+&amp; \leqslant \frac{1}{1-\frac{a}{b<sup>d</sup>}}
+\end{aligned}
+\end{equation}
+$$</p>
+
+<p>等比数列和小于等于一个常数，所以时间复杂度为$O(cn<sup>d</sup>\times \frac{1}{1-\frac{a}{b<sup>d</sup>}})=O(n<sup>d</sup>)$。在整个递归调用的过程中，根一级的操作数量最大，为$cn<sup>d</sup>$，因为各级操作量呈等比递减，其它各级相加无非是增加了$cn<sup>d</sup>$的常数项系数，即为$O(n<sup>d</sup>)$。</p>
+
+<p>第三种情况，<code>RSP&gt;RWS</code>，即$a>b<sup>d</sup>$。此时<code>Recursion Tree</code>各级操作量递增。对于原式右边的等比数列，因为a、b、d是与n无关的常数，且$\frac{a}{b<sup>d</sup>}>1$，由求和公式可得：</p>
+
+<p>$$
+\begin{equation}
+\begin{aligned}
+\sum_{j=0}^{log_bn}{(\frac{a}{b<sup>d</sup>})<sup>j</sup>}&amp;=\frac{ {\frac{a}{b<sup>d</sup>}}^{log_bn+1}-1}{\frac{a}{b<sup>d</sup>}-1}\
+&amp; \leqslant \frac{ {\frac{a}{b<sup>d</sup>}}^{log_bn+1}}{\frac{a}{b<sup>d</sup>}-1}\
+&amp; = {\frac{a}{b<sup>d</sup>}}^{log_bn}\times \frac{\frac{a}{b<sup>d</sup>}}{\frac{a}{b<sup>d</sup>}-1}\</p>
+
+<p>∵\frac{\frac{a}{b<sup>d</sup>}}{\frac{a}{b<sup>d</sup>}-1}为常数\
+∴O(cn<sup>d</sup> \sum_{j=0}^{log_bn}{(\frac{a}{b<sup>d</sup>})<sup>j</sup>})&amp;=O(n<sup>d</sup>\times {\frac{a}{b<sup>d</sup>}}^{log_bn})\
+&amp;=O(n<sup>d</sup> \times \frac{n^{log_ba}}{n<sup>d</sup>})\
+&amp;=O(n^{log_ba})
+\end{aligned}
+\end{equation}
+$$</p>
+
+<p>这种情况下，在整个递归调用的过程中，叶子一级的操作量最大，因为各级操作量呈等比递增，其它各级相加也无非是增加了叶子节点操作量的常数项系数。又因为每个叶子节点的操作量为常数$c$，所以时间复杂度为$O(c\times叶子节点数)=O(a^{log_bn})=O(n^{log_ba})$。</p>
+
+<p>了解了上面的过程后，我们就可以方便地使用<code>Master Method</code>来分析算法的复杂度了～</p>
+
+<h2>二、Quick Sort &ndash; 快速排序</h2>
+
+<p>快速排序是在实际情况中较常使用的一种排序算法，在C++的STL中就提供了qsort函数。不过我们还是来看看快速排序算法究竟是如何实现的。</p>
+
+<p><code>Quick Sort</code>算法同样采用了D&amp;C的设计思路，不过它的排序方法相较<code>Merge Sort</code>来说更为奇特。在<code>Worst Case</code>下，快速排序算法的算法时间复杂度为$Θ(n<sup>2</sup>)$，而在<code>Best Case</code>下为$Θ(n)$，平均复杂度为$Θ(nlog_2n)$。虽然它的平均运行时间才为$Θ(nlog_2n)$，而归并排序的<code>Worst Case</code>下运行时间就为$Θ(nlog_2n)$，但是快排在实际中一般仍然优于归并，这是因为算法时间复杂度并不能直接代表算法运行的快慢——只能表示运行时间增长的速度而已，毕竟常数项系数已经被隐去了。而快排在排序中是<code>In-Place</code>的，不需要额外建立数组并且复制回原数组，所以它的常数项系数要比归并小，总的来说仍然比归并快。</p>
+
+<h3>算法实现</h3>
+
+<p>快速排序算法的思路也很清晰，如下：</p>
+
+<p><strong><em>Divide：</em></strong>选定<code>pivot</code>，将比<code>pivot</code>小的元素排列在<code>pivot</code>左边，比<code>pivot</code>大的元素排列在其右边。</p>
+
+<p><strong><em>Conquer：</em></strong>对于不包含<code>pivot</code>的左右两个数组分别递归地调用自身解决问题。</p>
+
+<p><strong><em>Combine：</em></strong>很幸运，这一步可以省略掉，因为此时原数组已经排好序了。</p>
+
+<p>下面给出具体的C语言实现代码：</p>
+
+<figure class='code'><figcaption><span>Quick Sort.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">b</span><span class="p">){</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="o">*</span><span class="n">a</span><span class="p">;</span>
+</span><span class='line'>    <span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="o">*</span><span class="n">b</span><span class="p">;</span>
+</span><span class='line'>    <span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="kt">int</span> <span class="nf">partition</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">left</span><span class="p">,</span> <span class="kt">int</span> <span class="n">right</span><span class="p">){</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">pivot</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">pivot</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">];</span>          <span class="cm">/* 选择数组第一个元素作为pivot */</span>
+</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="n">left</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>  <span class="cm">/* i指向当前元素，j指向大于pivot的第一个元素 */</span>
+</span><span class='line'>        <span class="k">if</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">){</span>
+</span><span class='line'>            <span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span> <span class="cm">/* 若当前元素小于pivot，则将其与大于pivot的第一个元素交换 */</span>
+</span><span class='line'>            <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span> <span class="cm">/* 将pivot放到合适的位置 */</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="kt">void</span> <span class="nf">quickSort</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">left</span><span class="p">,</span> <span class="kt">int</span> <span class="n">right</span><span class="p">){</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">left</span> <span class="o">&gt;=</span> <span class="n">right</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">pivot</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">quickSort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">quickSort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">right</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>算法分析</h3>
+
+<p>由上面的算法描述可知，每一次partition时，都将选定的pivot排到了正确的位置，并进一步缩小待排序的数组大小，减少可能的比较次数。</p>
+
+<p>快速排序的运行时间取决于partition的步骤时分出的左右两个数组是否平衡。分析时的情况时选取pivot为数组第一个元素。</p>
+
+<h4>Worst Case</h4>
+
+<p><code>Worst Case</code>是快速排序算法Partition时最不平衡的一种情况，在这种情况下，每次partition都将现有n个元素的数组分为大小为0和n-1的两个数组，于是这个算法的运行时间递推式就和线性搜索的递归实现的分析类似了，不同的是快速排序算法每一次partition是线性复杂度。所以可以得到：</p>
+
+<p>$$
+\begin{equation}
+\begin{aligned}
+T(n)&amp;=T(n-1)+T(0)+Θ(n)\
+&amp;=T(n-1)+Θ(n)\
+&amp;=Θ(n<sup>2</sup>)
+\end{aligned}
+\end{equation}
+$$</p>
+
+<p>这个时候数组的元素为已经排好序的状态，不过进一步可以验证得到，无论输入数组是正向排好序还是逆向排好序，快速排序的运行时间均为$Θ(n<sup>2</sup>)$，这一点和插入排序等算法存在差异，后者此时对于按要求排好序的数组的运行时间反而仅为$Θ(n)$。所以，当需要排序的元素已经一定程度上排好序的时候，选择快排还需谨慎啊。</p>
+
+<h4>Best Case</h4>
+
+<p>最为理想的平衡情况就是每次pivot都选取到中间大小的元素，所以每一次partition都将数组分为两个近似$\frac{n}{2}$大小的子数组（要排除pivot这个元素）。我们忽略一些细节，可以得到：</p>
+
+<p>$$
+\begin{equation}
+\begin{aligned}
+T(n)&amp;=2T(\frac{n}{2})+Θ(n)\
+&amp;=Θ(nlog_2n)
+\end{aligned}
+\end{equation}
+$$</p>
+
+<h4>Balenced Partitioning</h4>
+
+<p>如果不按照$1:1$的比例划分数组而是按照其它的比例划分，那么partition还是平衡的吗？</p>
+
+<p>下面假设每次partition将数组划分为$\frac{1}{10}$和$\frac{9}{10}$的两个部分，我们可以得到递推式：</p>
+
+<p>$$
+\begin{equation}
+\begin{aligned}
+T(n)&amp;=T(\frac{9n}{10})+T(\frac{n}{10})+cn
+\end{aligned}
+\end{equation}
+$$</p>
+
+<p>粗看上去是一个极不平衡的划分，不过我们可以来仔细的看一下，用<code>Recursion Tree</code>进行分析。因为每次将数组划分为9:1的比例，所以划分为$\frac{1}{10}$的数组肯定比另一部分要先到达叶子部分，此时每一层的消耗均为cn，从这一层开始，因为不再是满二叉树了，每一层节点数减少，所以每一层的消耗已经小于cn，综合起来每一层消耗即$O(n)$。</p>
+
+<p>所以Recursion Tree的<code>Minimum Depth</code>为$log_{10}n=Θ(log_2n)$。</p>
+
+<p>而<code>Maximum Depth</code>则为$log_{\frac{10}{9}}n=Θ(log_2n)$。</p>
+
+<p>综上可得，$T(n)=O(nlog_2n)$，可见这仍旧是一个平衡的划分。</p>
+
+<p>我们将其一般化，假设常数$0&lt;α\leqslant\frac{1}{2}$作为左子数组的划分大小，那么右子数组则划分为$1-α$，可得：</p>
+
+<p>$$
+\begin{equation}
+\begin{aligned}
+T(n)&amp;=T(αn)+T((1-α)n)+cn
+\end{aligned}
+\end{equation}
+$$</p>
+
+<p><code>Minimum Depth</code>为：</p>
+
+<p>$$
+\begin{equation}
+\begin{aligned}
+log_{\frac{1}{α}}n&amp;=\frac{log_2n}{log_2{\frac{1}{α}}}\
+&amp;=Θ(log_2n)
+\end{aligned}
+\end{equation}
+$$</p>
+
+<p><code>Maximum Depth</code>则为：</p>
+
+<p>$$
+\begin{equation}
+\begin{aligned}
+log_{\frac{1}{1-α}}n&amp;=\frac{log_2n}{log_2{\frac{1}{1-α}}}\
+&amp;=Θ(log_2n)
+\end{aligned}
+\end{equation}
+$$</p>
+
+<p>可知每层的消耗还是不变，仍旧为$O(n)$，所以这几个量没有任何变化，$T(n)$仍旧为$O(nlog_2n)$。</p>
+
+<p>所以，无关划分的大小，只要每一次partition时进行的划分是<code>固定比例</code>的，运行时间总是$O(nlog_2n)$，只是被Big-Oh隐藏住的常数项系数可能会大一点。</p>
+
+<h3>Random Pivots</h3>
+
+<p>上面分析了各种比例下的时间复杂度，不过在实际的情况中几乎不可能每一次partition都是固定比例。为了使算法的复杂度充分靠近$(nlog_2n)$，我们采用随机的方法选取pivot。</p>
+
+<h2>Correctness of Quick Sort</h2>
+
+<p>前面我们已经学习了归并和快速排序算法，通常情况下从算法的实现原理与步骤上我们就能看出算法可以正确无误地运行，事实上这两个算法也确实如此。不过这两个算法到底为什么是正确的呢？如果严谨一点儿的话，就不能仅仅凭借直觉来判断算法正确与否了，所以<code>Professor Tim</code>介绍了使用归纳法来进行正确性证明的方法。</p>
+
+<p>数学归纳法可以概括为以下三步：</p>
+
+<blockquote><p>(1)归纳奠基：证明n=1时命题成立；</p>
+
+<p>(2)归纳假设：假设n=k时命题成立；</p>
+
+<p>(3)归纳递推：由归纳假设推出n=k+1时命题也成立。</p></blockquote>
+
+<p>当用它来进行算法正确性证明的时候，也是采用类似的步骤，但是稍有不同。</p>
+
+<p>设$p(n)$为<code>快速排序算法能够正确排序大小为n的数组</code>。</p>
+
+<p>为了证明$p(n)$对于所有的$n\geqslant 1$都成立，我们进行以下两个步骤：</p>
+
+<p><strong><em>Base Case：</em></strong>证明$p(1)$为真，这一步很容易，大小为1的数组当然是排好序的。</p>
+
+<p><strong><em>Inductive Step：</em></strong>对于$所有n\geqslant2$，证明：如果对于$任意k&lt;n，p(k)$均成立，那么$p(n)$也成立。</p>
+
+<p>当这两个步骤完成后，算法的正确性自然就证明了。这也就是一步一步地递推，从2一直推到n，自然就把p(n)给证明了。</p>
+
+<p>因为<code>Quick Sort</code>的实质是用partition对数组进行划分，每次将数组划分为左右两个数组，因为<code>pivot</code>元素不被包括在其中，所以两个数组的大小都严格小于n。由<code>Inductive Hypothesis</code>（$p(k)对于所有k&lt;n$均成立）可得，划分的两个子数组都能够被正确排列，继而整个数组处于排好序的状态。还可以继续对这两个子数组进行归纳证明，直到<code>base case</code>。不过根据<code>Inductive Hypothesis</code>，<code>Quick Sort</code>的正确性已经被证明了。</p>
+
+<h3>Loop Invariant &ndash; 循环不变式</h3>
+
+<p>在CLRS中还提出了<strong>Loop Invariant</strong>的概念，从数学上对算法中循环的正确性进行证明。</p>
+
+<p><strong>Loop Invariant</strong>是数学归纳法的一种变体，它和数学归纳法几乎完全相同，都是先证明一个初始条件为真，然后逐条递推，唯一的区别在于数学归纳法是将归纳步骤无限进行下去，证明了第n步再继续证明第n+1步，而Loop Invariant则是要在某一步停止，也就是当完成了循环的条件时。</p>
+
+<p>书中列出了应用Loop Invariant的三个步骤：</p>
+
+<blockquote><p><strong>Initialization</strong>: It is true prior to the first iteration of the loop.</p>
+
+<p><strong>Maintenance</strong>: If it is true before an iteration of the loop, it remains true before the next iteration.</p>
+
+<p><strong>Termination</strong>: When the loop terminates, the invariant gives us a useful property that hepls show that the algorithm is correct.</p></blockquote>
+
+<p>然后这里就用循环不变式对上面提到的Insertion Sort进行检验。</p>
+
+<p><strong>Initializaton：</strong>首先，循环的初始条件是<code>i=2</code>，这个时候i指向数组中第2个元素，此时数组<code>A[1...i-1]</code>也就是<code>A[1]</code>仅包含1个元素，所以trivially，这一个元素的数组肯定是排好序的。</p>
+
+<p><strong>Maintenance：</strong>接着，<code>i=2</code>，循环进行第一次iteration。在进行这次循环之前，算法肯定是已经正确排序了<code>A[1]</code>。而注意每次的循环都是从选定的位置开始向左遍历，依次把比它小的牌右移一位，直到找到自己合适的位置。所以第1次循环结束后，数组的前两个元素<code>A[1...2]</code>处于排好序的状态。以此递推，可知第i次循环开始前，<code>A[1...i-1]</code>处于排好序的状态，而当次循环结束以后，第i个数已经被放到了正确的位置，数组<code>A[1...i]</code>无疑包含了已经正确排序的数组，而<code>A[i+1...num]</code>仍旧处于未排序状态。</p>
+
+<p><strong>Termination：</strong>最后就是循环结束了。当循环结束时<code>i=num+1</code>，此时<code>A[1...i-1]</code>就是<code>A[1...num]</code>，也就是整个数组，可知是处于排好序的状态。</p>
+
+<p>至此，就用类似数学归纳法的Loop Invariant将完全由循环构成的Insertion Sort的算法正确性给证明了。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/07/algo-004-note-week-1/">Algorithms - Week 1 - Note</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-07T21:03:00+08:00" pubdate data-updated="true">Aug 7<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>零、写在算法学习之前</h2>
+
+<p>可能对于一名普通的软件编程人员，对于算法的深入学习不是一件特别必要的事情。不过要是想要提升自己，更深程度的理解计算机的世界，那么算法的学习是必不可少的。作为一名计算机科学与技术的本科生，我以后并不准备当一名算法专家，冗长的数学证明也并不合我口味，不过这并不妨碍我深入了解一下算法分析的应用，这无疑会给我能力的提升带来莫大的好处。</p>
+
+<p><code>《Algorithms: Design and Analysis, Part 1》</code>第一周的课程里边有一句话是Professor Tim想要我们记住的：<strong><em>“Can we do better?”</em></strong>，在学习的过程中我们要时刻回想这句话，我们已经做得够好了吗？还能更好吗？</p>
+
+<p>另外，实在想吐槽<code>Professor Tim</code>的用词和语速，还有那糟糕的板书——写的还没我好呢～</p>
+
+<h2>一、算法分析基本符号</h2>
+
+<h3>Big-Oh Notation</h3>
+
+<p>$T(n)=O(f(n))$</p>
+
+<p>数学定义：$T(n)=O(f(n))$当且仅当存在一个正常数$c$以及正整数$n_0$，使得对于任意$n>n_0$，总有$T(n)\leqslant cf(n)$</p>
+
+<p>意思是无关于函数在某个具体的点的值（因为$c$可以任意取值），只要$n$足够大，$cf(n)$的值总不会比$T(n)$小，此时$cf(n)$是$T(n)$函数的上界，$T(n)$的值无法超过它。$n_0$的值即为$T(n)=cf(n)$的那个临界点。</p>
+
+<p>也就是说f(n)的增长率大于或等于T(n)，而非某一具体值高于T(n)。</p>
+
+<h3>Omega Notation</h3>
+
+<p>$T(n)=Ω(f(n))$</p>
+
+<p>数学定义：$T(n)=Ω(f(n))$当且仅当存在一个正常数$c$以及正整数$n_0$，使得对于任意$n>n_0$，总有$T(n)\geqslant cf(n)$</p>
+
+<p>即，只要$n$足够大，$T(n)$总会大于或等于$cf(n)$，此时$cf(n)$是它的下界。同样，$n_0$是临界点。</p>
+
+<p>也就是说T(n)的增长率大于或等于f(n)。</p>
+
+<h3>Theta Notation</h3>
+
+<p>$T(n)=Θ(f(n))$</p>
+
+<p>数学定义：$T(n)=Θ(f(n))$当且仅当存在一个正常数$c_1$，$c_2$以及正整数$n_0$，使得对于任意$n>n_0$，总有$c_1f(n)\leqslant T(n)\leqslant cf(n)$。</p>
+
+<p>这表示，T(n)与f(n)仅相差一个常数项系数大小，也就是说它们的增长率相同。</p>
+
+<h3>o and ω</h3>
+
+<p>此外，还有Little-Oh(o)和ω符号，他们的定义与Big-Oh和Ω相似，但是取消了相等的条件。</p>
+
+<h3>Limits</h3>
+
+<p>用极限的观点来看，这些记号其实就是当$n$趋近于无穷大时两函数导数的比值$\frac{T&#8217;(n)}{f&#8217;(n)}$。</p>
+
+<p>如果比值为<code>无穷大</code>，则T(n)的增长率大于f(n)，即为T(n)=ω(f(n))</p>
+
+<p>如果比值为<code>常数</code>，则T(n)的增长率等于f(n)，即为T(n)=Θ(f(n))</p>
+
+<p>如果比值为<code>无穷小</code>，则T(n)的增长率小于f(n)，即为T(n)=o(f(n))</p>
+
+<h2>三、Divide and Conquer Paradigm &ndash; 分治算法</h2>
+
+<p>在解决某一特定问题的时候，递归是一种经常采用的思路，这一类算法不断地调用自身，直到遇到<code>Base Case</code>后停止递归，综合递归结果以得出最后的答案。</p>
+
+<p>但我发现身边的不少同学都对于递归算法存在一定程度上的误解，认为递归调用会导致时间和内存上的多余开销造成浪费，所以要尽量避免使用递归。在《C Primer Plus》里就提到了一个经典的递归算法——Fibonacci算法，当然了，是一个经典的糟糕算法。</p>
+
+<p>因为fibonacci数列规定$Fib(n)=Fib(n-1)+Fib(n-2)$，所以自然就有了下面的算法：</p>
+
+<figure class='code'><figcaption><span>糟糕的Fibonacci递归实现</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">int</span> <span class="nf">Fib</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="n">Fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">Fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//假设fibonacci前两项均为1</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>从数学意义上来看完全没有问题，不过在计算机上这实在糟糕得不能再糟糕了。有兴趣的同学可以自己运行一下这段程序，记得不要把n定得太高了哦XD，在我的电脑上计算Fib(45)要花7秒的时间，计算Fib(46)用了9.5秒的时间（其实我还计算了一下Fib(50)，只用了76秒哦）。</p>
+
+<p>虽然上面给出了一个糟糕的递归例子，但是通过对算法的学习，我们可以看到经过良好编写的递归程序具有强大的力量，而且形式优雅，给人一种化腐朽为神奇的感觉，Algorithms第一周的课程里边也给出了几个很好的例子，它们的算法复杂度都是$O(nlog_2n)$，对于大数据远比使用常规方法的$(O(n<sup>2</sup>))$要来的高效。那么下面进入正题。</p>
+
+<p><code>Divide and Conquer</code>是一种使用递归来解决问题的办法，中文里边叫作<code>分治算法</code>，也就所谓的是<code>分而治之</code>。D&amp;C算法分为三步，一是<code>Divide</code>（分），二是<code>Conquer</code>（治），三是<code>Combine</code>（合）。先把大的复杂的问题分解成小的相对简单的子问题，然后再递归地解决这些相对容易的小问题，再把所有的结果综合起来得出原本问题的解。</p>
+
+<p>在CLRS中对D&amp;C描述到：</p>
+
+<blockquote><p>1 &ndash; <strong>Divide</strong> the problem into a number of subproblems that are smaller instances of the same problem;</p>
+
+<p>2 &ndash; <strong>Conquer</strong> the subproblems by solving them recursively. If the problem sizes are small enough, however, just solve the subproblems in a straightforward manner;</p>
+
+<p>3 &ndash; <strong>Combine</strong> the solutions to the subproblems into the solution for the original problem.</p></blockquote>
+
+<h3>Integer Multiplication</h3>
+
+<p>对于乘法来说，我们最为熟悉的无非就是所谓的竖式计算法（貌似是叫长乘法？），这种方法直观，简单，从小学二年级开始学习乘法以来，我们就一直使用着竖式计算法，可谓得心应手，已经成了一种本能。</p>
+
+<p>对于两个四位数相乘的计算而言，我们一般会将两个数垂直对齐，然后用下边各位依次乘以上边的数，并按位左移。最后把所得各相乘结果加起来，得到的就是两个四位数的相乘结果。这其中我们每一位的数字都需要进行4次乘法运算，有进位的话可能还有四次加法运算，所以在竖式计算法中总共会用到$(4+4)\times4=32$次个位数的加法乘法运算。如果把乘数的位数设为n，那么竖式计算法所需的操作量就是$2*n<sup>2</sup>$，显然时间复杂度应为$Θ(n<sup>2</sup>)$。</p>
+
+<p>$$
+\begin{equation}
+\begin{aligned}
+&amp;1234\
+\times&amp;5678\
+\hline
+&amp;9872\
+8&amp;638\
+74&amp;04\
+617&amp;0\
+\hline
+700&amp;6652
+\end{aligned}
+\end{equation}
+$$</p>
+
+<p>上Algorithms这门课之前我几乎没怎么想过要对这种乘法计算方法进行优化。它足够好了吗？在我看来是的，不过计算机科学家们并不满足于此。于是有了<code>Karatsuba Multiplication</code>算法。</p>
+
+<h4>Karatsuba Multiplication &ndash; 快速乘法</h4>
+
+<p>这种乘法的时间复杂度为$Θ(n^{log_23})$。</p>
+
+<p>现在假设两个数相乘：$5678\times1234=7006652$</p>
+
+<p>令$a=56，b=78，c=12，d=34$</p>
+
+<p>1：计算$a\times c=672$</p>
+
+<p>2：计算$b\times d=2652$</p>
+
+<p>3：计算$(a+b)(c+d)=134\times46=6164$</p>
+
+<p>4.：计算$(3)&ndash;(2)&ndash;(1)=6164-2652-672=2840$</p>
+
+<p>5：综合结果$a\times c，(a+b)(c+d)-a\times c-b\times d，b\times d$，也就是：</p>
+
+<p>$$
+\begin{equation}
+\begin{aligned}
+6720000&amp;\
+2652&amp;\
+284000&amp;\
+\hline
+7006652&amp;
+\end{aligned}
+\end{equation}
+$$</p>
+
+<p>上面的过程有些地方难以理解，不过还能看出来是使用了D&amp;C。下面是算法的一些思路：</p>
+
+<p>令x和y为乘数a，b，c，d分别是各乘数的前半部分和后半部分，n为乘数位数</p>
+
+<p>所以$x=10^{\frac{n}{2}}\times a + b，y=10^{\frac{n}{2}}\times c + d$</p>
+
+<p>则$x\times y = 10^{n}\times a\times c + 10^{\frac{n}{2}}\times (a\times d+b\times c) + b\times d$</p>
+
+<p>这样，我们就把一个$\overline{ab}\times \overline{cd}$的问题转化为了$a\times c，b\times d，a\times d和b\times c$的相似的小问题，把乘数的位数变为了二分之一。</p>
+
+<p>所以现在我们需要求4个两位数的乘法。</p>
+
+<p>又因为$(a+b)(c+d)=a\times c+a\times d+b\times c+b\times d$，而其中$a\times c和b\times d$都是待求量，如果我们把$(a\times d+b\times c)$转化为$(a+b)(c+d)-a\times c-b\times d$，那我们就只用求3次乘法运算，因为相比加减法运算，乘法运算更为消耗时间。</p>
+
+<p>Base case就是当x和y均为1位数时，这时候仅仅把x和y乘起来就行。</p>
+
+<p>因为每次将$n$切分为两个$\frac{n}{2}$，每个部分需要3次乘法，所以总共需要$3^{log_2n}$次基本乘法，时间复杂度也就是$Θ(n^{log_23})\approxΘ(n^{1.1})$。</p>
+
+<p>需要注意的是，如果不进行上面这一步，仍旧划分为4个两位数乘法，那么一共需要$4^{log_2n}$次基本乘法，也就是$n<sup>2</sup>$次，复杂度仍为$Θ(n<sup>2</sup>)$没有变化。</p>
+
+<p>不过呢，计算机做乘法不是利用长乘法，如果仅仅用整型数据来实现这个算法没有任何意义，因为允许的相乘的数字太小了，那么Karatruba算法有何用武之地呢？我查了一下，发现它应该是被用于大数相乘的。比如两个1024位的数字相乘，这个时候就没办法使用两个整型数据进行乘法运算，因为整型存不下如此大的数值，这个时候就只能用数组来模拟大数，比如用一个数组元素代表数字的一位。这个时候大数相乘就只能人为地模拟乘法，而Karatsuba也就派上了用场。</p>
+
+<p>我模拟过的大数也是利用数组，最多优化一下每一个数组元素存储4～6位数以减少空间的开销，不过本质上还是在模拟竖式乘法。而大数相乘涉及到数组的操作，而乘法涉及到的数组的操作复杂度远远超过了归并算法的数组的操作复杂度，如何divide数组、如何combine数组就成了一个大问题。以前实现的大数乘法的经验这里完全用不上。思索未果，也没有查到相关的实现代码，等待高手来实现吧。</p>
+
+<hr />
+
+<h3>Merge Sort &ndash; 归并排序</h3>
+
+<p>这是一个排序算法，在1945年由John von Neumann所提出。和我们熟悉的冒泡排序、插入排序、选择排序相比，这个算法面对大数据的时候占有很大优势，因为它的算法时间复杂度仅为$Θ(n\log_2n)$，而冒泡排序等都为$Θ(n<sup>2</sup>)$。需要注意，$\log_2n$要远小于$n$哦，可以把$2^{20}$代进去看看。</p>
+
+<h4>算法实现</h4>
+
+<p>Merge Sort的思路完全符合D&amp;C：</p>
+
+<p><strong>Divide：</strong>将$n$个元素的数组划分为两个$\frac{n}{2}$个元素的数组；</p>
+
+<p><strong>Conquer：</strong>调用自身来递归地解决这两个比原数组小的排序问题。如果数组足够小（只有1个元素或1个元素也没有），那么就为<code>Base Case</code>，所以直接解决掉（在这里也就是什么都不做，不再继续调用自身）；</p>
+
+<p><strong>Combine：</strong>这一点是整个归并排序中最重要的一点，把被分开的两个数组重新合并为一个数组，合并好的数组也就是排好序的原数组。</p>
+
+<p>不再详解，这里给出C语言的实现代码。</p>
+
+<figure class='code'><figcaption><span>mergeSort.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &lt;stdio.h&gt;</span>
+</span><span class='line'><span class="cp">#define NUM 10</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">L</span><span class="p">[</span><span class="n">NUM</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="n">NUM</span><span class="p">];</span>
+</span><span class='line'><span class="kt">void</span> <span class="nf">merge</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">q</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">){</span>    <span class="cm">/* 合并两个数组 */</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">n1</span> <span class="o">=</span> <span class="n">q</span><span class="o">+</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">;</span>                 <span class="cm">/* 左子数组的长度 */</span>
+</span><span class='line'>    <span class="n">n2</span> <span class="o">=</span> <span class="n">r</span><span class="o">-</span><span class="n">q</span><span class="p">;</span>                   <span class="cm">/* 右子数组的长度 */</span>
+</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n1</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="n">j</span><span class="p">];</span>
+</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">R</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">q</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">k</span><span class="p">];</span>
+</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n1</span> <span class="o">&amp;&amp;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span><span class='line'>        <span class="k">if</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">R</span><span class="p">[</span><span class="n">k</span><span class="p">]){</span>
+</span><span class='line'>            <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+</span><span class='line'>            <span class="n">k</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span><span class='line'>            <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span><span class='line'>            <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">while</span><span class="p">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">n1</span><span class="p">){</span>
+</span><span class='line'>        <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span><span class='line'>        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>        <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">while</span><span class="p">(</span><span class="n">k</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">){</span>
+</span><span class='line'>        <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+</span><span class='line'>        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>        <span class="n">k</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="kt">void</span> <span class="nf">mergeSort</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">){</span>  <span class="cm">/* Merge Sort主函数 */</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">p</span> <span class="o">&gt;=</span> <span class="n">r</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>          <span class="cm">/* Base Case */</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">q</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>            <span class="cm">/* Divide */</span>
+</span><span class='line'>    <span class="n">mergeSort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">);</span>         <span class="cm">/* Conquer */</span>
+</span><span class='line'>    <span class="n">mergeSort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">q</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">);</span>       <span class="cm">/* Conquer */</span>
+</span><span class='line'>    <span class="n">merge</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">);</span>          <span class="cm">/* Combine */</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[]){</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">A</span><span class="p">[</span><span class="n">NUM</span><span class="p">],</span> <span class="n">i</span><span class="p">;</span>
+</span><span class='line'>    <span class="cm">/* freopen(&quot;./input.txt&quot;, &quot;r&quot;, stdin); */</span>
+</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUM</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span class='line'>    <span class="n">mergeSort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">NUM</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUM</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span class='line'>    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>对Merge Sort进行一些小小的修改，还可以用来计算逆序数（Inversions），因为是基于$Θ(n\log_2n)$的归并排序，所以计算逆序数的算法同样是$Θ(n\log_2n)$的时间复杂度。</p>
+
+<h4>Analysis of Merge Sort &ndash; 分析归并算法</h4>
+
+<p>上面已经提到，Merge Sort的算法时间复杂度是$Θ(n\log_2n)$，对于大数据来说优于插入排序等算法的$Θ(n<sup>2</sup>)$。</p>
+
+<p>但是为什么呢？为什么排序同样一个数组，把原数组分开成几个数组分别排序就比一起排序要快呢？分开排序不还多了一个Combine的步骤吗？</p>
+
+<p>在继续讲算法分析之前，可以思考一下排序一个$n$个元素的数组，当然是在<code>Worst Case</code>的情况下（设$n$为$2$的幂）：</p>
+
+<p><strong>1.</strong><code>插入排序</code>所需的<code>比较次数</code>为$\frac{n(n-1)}{2}=\frac{1}{2}n<sup>2</sup>-\frac{1}{2}n$。</p>
+
+<p><strong>2.</strong>下面我们还是使用<code>插入排序</code>，但是我们先把原数组分成两个$\frac{n}{2}$的数组来进行排序，然后将两个数组进行合并：显然对于每一个$\frac{n}{2}$个元素的数组来说，所需的<code>比较次数</code>为$\frac{\frac{n}{2}(\frac{n}{2}-1)}{2}=\frac{1}{8}n<sup>2</sup>-\frac{1}{4}n$，因为有两个数组，再加上Combine所需进行的$n$次比较，一共所需的<code>比较次数</code>为$\frac{1}{4}n<sup>2</sup>+\frac{1}{2}n$。</p>
+
+<p>显然，通过对二次项系数的比较可知：只要$n$足够大，第二种方法是要优于第一种方法的。</p>
+
+<p>你能看出来为什么吗？</p>
+
+<p>其实这一次Divide减少了很多不必要的比较。方法1中，第i个数要和它前面的i-1个数比较，而Divide之后，前$\frac{n}{2}$个数比较次数不变，后$\frac{n}{2}$个数，每个数的比较次数却都减少了$\frac{n}{2}$，所以一共就减少了$\frac{1}{4}n<sup>2</sup>$次比较，而这种方法是否实用，就看减少的比较次数$\frac{1}{4}n<sup>2</sup>$和增加的比较次数$n$谁大谁小了。</p>
+
+<p>这下子有点儿感觉了吧，要是继续Divide下去，减少的冗余比较岂不是更多？</p>
+
+<p>下面来看看一个比较正式的分析：</p>
+
+<p>在分析涉及递归的D&amp;C算法时，我们总可以把算法的运行时间表示为一个递推函数。</p>
+
+<p>设Divide时把问题划分为a个子问题，每一个问题是原本问题大小的$\frac{1}{b}$，c是判断base case的常数，可得：</p>
+
+<p>$$
+\begin{equation}
+\begin{aligned}
+T(n)=
+\begin{cases}
+Θ(1) &amp;{n\leqslant c}\
+aT(\frac{n}{b})+D(n)+C(n) &amp;{Otherwise}
+\end{cases}
+\end{aligned}
+\end{equation}
+$$</p>
+
+<p>所以对于Merge Sort来说，$a=b=2$：</p>
+
+<p><strong>Divide：</strong>对于归并排序来讲，这一步仅仅是一次计算而已，所以$D(n)=Θ(1)$。</p>
+
+<p><strong>Conquer：</strong>每次递归解决两个大小为$\frac{n}{2}$的问题，可得运行时间为：$2T(\frac{n}{2})$。</p>
+
+<p><strong>Combine：</strong>对于$n$个元素的数组来说，每次combine都需要花费$Θ(n)$的时间，所以$T(n)=Θ(n)$。</p>
+
+<p>可得：</p>
+
+<p>$$
+\begin{equation}
+\begin{aligned}
+T(n)=
+\begin{cases}
+Θ(1) &amp;{n=1}\
+2T(\frac{n}{2})+Θ(n) &amp;{n> 1}
+\end{cases}
+\end{aligned}
+\end{equation}
+$$</p>
+
+<p>设c为解决$n=1$时和每个元素操作所需的常数时间，利用<code>Recursion Tree</code>，便可以很直观的进行分析了。因为每一次将数组划分为相等的两部分，所以这棵<code>Recursion Tree</code>是一棵满二叉树，根结点以下第$i$层拥有节点数为$2^{i}$，同时这一层每一个节点拥有的元素数量为$\frac{n}{2<sup>i</sup>}$，已经假设单个元素操作需要常数项时间$c$，相乘即可得每一层要进行<code>Combine</code>阶段的操作量均为$cn$。而这棵满二叉树一共有$log_2n+1$层，所以总共的操作量为：</p>
+
+<p>$$
+\begin{equation}
+\begin{aligned}
+&amp;(log_2n+1)\times cn\
+=&amp;cnlog_2n+cn\
+=&amp;Θ(nlog_2n)
+\end{aligned}
+\end{equation}
+$$</p>
+
+<hr />
+
+<h3>Counting Inversions &ndash; 计算逆序数</h3>
+
+<p>这个是计算<code>逆序数</code>的算法，学习线性代数时有学到这个概念，不过没想到还能在商品推荐里边应用。在一个排列中，如果一对数的前后位置与大小顺序相反，即前面的数大于后面的数，那么它们就称为一个逆序。逆序数就是一个排列中所有逆序的数量。</p>
+
+<p>用最简单的Brutal Force Algorithm来解决这个问题的话，无疑就是将数列中的每一对数字进行比较，一共需要的比较次数为$\binom{n}{2}=Θ(n<sup>2</sup>)$。</p>
+
+<p>不过这个算法的实现可以基于<code>Merge Sort</code>，稍作修改即可。因为是基于$Θ(n\log_2n)$的归并排序，多出来的操作为常数项时间，所以计算逆序数的算法同样是$Θ(n\log_2n)$的时间复杂度。</p>
+
+<p>因为要计算前面的数大于后面的数的数量，我们便可以变相地对数组进行排序，计算要正确排序某个数需要将它左移的总位数——也就是和这个数相关的<code>Inversion</code>。</p>
+
+<p>修改后的算法中计算逆序数最核心的一句便是设立一个新的变量cnt计算逆序数的数量：</p>
+
+<p><code>cnt+=n1-i+1;</code></p>
+
+<p>这一句是关键，<code>Combine</code>时每当右子数组的元素被选中时，逆序数增加左子数组的剩余元素个数。</p>
+
+<p>再让<code>merge</code>函数在结束时返回当前merge阶段增加的逆序数。</p>
+
+<p>将其添加到合适的地方后，对<code>Merge Sort</code>进行如下修改：</p>
+
+<figure class='code'><figcaption><span>MergeSortAndCountInversion.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">int</span> <span class="nf">MergeSortAndCountInversion</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">p</span><span class="p">,</span><span class="kt">int</span> <span class="n">r</span><span class="p">){</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="o">==</span><span class="n">r</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span><span class="c1">//New Base Case</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">left</span><span class="p">,</span><span class="n">right</span><span class="p">,</span><span class="n">split</span><span class="p">,</span><span class="n">q</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">left</span> <span class="o">=</span> <span class="n">MergeSortAndCountInversion</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">right</span> <span class="o">=</span> <span class="n">MergeSortAndCountInversion</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">q</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">r</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">split</span> <span class="o">=</span> <span class="n">MergeAndCountSplitInversion</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">r</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span> <span class="o">+</span> <span class="n">split</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>便可以使用MergeSortAndCountInversion函数来得到逆序数了。</p>
+
+<p>修改后代码能够正确得出一定范围内的逆序数答案，但无法直接解决Programming Problem 1的问题，因为int的表示范围的因素，当然稍作修改便可以得出正确答案。对于10万个数据而言，这种算法运行时间不足1秒，而使用brute force algorithm则要花费20秒～30秒左右的时间。这是C语言的效率，据说Python用穷举的话要花两分钟左右。</p>
+
+<p>提示，正确答案为10位数字，以2开头，以8结尾。</p>
+
+<hr />
+
+<h3>Straseen Matrix Multiplication</h3>
+
+<p>同<code>Karatsuba Multiplication</code>类似，这个算法也是使用纯数学技巧加上D&amp;C来得到相对较高的效率。</p>
+
+<p>在矩阵乘法的定义中，$A\times B=C$，结果矩阵C的第i行第j列元素$C_{ij}$等于矩阵A的第i行与矩阵B的第j列的对应元素相乘的和，所以一共需要进行$n<sup>3</sup>$次相乘。这是一个立方复杂度的算法。</p>
+
+<p>而<code>Straseen Matrix Multiplication</code>进行数学变化，利用D&amp;C将复杂度降至了$Θ(n^{2.8})$左右，看似优化不大，但是对于大数据来说已经是极大的改善了。</p>
+
+<p>这个算法不进行详解，仅仅是利用数学变化又一次D&amp;C应用而已，略过。</p>
+
+<hr />
+
+<h3>Closet Pair</h3>
+
+<p>这个算法是求平面坐标系中，距离最短的两点。</p>
+
+<p>这类问题在机器人学、机器视觉、电脑图像里边都占有相当重要的地位，在ACM的竞赛题目中也时有出现。</p>
+
+<p>在平面坐标系中，求两点距离有个很简单的公式$\sqrt{(x_i-x_j)<sup>2</sup>+(y_i-y_j)<sup>2</sup>}$，暴力法当然就是把给出的所有点都进行成对的比较，时间复杂度为$Θ(n<sup>2</sup>)$，当然，我们现在肯定不这么做。同样，我们可以站在<code>Merge Sort</code>的肩上前进。</p>
+
+<p>当要排序的点都在一条直线上时，我们只需要先将其进行排序，然后找出最近的两点就行，而这可以在线性时间内完成，无需对每一对点进行比较。无疑，一维的情况下求<code>Closet Pair</code>可以在$Θ(nlog_2n)$内完成。</p>
+
+<p>但是点在平面上时，</p>
+
+<p>施工中。。。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/01/building-octopress-blog/">用Geek的方式来写博客(1)：在Github上搭建Octopress</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-01T10:45:00+08:00" pubdate data-updated="true">Aug 1<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>听说Octopress还是去年的时候，原因是我宿舍隔壁一哥们买了个域名。因为我一直有开个博客的想法，但不知道哪家提供的服务比较好，于是就去问了一下，没想到他说他把他的博客托管在了Github上。没问明白，我回宿舍后就Google了一下，于是发现了Octopress这个Ruby项目。</p>
+
+<p>这种编写博客的方式立即就吸引了我。那段时间还挣扎在VIM和Emacs之间，对于Markdown也是久闻大名，当即决定，就是这货了！</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/08/01/building-octopress-blog/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/31/clrs-2-2-analyzing-algorithm/">CLRS - Ch2.2 - Analyzing Algorithm</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-31T22:07:00+08:00" pubdate data-updated="true">Jul 31<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>前面的介绍略过不再记录，直接来看对于Insertion Sort的分析。</p>
+
+<h3>1.Analysis of insertion sort &ndash; 对插入排序的分析</h3>
+
+<p>衡量一个算法的好坏，重要的标准之一当然就是解决问题所需的时间的多少了，通常情况下都是希望运行越快越好。而算法的运行时间并不是固定的，它根据输入数据量的大小而变化。所以通常建立一个以输入数据量大小（input size）$$n$$为自变量的函数来表示算法的运行时间（running time）。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/07/31/clrs-2-2-analyzing-algorithm/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/31/clrs-2-1-note/">CLRS - Ch2.1 - Insertion Sort</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-31T19:49:00+08:00" pubdate data-updated="true">Jul 31<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>1.Insertion Sort &ndash; 插入排序</h3>
+
+<p>插入排序是非常基础的一类排序，它和平时玩扑克牌时摸牌的排序方法几乎一模一样。每当拿到一张牌，我们就从右向左（反向当然也行）依次查看手上的牌的大小，直到找到一张牌比摸到的牌大，就把摸到的牌放到这一张后面。反复摸牌，最后我们就得到了一副从大到小排列的牌。这也符合我个人的打牌习惯。</p>
+
+<p>这个算法非常基础，CLRS本节中也已经对此讲的很清楚了，这里仅仅列出C语言实现。注意书中是从小到大进行的排列。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/07/31/clrs-2-1-note/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/31/test001/">测试001</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-31T12:52:00+08:00" pubdate data-updated="true">Jul 31<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>这是Octopress部分功能的测试</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/07/31/test001/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/31/archlinux-installation/">Archlinux安装小记</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-31T10:07:00+08:00" pubdate data-updated="true">Jul 31<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>不知不觉已经使用了Archlinux好几个月的时间了，期间也记录了一些安装使用中遇到的问题，最近又把arch重新装了一遍，这里把整理后的安装记录发上来。</p>
+
+<p>Arch的安装过程是全命令行的，连Debian那样的字符模拟图形界面也不会提供，不过安装过程还是相当简单的。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/07/31/archlinux-installation/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/29/hello-world/">Hello World</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-29T20:12:00+08:00" pubdate data-updated="true">Jul 29<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Hello World!</p>
+
+<p>好吧，这是我用Octopress在Github上搭建好博客的第一篇文章。</p>
+
+<p>作为一名技术宅和未来的IT从业人员，怎么能没有自己的技术博客呢。</p>
+
+<p>这个博客将会记录我在学习、生活中所遇到的一些事，主要是作为一种记录，方便以后查询，也算是一种知识管理吧。</p>
+
+<p>希望这次可以把这个博客给坚持写下去。XD</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/07/algo-004-note-week-2/">Algorithms - Week 2 - Note</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/07/algo-004-note-week-1/">Algorithms - Week 1 - Note</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/01/building-octopress-blog/">用Geek的方式来写博客(1)：在Github上搭建Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/31/clrs-2-2-analyzing-algorithm/">CLRS - Ch2.2 - Analyzing Algorithm</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/31/clrs-2-1-note/">CLRS - Ch2.1 - Insertion Sort</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Your Name -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

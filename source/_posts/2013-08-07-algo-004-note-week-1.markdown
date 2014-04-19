@@ -1,0 +1,370 @@
+---
+layout: post
+title: "Algorithms - Week 1 - Note"
+date: 2013-08-07 21:03
+comments: true
+keywords: Algorithm, Coursera
+description:
+categories: [Coursera]
+tags: [Algorithm, Coursera]
+published: true
+---
+
+## 零、写在算法学习之前
+可能对于一名普通的软件编程人员，对于算法的深入学习不是一件特别必要的事情。不过要是想要提升自己，更深程度的理解计算机的世界，那么算法的学习是必不可少的。作为一名计算机科学与技术的本科生，我以后并不准备当一名算法专家，冗长的数学证明也并不合我口味，不过这并不妨碍我深入了解一下算法分析的应用，这无疑会给我能力的提升带来莫大的好处。
+
+`《Algorithms: Design and Analysis, Part 1》`第一周的课程里边有一句话是Professor Tim想要我们记住的：***“Can we do better?”***，在学习的过程中我们要时刻回想这句话，我们已经做得够好了吗？还能更好吗？
+
+另外，实在想吐槽`Professor Tim`的用词和语速，还有那糟糕的板书——写的还没我好呢～
+
+## 一、算法分析基本符号
+
+### Big-Oh Notation
+$T(n)=O(f(n))$
+
+数学定义：$T(n)=O(f(n))$当且仅当存在一个正常数$c$以及正整数$n_0$，使得对于任意$n>n_0$，总有$T(n)\leqslant cf(n)$
+
+意思是无关于函数在某个具体的点的值（因为$c$可以任意取值），只要$n$足够大，$cf(n)$的值总不会比$T(n)$小，此时$cf(n)$是$T(n)$函数的上界，$T(n)$的值无法超过它。$n_0$的值即为$T(n)=cf(n)$的那个临界点。
+
+也就是说f(n)的增长率大于或等于T(n)，而非某一具体值高于T(n)。
+
+### Omega Notation
+$T(n)=Ω(f(n))$
+
+数学定义：$T(n)=Ω(f(n))$当且仅当存在一个正常数$c$以及正整数$n_0$，使得对于任意$n>n_0$，总有$T(n)\geqslant cf(n)$
+
+即，只要$n$足够大，$T(n)$总会大于或等于$cf(n)$，此时$cf(n)$是它的下界。同样，$n_0$是临界点。
+
+也就是说T(n)的增长率大于或等于f(n)。
+
+### Theta Notation
+$T(n)=Θ(f(n))$
+
+数学定义：$T(n)=Θ(f(n))$当且仅当存在一个正常数$c_1$，$c_2$以及正整数$n_0$，使得对于任意$n>n_0$，总有$c_1f(n)\leqslant T(n)\leqslant cf(n)$。
+
+这表示，T(n)与f(n)仅相差一个常数项系数大小，也就是说它们的增长率相同。
+
+### o and ω
+此外，还有Little-Oh(o)和ω符号，他们的定义与Big-Oh和Ω相似，但是取消了相等的条件。
+
+### Limits
+用极限的观点来看，这些记号其实就是当$n$趋近于无穷大时两函数导数的比值$\frac{T'(n)}{f'(n)}$。
+
+如果比值为`无穷大`，则T(n)的增长率大于f(n)，即为T(n)=ω(f(n))
+
+如果比值为`常数`，则T(n)的增长率等于f(n)，即为T(n)=Θ(f(n))
+
+如果比值为`无穷小`，则T(n)的增长率小于f(n)，即为T(n)=o(f(n))
+
+## 三、Divide and Conquer Paradigm - 分治算法
+在解决某一特定问题的时候，递归是一种经常采用的思路，这一类算法不断地调用自身，直到遇到`Base Case`后停止递归，综合递归结果以得出最后的答案。
+
+但我发现身边的不少同学都对于递归算法存在一定程度上的误解，认为递归调用会导致时间和内存上的多余开销造成浪费，所以要尽量避免使用递归。在《C Primer Plus》里就提到了一个经典的递归算法——Fibonacci算法，当然了，是一个经典的糟糕算法。
+
+因为fibonacci数列规定$Fib(n)=Fib(n-1)+Fib(n-2)$，所以自然就有了下面的算法：
+
+```c 糟糕的Fibonacci递归实现
+int Fib(int n){
+    if(n > 2) return Fib(n-1) + Fib(n-2);
+    return 1; //假设fibonacci前两项均为1
+}
+```
+
+从数学意义上来看完全没有问题，不过在计算机上这实在糟糕得不能再糟糕了。有兴趣的同学可以自己运行一下这段程序，记得不要把n定得太高了哦XD，在我的电脑上计算Fib(45)要花7秒的时间，计算Fib(46)用了9.5秒的时间（其实我还计算了一下Fib(50)，只用了76秒哦）。
+
+虽然上面给出了一个糟糕的递归例子，但是通过对算法的学习，我们可以看到经过良好编写的递归程序具有强大的力量，而且形式优雅，给人一种化腐朽为神奇的感觉，Algorithms第一周的课程里边也给出了几个很好的例子，它们的算法复杂度都是$O(nlog_2n)$，对于大数据远比使用常规方法的$(O(n^2))$要来的高效。那么下面进入正题。
+
+`Divide and Conquer`是一种使用递归来解决问题的办法，中文里边叫作`分治算法`，也就所谓的是`分而治之`。D&C算法分为三步，一是`Divide`（分），二是`Conquer`（治），三是`Combine`（合）。先把大的复杂的问题分解成小的相对简单的子问题，然后再递归地解决这些相对容易的小问题，再把所有的结果综合起来得出原本问题的解。
+
+在CLRS中对D&C描述到：
+
+>1 - **Divide** the problem into a number of subproblems that are smaller instances of the same problem;
+>
+>2 - **Conquer** the subproblems by solving them recursively. If the problem sizes are small enough, however, just solve the subproblems in a straightforward manner;
+>
+>3 - **Combine** the solutions to the subproblems into the solution for the original problem.
+
+### Integer Multiplication
+对于乘法来说，我们最为熟悉的无非就是所谓的竖式计算法（貌似是叫长乘法？），这种方法直观，简单，从小学二年级开始学习乘法以来，我们就一直使用着竖式计算法，可谓得心应手，已经成了一种本能。
+
+对于两个四位数相乘的计算而言，我们一般会将两个数垂直对齐，然后用下边各位依次乘以上边的数，并按位左移。最后把所得各相乘结果加起来，得到的就是两个四位数的相乘结果。这其中我们每一位的数字都需要进行4次乘法运算，有进位的话可能还有四次加法运算，所以在竖式计算法中总共会用到$(4+4)\times4=32$次个位数的加法乘法运算。如果把乘数的位数设为n，那么竖式计算法所需的操作量就是$2*n^2$，显然时间复杂度应为$Θ(n^2)$。
+
+$$
+\begin{equation}
+\begin{aligned}
+&1234\\
+\times&5678\\
+\hline
+&9872\\
+8&638\\
+74&04\\
+617&0\\
+\hline
+700&6652
+\end{aligned}
+\end{equation}
+$$
+
+上Algorithms这门课之前我几乎没怎么想过要对这种乘法计算方法进行优化。它足够好了吗？在我看来是的，不过计算机科学家们并不满足于此。于是有了`Karatsuba Multiplication`算法。
+
+#### Karatsuba Multiplication - 快速乘法
+这种乘法的时间复杂度为$Θ(n^{log_23})$。
+
+现在假设两个数相乘：$5678\times1234=7006652$
+
+令$a=56，b=78，c=12，d=34$
+
+1：计算$a\times c=672$
+
+2：计算$b\times d=2652$
+
+3：计算$(a+b)(c+d)=134\times46=6164$
+
+4.：计算$(3)-(2)-(1)=6164-2652-672=2840$
+
+5：综合结果$a\times c，(a+b)(c+d)-a\times c-b\times d，b\times d$，也就是：
+
+$$
+\begin{equation}
+\begin{aligned}
+6720000&\\
+2652&\\
+284000&\\
+\hline
+7006652&
+\end{aligned}
+\end{equation}
+$$
+
+上面的过程有些地方难以理解，不过还能看出来是使用了D&C。下面是算法的一些思路：
+
+令x和y为乘数a，b，c，d分别是各乘数的前半部分和后半部分，n为乘数位数
+
+所以$x=10^{\frac{n}{2}}\times a + b，y=10^{\frac{n}{2}}\times c + d$
+
+则$x\times y = 10^{n}\times a\times c + 10^{\frac{n}{2}}\times (a\times d+b\times c) + b\times d$
+
+这样，我们就把一个$\overline{ab}\times \overline{cd}$的问题转化为了$a\times c，b\times d，a\times d和b\times c$的相似的小问题，把乘数的位数变为了二分之一。
+
+所以现在我们需要求4个两位数的乘法。
+
+又因为$(a+b)(c+d)=a\times c+a\times d+b\times c+b\times d$，而其中$a\times c和b\times d$都是待求量，如果我们把$(a\times d+b\times c)$转化为$(a+b)(c+d)-a\times c-b\times d$，那我们就只用求3次乘法运算，因为相比加减法运算，乘法运算更为消耗时间。
+
+Base case就是当x和y均为1位数时，这时候仅仅把x和y乘起来就行。
+
+因为每次将$n$切分为两个$\frac{n}{2}$，每个部分需要3次乘法，所以总共需要$3^{log_2n}$次基本乘法，时间复杂度也就是$Θ(n^{log_23})\approxΘ(n^{1.1})$。
+
+需要注意的是，如果不进行上面这一步，仍旧划分为4个两位数乘法，那么一共需要$4^{log_2n}$次基本乘法，也就是$n^2$次，复杂度仍为$Θ(n^2)$没有变化。
+
+不过呢，计算机做乘法不是利用长乘法，如果仅仅用整型数据来实现这个算法没有任何意义，因为允许的相乘的数字太小了，那么Karatruba算法有何用武之地呢？我查了一下，发现它应该是被用于大数相乘的。比如两个1024位的数字相乘，这个时候就没办法使用两个整型数据进行乘法运算，因为整型存不下如此大的数值，这个时候就只能用数组来模拟大数，比如用一个数组元素代表数字的一位。这个时候大数相乘就只能人为地模拟乘法，而Karatsuba也就派上了用场。
+
+我模拟过的大数也是利用数组，最多优化一下每一个数组元素存储4～6位数以减少空间的开销，不过本质上还是在模拟竖式乘法。而大数相乘涉及到数组的操作，而乘法涉及到的数组的操作复杂度远远超过了归并算法的数组的操作复杂度，如何divide数组、如何combine数组就成了一个大问题。以前实现的大数乘法的经验这里完全用不上。思索未果，也没有查到相关的实现代码，等待高手来实现吧。
+
+***
+
+###  Merge Sort - 归并排序
+这是一个排序算法，在1945年由John von Neumann所提出。和我们熟悉的冒泡排序、插入排序、选择排序相比，这个算法面对大数据的时候占有很大优势，因为它的算法时间复杂度仅为$Θ(n\log_2n)$，而冒泡排序等都为$Θ(n^2)$。需要注意，$\log_2n$要远小于$n$哦，可以把$2^{20}$代进去看看。
+
+#### 算法实现
+Merge Sort的思路完全符合D&C：
+
+**Divide：**将$n$个元素的数组划分为两个$\frac{n}{2}$个元素的数组；
+
+**Conquer：**调用自身来递归地解决这两个比原数组小的排序问题。如果数组足够小（只有1个元素或1个元素也没有），那么就为`Base Case`，所以直接解决掉（在这里也就是什么都不做，不再继续调用自身）；
+
+**Combine：**这一点是整个归并排序中最重要的一点，把被分开的两个数组重新合并为一个数组，合并好的数组也就是排好序的原数组。
+
+不再详解，这里给出C语言的实现代码。
+
+```c mergeSort.c
+#include <stdio.h>
+#define NUM 10
+int L[NUM], R[NUM];
+void merge(int A[], int p, int q, int r){    /* 合并两个数组 */
+    int n1, n2, i, j, k;
+    n1 = q+1-p;                 /* 左子数组的长度 */
+    n2 = r-q;                   /* 右子数组的长度 */
+    for(j = 0; j < n1; ++j)
+        L[j] = A[p+j];
+    for(k = 0; k < n2; ++k)
+        R[k] = A[q+1+k];
+    for(i = j = k = 0; j < n1 && k < n2; i++){
+        if(L[j] > R[k]){
+            A[p+i] = R[k];
+            k++;
+        }else{
+            A[p+i] = L[j];
+            j++;
+        }
+    }
+    while(j < n1){
+        A[p+i] = L[j];
+        i++;
+        j++;
+    }
+    while(k < n2){
+        A[p+i] = R[k];
+        i++;
+        k++;
+    }
+}
+void mergeSort(int A[], int p, int r){  /* Merge Sort主函数 */
+    if(p >= r) return;          /* Base Case */
+    int q = (p+r)/2;            /* Divide */
+    mergeSort(A, p, q);         /* Conquer */
+    mergeSort(A, q+1, r);       /* Conquer */
+    merge(A, p, q, r);          /* Combine */
+}
+int main(int argc, char *argv[]){
+    int A[NUM], i;
+    /* freopen("./input.txt", "r", stdin); */
+    for(i = 0; i < NUM; ++i)
+        scanf("%d", &A[i]);
+    mergeSort(A, 0, NUM-1);
+    for(i = 0; i < NUM; ++i)
+        printf("%d ", A[i]);
+    printf("\n");
+    return 0;
+}
+```
+
+对Merge Sort进行一些小小的修改，还可以用来计算逆序数（Inversions），因为是基于$Θ(n\log_2n)$的归并排序，所以计算逆序数的算法同样是$Θ(n\log_2n)$的时间复杂度。
+
+#### Analysis of Merge Sort - 分析归并算法
+
+上面已经提到，Merge Sort的算法时间复杂度是$Θ(n\log_2n)$，对于大数据来说优于插入排序等算法的$Θ(n^2)$。
+
+但是为什么呢？为什么排序同样一个数组，把原数组分开成几个数组分别排序就比一起排序要快呢？分开排序不还多了一个Combine的步骤吗？
+
+在继续讲算法分析之前，可以思考一下排序一个$n$个元素的数组，当然是在`Worst Case`的情况下（设$n$为$2$的幂）：
+
+**1.**`插入排序`所需的`比较次数`为$\frac{n(n-1)}{2}=\frac{1}{2}n^2-\frac{1}{2}n$。
+
+**2.**下面我们还是使用`插入排序`，但是我们先把原数组分成两个$\frac{n}{2}$的数组来进行排序，然后将两个数组进行合并：显然对于每一个$\frac{n}{2}$个元素的数组来说，所需的`比较次数`为$\frac{\frac{n}{2}(\frac{n}{2}-1)}{2}=\frac{1}{8}n^2-\frac{1}{4}n$，因为有两个数组，再加上Combine所需进行的$n$次比较，一共所需的`比较次数`为$\frac{1}{4}n^2+\frac{1}{2}n$。
+
+显然，通过对二次项系数的比较可知：只要$n$足够大，第二种方法是要优于第一种方法的。
+
+你能看出来为什么吗？
+
+其实这一次Divide减少了很多不必要的比较。方法1中，第i个数要和它前面的i-1个数比较，而Divide之后，前$\frac{n}{2}$个数比较次数不变，后$\frac{n}{2}$个数，每个数的比较次数却都减少了$\frac{n}{2}$，所以一共就减少了$\frac{1}{4}n^2$次比较，而这种方法是否实用，就看减少的比较次数$\frac{1}{4}n^2$和增加的比较次数$n$谁大谁小了。
+
+这下子有点儿感觉了吧，要是继续Divide下去，减少的冗余比较岂不是更多？
+
+下面来看看一个比较正式的分析：
+
+在分析涉及递归的D&C算法时，我们总可以把算法的运行时间表示为一个递推函数。
+
+设Divide时把问题划分为a个子问题，每一个问题是原本问题大小的$\frac{1}{b}$，c是判断base case的常数，可得：
+
+$$
+\begin{equation}
+\begin{aligned}
+T(n)=
+\begin{cases}
+Θ(1) &{n\leqslant c}\\
+aT(\frac{n}{b})+D(n)+C(n) &{Otherwise}
+\end{cases}
+\end{aligned}
+\end{equation}
+$$
+
+
+所以对于Merge Sort来说，$a=b=2$：
+
+**Divide：**对于归并排序来讲，这一步仅仅是一次计算而已，所以$D(n)=Θ(1)$。
+
+**Conquer：**每次递归解决两个大小为$\frac{n}{2}$的问题，可得运行时间为：$2T(\frac{n}{2})$。
+
+**Combine：**对于$n$个元素的数组来说，每次combine都需要花费$Θ(n)$的时间，所以$T(n)=Θ(n)$。
+
+可得：
+
+$$
+\begin{equation}
+\begin{aligned}
+T(n)=
+\begin{cases}
+Θ(1) &{n=1}\\
+2T(\frac{n}{2})+Θ(n) &{n> 1}
+\end{cases}
+\end{aligned}
+\end{equation}
+$$
+
+设c为解决$n=1$时和每个元素操作所需的常数时间，利用`Recursion Tree`，便可以很直观的进行分析了。因为每一次将数组划分为相等的两部分，所以这棵`Recursion Tree`是一棵满二叉树，根结点以下第$i$层拥有节点数为$2^{i}$，同时这一层每一个节点拥有的元素数量为$\frac{n}{2^i}$，已经假设单个元素操作需要常数项时间$c$，相乘即可得每一层要进行`Combine`阶段的操作量均为$cn$。而这棵满二叉树一共有$log_2n+1$层，所以总共的操作量为：
+
+$$
+\begin{equation}
+\begin{aligned}
+&(log_2n+1)\times cn\\
+=&cnlog_2n+cn\\
+=&Θ(nlog_2n)
+\end{aligned}
+\end{equation}
+$$
+
+***
+
+### Counting Inversions - 计算逆序数
+
+这个是计算`逆序数`的算法，学习线性代数时有学到这个概念，不过没想到还能在商品推荐里边应用。在一个排列中，如果一对数的前后位置与大小顺序相反，即前面的数大于后面的数，那么它们就称为一个逆序。逆序数就是一个排列中所有逆序的数量。
+
+用最简单的Brutal Force Algorithm来解决这个问题的话，无疑就是将数列中的每一对数字进行比较，一共需要的比较次数为$\binom{n}{2}=Θ(n^2)$。
+
+不过这个算法的实现可以基于`Merge Sort`，稍作修改即可。因为是基于$Θ(n\log_2n)$的归并排序，多出来的操作为常数项时间，所以计算逆序数的算法同样是$Θ(n\log_2n)$的时间复杂度。
+
+因为要计算前面的数大于后面的数的数量，我们便可以变相地对数组进行排序，计算要正确排序某个数需要将它左移的总位数——也就是和这个数相关的`Inversion`。
+
+修改后的算法中计算逆序数最核心的一句便是设立一个新的变量cnt计算逆序数的数量：
+
+`cnt+=n1-i+1;`
+
+这一句是关键，`Combine`时每当右子数组的元素被选中时，逆序数增加左子数组的剩余元素个数。
+
+再让`merge`函数在结束时返回当前merge阶段增加的逆序数。
+
+将其添加到合适的地方后，对`Merge Sort`进行如下修改：
+
+```c MergeSortAndCountInversion.c
+int MergeSortAndCountInversion(int A[], int p,int r){
+    if(p==r) return 0;//New Base Case
+    int left,right,split,q = (p+r)/2;
+    left = MergeSortAndCountInversion(A,p,q);
+    right = MergeSortAndCountInversion(A,q+1,r);
+    split = MergeAndCountSplitInversion(A,p,q,r);
+    return left + right + split;
+}
+```
+
+便可以使用MergeSortAndCountInversion函数来得到逆序数了。
+
+修改后代码能够正确得出一定范围内的逆序数答案，但无法直接解决Programming Problem 1的问题，因为int的表示范围的因素，当然稍作修改便可以得出正确答案。对于10万个数据而言，这种算法运行时间不足1秒，而使用brute force algorithm则要花费20秒～30秒左右的时间。这是C语言的效率，据说Python用穷举的话要花两分钟左右。
+
+提示，正确答案为10位数字，以2开头，以8结尾。
+
+***
+
+### Straseen Matrix Multiplication
+同`Karatsuba Multiplication`类似，这个算法也是使用纯数学技巧加上D&C来得到相对较高的效率。
+
+在矩阵乘法的定义中，$A\times B=C$，结果矩阵C的第i行第j列元素$C_{ij}$等于矩阵A的第i行与矩阵B的第j列的对应元素相乘的和，所以一共需要进行$n^3$次相乘。这是一个立方复杂度的算法。
+
+而`Straseen Matrix Multiplication`进行数学变化，利用D&C将复杂度降至了$Θ(n^{2.8})$左右，看似优化不大，但是对于大数据来说已经是极大的改善了。
+
+这个算法不进行详解，仅仅是利用数学变化又一次D&C应用而已，略过。
+
+***
+
+### Closet Pair
+这个算法是求平面坐标系中，距离最短的两点。
+
+这类问题在机器人学、机器视觉、电脑图像里边都占有相当重要的地位，在ACM的竞赛题目中也时有出现。
+
+在平面坐标系中，求两点距离有个很简单的公式$\sqrt{(x_i-x_j)^2+(y_i-y_j)^2}$，暴力法当然就是把给出的所有点都进行成对的比较，时间复杂度为$Θ(n^2)$，当然，我们现在肯定不这么做。同样，我们可以站在`Merge Sort`的肩上前进。
+
+当要排序的点都在一条直线上时，我们只需要先将其进行排序，然后找出最近的两点就行，而这可以在线性时间内完成，无需对每一对点进行比较。无疑，一维的情况下求`Closet Pair`可以在$Θ(nlog_2n)$内完成。
+
+但是点在平面上时，
+
+
+施工中。。。
