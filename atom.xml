@@ -4,7 +4,7 @@
   <title><![CDATA[CyberLuc's Blog]]></title>
   <link href="http://cyberLuc.github.io/atom.xml" rel="self"/>
   <link href="http://cyberLuc.github.io/"/>
-  <updated>2014-04-19T15:00:18+08:00</updated>
+  <updated>2014-04-19T15:05:54+08:00</updated>
   <id>http://cyberLuc.github.io/</id>
   <author>
     <name><![CDATA[CyberLuc]]></name>
@@ -1524,18 +1524,19 @@ T(n)&=c_1n+c_2(n-1)+c_3(n-1)+c_4(\frac{n(n+1)}{2}-1)+c_5\frac{n(n-1)}{2}+c_6\fra
 </span><span class="line"># reboot</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h3 id="xinitrc">17.xinitrc</h3>
-<p>修改<code>.xinitrc</code>，添加<code>exec awesome</code>
-&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;figcaption&gt;<span>我的.xinitrc</span>&lt;/figcaption&gt;&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+<p>修改<code>.xinitrc</code>，添加<code>exec awesome</code></p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>我的.xinitrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
 <span class="line-number">4</span>
 <span class="line-number">5</span>
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class="bash"><span class="line"><span class="c">#!/bin/zsh</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#!/bin/zsh</span>
 </span><span class="line">numlockx
 </span><span class="line">xbacklight -set 0
 </span><span class="line"><span class="c">#setxkbmap -option ctrl:nocaps</span>
 </span><span class="line"><span class="nb">exec </span>awesome
-</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;</p>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h3 id="section-12">关于字体</h3>
 <p>有几个字体是必下，比如community里的<code>wqy-microhei</code>，<code>wqy-zenhei</code>，还有aur里的<code>ttf-dejavusans-yuanti</code>，以及<code>ttf-droid-sans</code>,<code>ttf-microsoft-yahei</code>也可以装上，都是很不错的字体。</p>

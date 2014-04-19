@@ -4,7 +4,7 @@
   <title><![CDATA[Tag:Octopress | CyberLuc's Blog]]></title>
   <link href="http://cyberLuc.github.io/tags/octopress/atom.xml" rel="self"/>
   <link href="http://cyberLuc.github.io/"/>
-  <updated>2014-04-19T15:00:18+08:00</updated>
+  <updated>2014-04-19T15:06:01+08:00</updated>
   <id>http://cyberLuc.github.io/</id>
   <author>
     <name><![CDATA[CyberLuc]]></name>
@@ -214,12 +214,12 @@ rake new_page[About]
 
 <p>```html
 &lt;ul class="main-navigation"&gt;</p>
-<li><a href="/">Blog</a></li>
-<li><a href="/blog/archives">Archives</a></li>
+<li><a href="{{ root_url }}/">Blog</a></li>
+<li><a href="{{ root_url }}/blog/archives">Archives</a></li>
 <p>&lt;/ul&gt;
 ```</p>
 
-<p>在合适的位置添加上<code>&lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;</code>即可。</p>
+<p>在合适的位置添加上<code>&lt;li&gt;&lt;a href="{{ root_url }}/about"&gt;About&lt;/a&gt;&lt;/li&gt;</code>即可。</p>
 
 <p>另外博客默认是首页显示每一篇博文所有内容的，如果你不想这么做，那么就需要在博文的合适位置加上<code>&lt;!-- more --&gt;</code>，这可以让首页博文的内容在这里截止，并显示<code>Read On</code>，也就是点击继续阅读。</p>
 
