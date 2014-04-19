@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Tag:Coursera | CyberLuc's Blog]]></title>
-  <link href="http://cyberLuc.github.io/tags/coursera/atom.xml" rel="self"/>
-  <link href="http://cyberLuc.github.io/"/>
-  <updated>2014-04-19T15:10:13+08:00</updated>
-  <id>http://cyberLuc.github.io/</id>
+  <link href="http://blog.cyberluc29.tk/tags/coursera/atom.xml" rel="self"/>
+  <link href="http://blog.cyberluc29.tk/"/>
+  <updated>2014-04-19T18:19:46+08:00</updated>
+  <id>http://blog.cyberluc29.tk/</id>
   <author>
     <name><![CDATA[CyberLuc]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Algorithms - Week 2 - Note]]></title>
-    <link href="http://cyberLuc.github.io/blog/2013/08/07/algo-004-note-week-2/"/>
+    <link href="http://blog.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-2/"/>
     <updated>2013-08-07T21:03:00+08:00</updated>
-    <id>http://cyberLuc.github.io/blog/2013/08/07/algo-004-note-week-2</id>
+    <id>http://blog.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-2</id>
     <content type="html"><![CDATA[<h2 id="master-method">一、Master Method</h2>
 <p>前面对算法进行了一定程度的分析，这里要祭出一个分析利器：<code>Master Method</code>。</p>
 
@@ -325,9 +325,9 @@ log_{\frac{1}{1-α}}n&=\frac{log_2n}{log_2{\frac{1}{1-α}}}\\
   
   <entry>
     <title type="html"><![CDATA[Algorithms - Week 1 - Note]]></title>
-    <link href="http://cyberLuc.github.io/blog/2013/08/07/algo-004-note-week-1/"/>
+    <link href="http://blog.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-1/"/>
     <updated>2013-08-07T21:03:00+08:00</updated>
-    <id>http://cyberLuc.github.io/blog/2013/08/07/algo-004-note-week-1</id>
+    <id>http://blog.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-1</id>
     <content type="html"><![CDATA[<h2 id="section">零、写在算法学习之前</h2>
 <p>可能对于一名普通的软件编程人员，对于算法的深入学习不是一件特别必要的事情。不过要是想要提升自己，更深程度的理解计算机的世界，那么算法的学习是必不可少的。作为一名计算机科学与技术的本科生，我以后并不准备当一名算法专家，冗长的数学证明也并不合我口味，不过这并不妨碍我深入了解一下算法分析的应用，这无疑会给我能力的提升带来莫大的好处。</p>
 

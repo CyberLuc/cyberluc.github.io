@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[CyberLuc's Blog]]></title>
-  <link href="http://cyberLuc.github.io/atom.xml" rel="self"/>
-  <link href="http://cyberLuc.github.io/"/>
-  <updated>2014-04-19T15:10:13+08:00</updated>
-  <id>http://cyberLuc.github.io/</id>
+  <link href="http://blog.cyberluc29.tk/atom.xml" rel="self"/>
+  <link href="http://blog.cyberluc29.tk/"/>
+  <updated>2014-04-19T18:19:46+08:00</updated>
+  <id>http://blog.cyberluc29.tk/</id>
   <author>
     <name><![CDATA[CyberLuc]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Algorithms - Week 2 - Note]]></title>
-    <link href="http://cyberLuc.github.io/blog/2013/08/07/algo-004-note-week-2/"/>
+    <link href="http://blog.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-2/"/>
     <updated>2013-08-07T21:03:00+08:00</updated>
-    <id>http://cyberLuc.github.io/blog/2013/08/07/algo-004-note-week-2</id>
+    <id>http://blog.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-2</id>
     <content type="html"><![CDATA[<h2 id="master-method">一、Master Method</h2>
 <p>前面对算法进行了一定程度的分析，这里要祭出一个分析利器：<code>Master Method</code>。</p>
 
@@ -347,9 +347,9 @@ log_{\frac{1}{1-α}}n&=\frac{log_2n}{log_2{\frac{1}{1-α}}}\\
   
   <entry>
     <title type="html"><![CDATA[Algorithms - Week 1 - Note]]></title>
-    <link href="http://cyberLuc.github.io/blog/2013/08/07/algo-004-note-week-1/"/>
+    <link href="http://blog.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-1/"/>
     <updated>2013-08-07T21:03:00+08:00</updated>
-    <id>http://cyberLuc.github.io/blog/2013/08/07/algo-004-note-week-1</id>
+    <id>http://blog.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-1</id>
     <content type="html"><![CDATA[<h2 id="section">零、写在算法学习之前</h2>
 <p>可能对于一名普通的软件编程人员，对于算法的深入学习不是一件特别必要的事情。不过要是想要提升自己，更深程度的理解计算机的世界，那么算法的学习是必不可少的。作为一名计算机科学与技术的本科生，我以后并不准备当一名算法专家，冗长的数学证明也并不合我口味，不过这并不妨碍我深入了解一下算法分析的应用，这无疑会给我能力的提升带来莫大的好处。</p>
 
@@ -778,9 +778,9 @@ T(n)=
   
   <entry>
     <title type="html"><![CDATA[用Geek的方式来写博客(1)：在Github上搭建Octopress]]></title>
-    <link href="http://cyberLuc.github.io/blog/2013/08/01/building-octopress-blog/"/>
+    <link href="http://blog.cyberluc29.tk/blog/2013/08/01/building-octopress-blog/"/>
     <updated>2013-08-01T10:45:00+08:00</updated>
-    <id>http://cyberLuc.github.io/blog/2013/08/01/building-octopress-blog</id>
+    <id>http://blog.cyberluc29.tk/blog/2013/08/01/building-octopress-blog</id>
     <content type="html"><![CDATA[<p>听说Octopress还是去年的时候，原因是我宿舍隔壁一哥们买了个域名。因为我一直有开个博客的想法，但不知道哪家提供的服务比较好，于是就去问了一下，没想到他说他把他的博客托管在了Github上。没问明白，我回宿舍后就Google了一下，于是发现了Octopress这个Ruby项目。</p>
 
 <p>这种编写博客的方式立即就吸引了我。那段时间还挣扎在VIM和Emacs之间，对于Markdown也是久闻大名，当即决定，就是这货了！</p>
@@ -1033,7 +1033,7 @@ T(n)=
 </span><span class="line"><span class="nt">&lt;/ul&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>在合适的位置添加上<code>&lt;li&gt;&lt;a href="http://cyberLuc.github.io/about"&gt;About&lt;/a&gt;&lt;/li&gt;</code>即可。</p>
+<p>在合适的位置添加上<code>&lt;li&gt;&lt;a href="http://blog.cyberluc29.tk/about"&gt;About&lt;/a&gt;&lt;/li&gt;</code>即可。</p>
 
 <p>另外博客默认是首页显示每一篇博文所有内容的，如果你不想这么做，那么就需要在博文的合适位置加上<code>&lt;!-- more --&gt;</code>，这可以让首页博文的内容在这里截止，并显示<code>Read On</code>，也就是点击继续阅读。</p>
 
@@ -1078,9 +1078,9 @@ T(n)=
   
   <entry>
     <title type="html"><![CDATA[CLRS - Ch2.2 - Analyzing Algorithm]]></title>
-    <link href="http://cyberLuc.github.io/blog/2013/07/31/clrs-2-2-analyzing-algorithm/"/>
+    <link href="http://blog.cyberluc29.tk/blog/2013/07/31/clrs-2-2-analyzing-algorithm/"/>
     <updated>2013-07-31T22:07:00+08:00</updated>
-    <id>http://cyberLuc.github.io/blog/2013/07/31/clrs-2-2-analyzing-algorithm</id>
+    <id>http://blog.cyberluc29.tk/blog/2013/07/31/clrs-2-2-analyzing-algorithm</id>
     <content type="html"><![CDATA[<p>前面的介绍略过不再记录，直接来看对于Insertion Sort的分析。</p>
 
 <h3 id="analysis-of-insertion-sort---">1.Analysis of insertion sort - 对插入排序的分析</h3>
@@ -1182,9 +1182,9 @@ T(n)&=c_1n+c_2(n-1)+c_3(n-1)+c_4(\frac{n(n+1)}{2}-1)+c_5\frac{n(n-1)}{2}+c_6\fra
   
   <entry>
     <title type="html"><![CDATA[CLRS - Ch2.1 - Insertion Sort]]></title>
-    <link href="http://cyberLuc.github.io/blog/2013/07/31/clrs-2-1-note/"/>
+    <link href="http://blog.cyberluc29.tk/blog/2013/07/31/clrs-2-1-note/"/>
     <updated>2013-07-31T19:49:00+08:00</updated>
-    <id>http://cyberLuc.github.io/blog/2013/07/31/clrs-2-1-note</id>
+    <id>http://blog.cyberluc29.tk/blog/2013/07/31/clrs-2-1-note</id>
     <content type="html"><![CDATA[<h3 id="insertion-sort---">1.Insertion Sort - 插入排序</h3>
 <p>插入排序是非常基础的一类排序，它和平时玩扑克牌时摸牌的排序方法几乎一模一样。每当拿到一张牌，我们就从右向左（反向当然也行）依次查看手上的牌的大小，直到找到一张牌比摸到的牌大，就把摸到的牌放到这一张后面。反复摸牌，最后我们就得到了一副从大到小排列的牌。这也符合我个人的打牌习惯。</p>
 
@@ -1247,9 +1247,9 @@ T(n)&=c_1n+c_2(n-1)+c_3(n-1)+c_4(\frac{n(n+1)}{2}-1)+c_5\frac{n(n-1)}{2}+c_6\fra
   
   <entry>
     <title type="html"><![CDATA[测试001]]></title>
-    <link href="http://cyberLuc.github.io/blog/2013/07/31/test001/"/>
+    <link href="http://blog.cyberluc29.tk/blog/2013/07/31/test001/"/>
     <updated>2013-07-31T12:52:00+08:00</updated>
-    <id>http://cyberLuc.github.io/blog/2013/07/31/test001</id>
+    <id>http://blog.cyberluc29.tk/blog/2013/07/31/test001</id>
     <content type="html"><![CDATA[<p>这是Octopress部分功能的测试</p>
 
 <!--more-->
@@ -1306,9 +1306,9 @@ T(n)&=c_1n+c_2(n-1)+c_3(n-1)+c_4(\frac{n(n+1)}{2}-1)+c_5\frac{n(n-1)}{2}+c_6\fra
   
   <entry>
     <title type="html"><![CDATA[Archlinux安装小记]]></title>
-    <link href="http://cyberLuc.github.io/blog/2013/07/31/archlinux-installation/"/>
+    <link href="http://blog.cyberluc29.tk/blog/2013/07/31/archlinux-installation/"/>
     <updated>2013-07-31T10:07:00+08:00</updated>
-    <id>http://cyberLuc.github.io/blog/2013/07/31/archlinux-installation</id>
+    <id>http://blog.cyberluc29.tk/blog/2013/07/31/archlinux-installation</id>
     <content type="html"><![CDATA[<p>不知不觉已经使用了Archlinux好几个月的时间了，期间也记录了一些安装使用中遇到的问题，最近又把arch重新装了一遍，这里把整理后的安装记录发上来。</p>
 
 <p>Arch的安装过程是全命令行的，连Debian那样的字符模拟图形界面也不会提供，不过安装过程还是相当简单的。</p>
@@ -1582,9 +1582,9 @@ T(n)&=c_1n+c_2(n-1)+c_3(n-1)+c_4(\frac{n(n+1)}{2}-1)+c_5\frac{n(n-1)}{2}+c_6\fra
   
   <entry>
     <title type="html"><![CDATA[Hello World]]></title>
-    <link href="http://cyberLuc.github.io/blog/2013/07/29/hello-world/"/>
+    <link href="http://blog.cyberluc29.tk/blog/2013/07/29/hello-world/"/>
     <updated>2013-07-29T20:12:00+08:00</updated>
-    <id>http://cyberLuc.github.io/blog/2013/07/29/hello-world</id>
+    <id>http://blog.cyberluc29.tk/blog/2013/07/29/hello-world</id>
     <content type="html"><![CDATA[<p>Hello World!</p>
 
 <p>好吧，这是我用Octopress在Github上搭建好博客的第一篇文章。</p>
