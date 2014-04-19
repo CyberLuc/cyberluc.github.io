@@ -1,78 +1,70 @@
-
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Archlinux安装小记 - My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
   
-  <meta name="description" content="不知不觉已经使用了Archlinux好几个月的时间了，期间也记录了一些安装使用中遇到的问题，最近又把arch重新装了一遍，这里把整理后的安装记录发上来。 Arch的安装过程是全命令行的，连Debian那样的字符模拟图形界面也不会提供，不过安装过程还是相当简单的。 &hellip;">
-  <meta name="keywords" content="Archlinux">
+    
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Archlinux安装小记 - CyberLuc's Blog</title>
+    <meta name="author" content="CyberLuc">
+    
+    <meta name="description" content="Archlinux安装小记 Jul 31st, 2013 Archlinux Comments 不知不觉已经使用了Archlinux好几个月的时间了，期间也记录了一些安装使用中遇到的问题，最近又把arch重新装了一遍，这里把整理后的安装记录发上来。 Arch的安装过程是全命令行的， &hellip;">
+    <meta name="keywords" content="Archlinux">
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://cyberLuc.github.io/blog/2013/07/31/archlinux-installation">
+    
+    <link href="/favicon.png" rel="icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="CyberLuc's Blog" type="application/atom+xml">
+  </head>
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
-  <link rel="canonical" href="http://CyberLuc.github.io/blog/2013/07/31/archlinux-installation">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <body >
 
-  
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
 
-</head>
+    <div class="grid__item two-fifths lap-four-sixths palm-one-whole">
+  <a href="/" class="site-title">CyberLuc's Blog</a>
+</div>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">My Octopress Blog</a></h1>
-  
-    <h2>A blogging framework for hackers.</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
+<div class="grid__item three-fifths lap-two-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/">Blog</a></li>
 </ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:CyberLuc.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
+  </nav>
+</div>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="post">
   <header>
+  
+  <h1 class="title indent">Archlinux安装小记</h1>
+  
+
+  
+  <div class="meta clearfix">
     
-      <h1 class="entry-title">Archlinux安装小记</h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -84,19 +76,37 @@
   
 
 
-<time datetime="2013-07-31T10:07:00+08:00" pubdate data-updated="true">Jul 31<span>st</span>, 2013</time>
-        
-      </p>
+<time class="pull-left" datetime="2013-07-31T10:07:00+08:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jul 31<span>st</span>, 2013</time>
     
-  </header>
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/archlinux/'>Archlinux</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
 
 
-<div class="entry-content"><p>不知不觉已经使用了Archlinux好几个月的时间了，期间也记录了一些安装使用中遇到的问题，最近又把arch重新装了一遍，这里把整理后的安装记录发上来。</p>
+
+
+  <p>不知不觉已经使用了Archlinux好几个月的时间了，期间也记录了一些安装使用中遇到的问题，最近又把arch重新装了一遍，这里把整理后的安装记录发上来。</p>
 
 <p>Arch的安装过程是全命令行的，连Debian那样的字符模拟图形界面也不会提供，不过安装过程还是相当简单的。</p>
 
 <!-- more -->
-
 
 <p>我是从Debian下转到Archlinux，手头正好有一个不用的U盘，于是便按照ArchWiki的说明将U盘写入archlinux的iso镜像。用<code>syslinux</code>的那个方法我试了，但是记得没用，以后哪天再去研究一下吧。</p>
 
@@ -104,203 +114,177 @@
 
 <p>注意这个方法是会格式化u盘数据的！</p>
 
-<figure class='code'><figcaption><span>写入USB </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># dd bs=4M if=/home/twtwtw/Downloads/archlinux-2013.07.01-dual.iso of=/dev/sdb</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>写入USB </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line"># dd bs=4M if=/home/twtwtw/Downloads/archlinux-2013.07.01-dual.iso of=/dev/sdb</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>然后重启开始安装Archlinux。</p>
 
-<h3>1.分区</h3>
-
+<h3 id="section">1.分区</h3>
 <p>使用cfdisk可以很方便的给磁盘分区，我给arch划出了大约200个G，分别划分了/boot 200M，/ 90G，/home 140G，swap 8G。</p>
 
-<h3>2.格式化</h3>
-
+<h3 id="section-1">2.格式化</h3>
 <p>对磁盘进行格式化，可以使用如下的命令，将其中的x替换为对应的磁盘符号</p>
 
-<figure class='code'><figcaption><span>格式化 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># mkfs.ext4 /dev/sdx                 //格式化为ext4
-</span><span class='line'># mkswap /dev/sdx && swapon /dev/sdx //格式化swap并挂载</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>格式化 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line"># mkfs.ext4 /dev/sdx                 //格式化为ext4
+</span><span class="line"># mkswap /dev/sdx &amp;&amp; swapon /dev/sdx //格式化swap并挂载</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-<h3>3.挂载</h3>
-
+<h3 id="section-2">3.挂载</h3>
 <p>接下来开始挂载分区，此时挂载分区一是为了正常安装系统，二是为了生成fstab，这个文件记录了磁盘挂载的信息，开机后按照文件内容会自动挂载。这里可以把Windos系统的NTFS分区也给挂载上，不过记得后面要装<code>ntfs-3g</code>，否则开机会报错。</p>
 
-<figure class='code'><figcaption><span>挂载 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># mount /dev/sdx /mnt &lt;!-- 测试 -->
-</span><span class='line'># mkdir /mnt/{boot,var,home}
-</span><span class='line'># mount /dev/sd{9,10} /mnt/{boot,home}</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>挂载 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line"># mount /dev/sdx /mnt &lt;!-- 测试 --&gt;
+</span><span class="line"># mkdir /mnt/{boot,var,home}
+</span><span class="line"># mount /dev/sd{9,10} /mnt/{boot,home}</span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<h3 id="pacman">4.调整网络，修改Pacman源</h3>
 
-<h3>4.调整网络，修改Pacman源</h3>
-
-<figure class='code'><figcaption><span>调整网络，修改Pacman源 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>// dhcpcd、wifi-menu、ifconfig、iwconfig均可使用，我直接连接路由，arch已经自动dhcp
-</span><span class='line'># vi /etc/pacman.d/mirrorlist //找到其中的China标记的项，去掉注释</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>调整网络，修改Pacman源 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">// dhcpcd、wifi-menu、ifconfig、iwconfig均可使用，我直接连接路由，arch已经自动dhcp
+</span><span class="line"># vi /etc/pacman.d/mirrorlist //找到其中的China标记的项，去掉注释</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>这些是China的源加在网上找的一些据说不错的源:</p>
 
-<figure class='code'><figcaption><span>/etc/pacman.d/mirrorlist </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='d'><span class='line'><span class="n">Server</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//mirrors.163.com/archlinux/$repo/os/$arch</span>
-</span><span class='line'><span class="n">Server</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//mirror.hust.edu.cn/archlinux/$repo/os/$arch</span>
-</span><span class='line'><span class="n">Server</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//mirrors.ustc.edu.cn/archlinux/$repo/os/$arch</span>
-</span><span class='line'><span class="n">Server</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//mirrors.stuhome.net/archlinux/$repo/os/$arch</span>
-</span><span class='line'><span class="n">Server</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch</span>
-</span><span class='line'><span class="n">Server</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//mirrors.neusoft.edu.cn/archlinux/$repo/os/$arch</span>
-</span><span class='line'><span class="n">Server</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//lug.mtu.edu/archlinux/$repo/os/$arch</span>
-</span><span class='line'><span class="n">Server</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//mirror.umd.edu/archlinux/$repo/os/$arch</span>
-</span><span class='line'><span class="n">Server</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//mirrors.liquidweb.com/archlinux/$repo/os/$arch</span>
-</span><span class='line'><span class="n">Server</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//cosmos.cites.illinois.edu/pub/archlinux/$repo/os/$arch</span>
-</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>/etc/pacman.d/mirrorlist </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+</pre></td><td class="code"><pre><code class="d"><span class="line"><span class="n">Server</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//mirrors.163.com/archlinux/$repo/os/$arch</span>
+</span><span class="line"><span class="n">Server</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//mirror.hust.edu.cn/archlinux/$repo/os/$arch</span>
+</span><span class="line"><span class="n">Server</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//mirrors.ustc.edu.cn/archlinux/$repo/os/$arch</span>
+</span><span class="line"><span class="n">Server</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//mirrors.stuhome.net/archlinux/$repo/os/$arch</span>
+</span><span class="line"><span class="n">Server</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch</span>
+</span><span class="line"><span class="n">Server</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//mirrors.neusoft.edu.cn/archlinux/$repo/os/$arch</span>
+</span><span class="line"><span class="n">Server</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//lug.mtu.edu/archlinux/$repo/os/$arch</span>
+</span><span class="line"><span class="n">Server</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//mirror.umd.edu/archlinux/$repo/os/$arch</span>
+</span><span class="line"><span class="n">Server</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//mirrors.liquidweb.com/archlinux/$repo/os/$arch</span>
+</span><span class="line"><span class="n">Server</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//cosmos.cites.illinois.edu/pub/archlinux/$repo/os/$arch</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<h3 id="grub-bios">5.安装系统基本组件和grub-bios</h3>
 
-<h3>5.安装系统基本组件和grub-bios</h3>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>安装系统基本组件 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line"># pacstrap /mnt base base-devel grub-bios</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<figure class='code'><figcaption><span>安装系统基本组件 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># pacstrap /mnt base base-devel grub-bios</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>6.生成fstab</h3>
-
+<h3 id="fstab">6.生成fstab</h3>
 <p><code>-p</code>这里表示生成以设备名为标识的fstab，比如/dev/sda等
 <code>-U</code>标记可以生成UUID为标识的fstab</p>
 
-<figure class='code'><figcaption><span>生成fstab </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># genfstab -p /mnt &gt;&gt; /mnt/etc/fstab</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>生成fstab </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c"># genfstab -p /mnt &gt;&gt; /mnt/etc/fstab</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>然后就等待慢慢下载安装吧。</p>
 
-<h3>7.切换到安装好的系统</h3>
+<h3 id="section-3">7.切换到安装好的系统</h3>
 
-<figure class='code'><figcaption><span>切换到安装好的系统 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># arch-chroot /mnt</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>切换到安装好的系统 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line"># arch-chroot /mnt</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-<h3>8.设置主机名</h3>
-
+<h3 id="section-4">8.设置主机名</h3>
 <p>主机名写在文件<code>/etc/hostname</code>里边，写入就好。</p>
 
-<figure class='code'><figcaption><span>设置主机名 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># echo Cryo-Nyx > /etc/hostname</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>设置主机名 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line"># echo Cryo-Nyx &gt; /etc/hostname</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-<h3>9.修改locale</h3>
-
+<h3 id="locale">9.修改locale</h3>
 <p>我想要系统仍旧以英文显示各种提示，所以这里仅仅修改<code>LC_CTYPE</code>为<code>zh_CN.UTF-8</code>。</p>
 
-<figure class='code'><figcaption><span>修改locale </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># vi /etc/locale.conf    //添加LANG=en_US.UTF-8，LC_CTYPE=zh_CN.UTF-8
-</span><span class='line'># vi /etc/locale.gen     //取消需要的locale前注释
-</span><span class='line'># locale-gen</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>修改locale </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line"># vi /etc/locale.conf    //添加LANG=en_US.UTF-8，LC_CTYPE=zh_CN.UTF-8
+</span><span class="line"># vi /etc/locale.gen     //取消需要的locale前注释
+</span><span class="line"># locale-gen</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-<h3>10.设置时区与硬件时钟</h3>
-
+<h3 id="section-5">10.设置时区与硬件时钟</h3>
 <p>这一步设置本地时区</p>
 
-<figure class='code'><figcaption><span>设置本地时区 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># ln -s /usr/share/zoneinfo/Asia/Chongqing /etc/localtime
-</span><span class='line'># hwclock --systohc --utc</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>设置本地时区 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line"># ln -s /usr/share/zoneinfo/Asia/Chongqing /etc/localtime
+</span><span class="line"># hwclock --systohc --utc</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-<h3>11.设置键盘布局</h3>
-
+<h3 id="section-6">11.设置键盘布局</h3>
 <p>这一步可以在tty下进行键盘布局的设置，比如交换CapsLock和Escape，方便VIM操作</p>
 
-<figure class='code'><figcaption><span>设置TTY下键盘布局 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># cd /usr/share/kbd/keymaps/i386/qwerty/
-</span><span class='line'># cp us.map.gz twtwtw.map.gz
-</span><span class='line'># gunzip twtwwt.map.gz
-</span><span class='line'># vi twtwtw.map.gz
-</span><span class='line'>//找到CapsLock和Escape的键位，互换其值
-</span><span class='line'># vi /etc/vconsole.conf  //添加`KEYMAP=twtwtw`</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>设置TTY下键盘布局 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class=""><span class="line"># cd /usr/share/kbd/keymaps/i386/qwerty/
+</span><span class="line"># cp us.map.gz twtwtw.map.gz
+</span><span class="line"># gunzip twtwwt.map.gz
+</span><span class="line"># vi twtwtw.map.gz
+</span><span class="line">//找到CapsLock和Escape的键位，互换其值
+</span><span class="line"># vi /etc/vconsole.conf  //添加`KEYMAP=twtwtw`</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-<h3>12.创建引导linux内核的初始环境</h3>
-
+<h3 id="linux">12.创建引导linux内核的初始环境</h3>
 <p><code>-p</code>是preset的意思，也就是以预设的linux配置文件生成。</p>
 
 <p>如果是intel集显的话，可以在<code>/etc/mkinitcpio.conf</code>的<code>MODULE</code>里边添加<code>i915</code>打开KMS。</p>
 
 <p>详情参照这里<a href="https://wiki.archlinux.org/index.php/Intel_Graphics">ArchWiki: Intel Grapchis</a>。</p>
 
-<figure class='code'><figcaption><span>创建引导linux内核的初始环境 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># vi /etc/mkinitcpio.conf //在MODULES里添加i915
-</span><span class='line'># mkinitcpio -p linux</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>创建引导linux内核的初始环境 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line"># vi /etc/mkinitcpio.conf //在MODULES里添加i915
+</span><span class="line"># mkinitcpio -p linux</span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<h3 id="grubdevsda">13.安装grub到/dev/sda上并生成初始配置</h3>
 
-<h3>13.安装grub到/dev/sda上并生成初始配置</h3>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>安装grub </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class=""><span class="line"># grub-install /dev/sda  //将grub安装到sda上
+</span><span class="line"># cp /usr/share/locale/en\@quot\LC_MESSAGES /boot/grub/locale/en.mo //不然开机加载grub时会提示en.mo not found
+</span><span class="line"># pacman -S os-prober    //如果还装有Win系统的话
+</span><span class="line"># grub-mkconfig -o /boot/grub/grub.cfg</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<figure class='code'><figcaption><span>安装grub </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># grub-install /dev/sda  //将grub安装到sda上
-</span><span class='line'># cp /usr/share/locale/en\@quot\LC_MESSAGES /boot/grub/locale/en.mo //不然开机加载grub时会提示en.mo not found
-</span><span class='line'># pacman -S os-prober    //如果还装有Win系统的话
-</span><span class='line'># grub-mkconfig -o /boot/grub/grub.cfg</span></code></pre></td></tr></table></div></figure>
+<h3 id="section-7">14.添加用户</h3>
 
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>添加用户 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">#useradd -d /home/twtwtw -m twtwtw
+</span><span class="line">#usermod -G audio,video,wheel,users,games,optical,storage,lp twtwtw //将用户添加到xxxx各个组</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h3>14.添加用户</h3>
+<h3 id="section-8">14.修改初始密码</h3>
 
-<figure class='code'><figcaption><span>添加用户 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#useradd -d /home/twtwtw -m twtwtw
-</span><span class='line'>#usermod -G audio,video,wheel,users,games,optical,storage,lp twtwtw //将用户添加到xxxx各个组</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>修改初始密码 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line"># passwd //修改root密码
+</span><span class="line"># passwd twtwtw //修改用户密码</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-<h3>14.修改初始密码</h3>
-
-<figure class='code'><figcaption><span>修改初始密码 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># passwd //修改root密码
-</span><span class='line'># passwd twtwtw //修改用户密码</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>15.安装基本系统软件</h2>
-
+<h2 id="section-9">15.安装基本系统软件</h2>
 <p>安装系统一些基本的软件，这些base包并没有提供。</p>
 
 <p>Archlinux使用ip和netctl工具来进行网络管理，不过以前用惯了ifconfig，这里也一起装上吧。</p>
@@ -308,156 +292,145 @@
 <p><code>net-tools</code>提供了<code>ifconfig</code>工具
 <code>wireless_tools</code>提供了<code>iwconfig</code>和<code>iwlist</code></p>
 
-<figure class='code'><figcaption><span>安装基本系统软件 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># pacman -S sudo gksu vim net-tools wireless_tools  dialog wpa_supplicant dhcpcd ntfs-3</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>安装基本系统软件 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line"># pacman -S sudo gksu vim net-tools wireless_tools  dialog wpa_supplicant dhcpcd ntfs-3</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>然后visudo，把自己的用户加上管理员权限</p>
 
-<h3>15.安装桌面环境</h3>
-
+<h3 id="section-10">15.安装桌面环境</h3>
 <p>我使用的是<code>Awesome</code>这款wm，并没有使用dm。</p>
 
-<figure class='code'><figcaption><span>安装桌面环境 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># pacman -S xorg-{server,server-utils,utils,xinit} xterm xf86-video-intel mesa alsa-utils feh awesome vicious xcompmgr</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>安装桌面环境 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line"># pacman -S xorg-{server,server-utils,utils,xinit} xterm xf86-video-intel mesa alsa-utils feh awesome vicious xcompmgr</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-<h3>16.安装完成</h3>
-
+<h3 id="section-11">16.安装完成</h3>
 <p>安装完成，重启进入系统。</p>
 
-<figure class='code'><figcaption><span>安装完成 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># exit
-</span><span class='line'># umount -a
-</span><span class='line'># reboot</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>安装完成 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line"># exit
+</span><span class="line"># umount -a
+</span><span class="line"># reboot</span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<h3 id="xinitrc">17.xinitrc</h3>
+<p>修改<code>.xinitrc</code>，添加<code>exec awesome</code>
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;figcaption&gt;<span>我的.xinitrc</span>&lt;/figcaption&gt;&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class="bash"><span class="line"><span class="c">#!/bin/zsh</span>
+</span><span class="line">numlockx
+</span><span class="line">xbacklight -set 0
+</span><span class="line"><span class="c">#setxkbmap -option ctrl:nocaps</span>
+</span><span class="line"><span class="nb">exec </span>awesome
+</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;</p>
 
-<h3>17.xinitrc</h3>
-
-<p>修改<code>.xinitrc</code>，添加<code>exec awesome</code></p>
-
-<figure class='code'><figcaption><span>我的.xinitrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/zsh</span>
-</span><span class='line'>numlockx
-</span><span class='line'>xbacklight -set 0
-</span><span class='line'><span class="c">#setxkbmap -option ctrl:nocaps</span>
-</span><span class='line'><span class="nb">exec </span>awesome
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>关于字体</h3>
-
+<h3 id="section-12">关于字体</h3>
 <p>有几个字体是必下，比如community里的<code>wqy-microhei</code>，<code>wqy-zenhei</code>，还有aur里的<code>ttf-dejavusans-yuanti</code>，以及<code>ttf-droid-sans</code>,<code>ttf-microsoft-yahei</code>也可以装上，都是很不错的字体。</p>
 
-<figure class='code'><figcaption><span>字体 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># pacman -S xorg-font-{util,utils,100dpi,75dpi,alias}</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>字体 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line"># pacman -S xorg-font-{util,utils,100dpi,75dpi,alias}</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-<h3>常用软件</h3>
-
-<figure class='code'><figcaption><span>常用软件</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>firefox //不解释
-</span><span class='line'>rdesktop //远程桌面
-</span><span class='line'>banshee //听歌还不错，不过ncmpcpp作为字符下的也还可以
-</span><span class='line'>mplayer
-</span><span class='line'>smplayer
-</span><span class='line'>chmsee
-</span><span class='line'>foxitreader //比evince好用
-</span><span class='line'>gthumb //不错的看图软件
-</span><span class='line'>bc //命令行下的计算器
-</span><span class='line'>emacs
-</span><span class='line'>xbacklight //可以设置笔记本的亮度，对于无法保存亮度的笔记本来说很方便
-</span><span class='line'>numlockx //自动打开小键盘
-</span><span class='line'>ibus,ibus-sunpinyin //挺不错的，个人觉得比ibus好用
-</span></code></pre></td></tr></table></div></figure>
-
+<h3 id="section-13">常用软件</h3>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>常用软件</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+</pre></td><td class="code"><pre><code class="text"><span class="line">firefox //不解释
+</span><span class="line">rdesktop //远程桌面
+</span><span class="line">banshee //听歌还不错，不过ncmpcpp作为字符下的也还可以
+</span><span class="line">mplayer
+</span><span class="line">smplayer
+</span><span class="line">chmsee
+</span><span class="line">foxitreader //比evince好用
+</span><span class="line">gthumb //不错的看图软件
+</span><span class="line">bc //命令行下的计算器
+</span><span class="line">emacs
+</span><span class="line">xbacklight //可以设置笔记本的亮度，对于无法保存亮度的笔记本来说很方便
+</span><span class="line">numlockx //自动打开小键盘
+</span><span class="line">ibus,ibus-sunpinyin //挺不错的，个人觉得比ibus好用
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>已经安装了好久了，当时也没记录多详细，就这些内容了。</p>
 
 <p>系统配置上的问题，以后想起来了再发吧。</p>
-</div>
 
 
   <footer>
     <p class="meta">
-      
-  
-
-<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
-
-      
-
-
-
-
-
-
-
+            
 
   
 
-
-<time datetime="2013-07-31T10:07:00+08:00" pubdate data-updated="true">Jul 31<span>st</span>, 2013</time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/archlinux/'>Archlinux</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://CyberLuc.github.io/blog/2013/07/31/archlinux-installation/" data-via="" data-counturl="http://CyberLuc.github.io/blog/2013/07/31/archlinux-installation/" >Tweet</a>
-  
-  
-  
+<div class="cryocopyright">
+  <!--<DIV style="MARGIN-TOP: 10px; FLOAT: left; MARGIN-LEFT: 5px; MARGIN-RIGHT: 10px">
+      <IMG alt="" src="http://images.cnblogs.com/cnblogs_com/oec2003/219566/123.jpg" width=90 height=100>
+  </DIV>-->
+  <div id="cryoinfo">
+    作者： <a href="http://cyberLuc.github.io/about">CyberLuc</a> <br/>
+    出处： <a href="http://cyberLuc.github.io">http://cyberLuc.github.io</a><br/>
+    本文基于 <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/" target="_blank">CC 创作共用版权协议(2.5 License)</a> ，要求<font class="cryobold">署名、非商业用途和保持一致</font>。本博未标明[转载]字样的文章均为原创。转载本博原创作品(内容)也必须遵循“署名-非商业用途-保持一致”的创作共用协议，请务必以文字链接的形式标明或保留文章<a href="./" target="_blank" class="cryobold">原始出处</a>和博客作者(<a href="http://cyberLuc.github.io/about" target="_blank"><font class="cryobold">CyberLuc</font></a>)的信息。本博客(原创)内容，一经转载，即表示您已经接受上述声明！
+  </div>
 </div>
 
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2013/07/29/hello-world/" title="Previous Post: Hello World">&laquo; Hello World</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2013/07/31/test001/" title="Next Post: 测试001">测试001 &raquo;</a>
-      
+
     </p>
   </footer>
 </article>
 
-</div>
 
-<aside class="sidebar">
+<section id="disqus">
+  <h1 class="indent title">Comments</h1>
+  <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
   
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
+<section class="social aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">
+    Follow me!
+  </h1>
+  <ul class="unstyled">
+    
+    
+    <li><a class="github" href="//github.com/CyberLuc"><i class="icon-github"></i> Github</a></li>
+    
+    <li><a class="gplus" href="//plus.google.com/cyberluc29@gmail.com"><i class="icon-google-plus-sign"></i> Google+</a></li>
+    
+    
+    
+    <li><a class="twitter" href="//twitter.com/twi3325831@gmail.com"><i class="icon-twitter"></i> Twitter</a></li>
+    
+  </ul>
+</section>
+
+
+  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
     
       <li class="post">
         <a href="/blog/2013/08/07/algo-004-note-week-2/">Algorithms - Week 2 - Note</a>
@@ -482,43 +455,116 @@
   </ul>
 </section>
 
+<section id="github-repos" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">
+    GitHub Repos
+    
+  </h1>
+  <ul id="gh_repos" class="divided">
+    <li class="loading">
+      <i class="icon-spinner icon-spin"></i>
+    </li>
+  </ul>
+</section>
 
 
 
 
+</div>
+
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [ ['$', '$'] ],
+    displayMath: [ ['$$', '$$']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+
+<p class="copyright" style="text-align:center;">
+  Copyright &copy; 2014
   
-</aside>
+  CyberLuc
+  
 
+</p>
 
     </div>
   </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Your Name -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+</div>
 
-</footer>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+<script defer src="/javascripts/octopress.js"></script>
+
+
+
+
+<script>
+  var disqus_shortname = 'cyberluc29';
   
+    
+    // var disqus_developer = 1;
+    var disqus_identifier = 'http://cyberLuc.github.io/blog/2013/07/31/archlinux-installation/';
+    var disqus_url = 'http://cyberLuc.github.io/blog/2013/07/31/archlinux-installation/';
+    var disqus_script = 'embed.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'CyberLuc',
+      count: 0,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
 
 
 
 
 
 
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
+  </body>
 </html>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: CLRS读书笔记 | My Octopress Blog]]></title>
-  <link href="http://CyberLuc.github.io/blog/categories/clrsdu-shu-bi-ji/atom.xml" rel="self"/>
-  <link href="http://CyberLuc.github.io/"/>
-  <updated>2014-04-19T09:56:51+08:00</updated>
-  <id>http://CyberLuc.github.io/</id>
+  <title><![CDATA[Category: CLRS读书笔记 | CyberLuc's Blog]]></title>
+  <link href="http://cyberLuc.github.io/blog/categories/clrsdu-shu-bi-ji/atom.xml" rel="self"/>
+  <link href="http://cyberLuc.github.io/"/>
+  <updated>2014-04-19T11:39:40+08:00</updated>
+  <id>http://cyberLuc.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[CyberLuc]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,40 +15,35 @@
   
   <entry>
     <title type="html"><![CDATA[CLRS - Ch2.2 - Analyzing Algorithm]]></title>
-    <link href="http://CyberLuc.github.io/blog/2013/07/31/clrs-2-2-analyzing-algorithm/"/>
+    <link href="http://cyberLuc.github.io/blog/2013/07/31/clrs-2-2-analyzing-algorithm/"/>
     <updated>2013-07-31T22:07:00+08:00</updated>
-    <id>http://CyberLuc.github.io/blog/2013/07/31/clrs-2-2-analyzing-algorithm</id>
+    <id>http://cyberLuc.github.io/blog/2013/07/31/clrs-2-2-analyzing-algorithm</id>
     <content type="html"><![CDATA[<p>前面的介绍略过不再记录，直接来看对于Insertion Sort的分析。</p>
 
-<h3>1.Analysis of insertion sort &ndash; 对插入排序的分析</h3>
-
-<p>衡量一个算法的好坏，重要的标准之一当然就是解决问题所需的时间的多少了，通常情况下都是希望运行越快越好。而算法的运行时间并不是固定的，它根据输入数据量的大小而变化。所以通常建立一个以输入数据量大小（input size）$$n$$为自变量的函数来表示算法的运行时间（running time）。</p>
+<h3 id="analysis-of-insertion-sort---">1.Analysis of insertion sort - 对插入排序的分析</h3>
+<p>衡量一个算法的好坏，重要的标准之一当然就是解决问题所需的时间的多少了，通常情况下都是希望运行越快越好。而算法的运行时间并不是固定的，它根据输入数据量的大小而变化。所以通常建立一个以输入数据量大小（input size）<script type="math/tex">n</script>为自变量的函数来表示算法的运行时间（running time）。</p>
 
 <!-- more -->
 
-
-<p><code>Input size</code>的定义并不是固定不变的，对于前面提到的插入排序来说，$$n$$无非就是数组的大小。对于乘法来说，由于计算机的电子特性，一般用乘数的二进制位数作为衡量。而对于一个图论算法来讲，输入的数据量可能同时由图的节点(Vertices)和边(Edges)两个量组成。</p>
+<p><code>Input size</code>的定义并不是固定不变的，对于前面提到的插入排序来说，<script type="math/tex">n</script>无非就是数组的大小。对于乘法来说，由于计算机的电子特性，一般用乘数的二进制位数作为衡量。而对于一个图论算法来讲，输入的数据量可能同时由图的节点(Vertices)和边(Edges)两个量组成。</p>
 
 <p><code>Running time</code>在这里暂时被定义为算法对于某一特定输入所需要执行的<code>操作数量</code>，或者说是所需执行的<code>步数</code>，这就把算法的运行时间和具体的计算机独立了开来，所以并不以算法在某一特定电脑上的运行时间为标准来定义算法的运行时间。</p>
 
-<p>假设每一行的操作都需要花费常数项的时间$$c_i$$，接下来我们就可以来分析一下插入排序了。</p>
+<p>假设每一行的操作都需要花费常数项的时间<script type="math/tex">c_i</script>，接下来我们就可以来分析一下插入排序了。</p>
 
 <p>其实CLRS这里的定义略显繁琐，比我在《Data Structure and Algorithm Analysis in C》中看到的描述要复杂上一些，因为其书中将每一个基本操作定义为相同的常数项时间（当然其实乘法所需的时间远大于加法），每一行可以含有多个基本操作，比如for循环的那一行就含有一次赋值，一次比较，与一次自增。而CLRS将每一行所需时间定义为一个常数项，那么有多少行就得有多少个常数项。</p>
 
-<p>```c void insertionSort(int A[], int num)
-for(i = 2; i &lt;= num; i++){     //c1</p>
-
-<pre><code>key = A[i];                //c2
-j = i - 1;                 //c3
-while(j&gt;0 &amp;&amp; A[j]&lt;key){    //c4
-    A[j+1] = A[j];         //c5
-    j--;                   //c6
+<p><code>c void insertionSort(int A[], int num)
+for(i = 2; i &lt;= num; i++){     //c1
+    key = A[i];                //c2
+    j = i - 1;                 //c3
+    while(j&gt;0 &amp;&amp; A[j]&lt;key){    //c4
+        A[j+1] = A[j];         //c5
+        j--;                   //c6
+    }
+    A[j+1] = key;              //c8
 }
-A[j+1] = key;              //c8
-</code></pre>
-
-<p>}
-```</p>
+</code></p>
 
 <p>设$T(n)$为插入排序的运行时间，每行所需时间$c_i$如上所示，另设每一次while循环执行的次数为$t_i$，也即根据$i$的数值而变化。</p>
 
@@ -58,13 +53,13 @@ A[j+1] = key;              //c8
 
 <p>综上所述：</p>
 
-<p>$$
+<script type="math/tex; mode=display">
 \begin{equation}
 \begin{aligned}
-T(n)=c_1n+c_2(n-1)+c_3(n-1)+c_4\sum<em>{i=2}^{n}t_i+c_5\sum</em>{i=2}^{n}(t_i-1)+c_6\sum_{i=2}^{n}(t_i-1)+c_8(n-1)
+T(n)=c_1n+c_2(n-1)+c_3(n-1)+c_4\sum_{i=2}^{n}t_i+c_5\sum_{i=2}^{n}(t_i-1)+c_6\sum_{i=2}^{n}(t_i-1)+c_8(n-1)
 \end{aligned}
 \end{equation}
-$$</p>
+</script>
 
 <p>分析算法的时候是根据算法的输入数据量进行的分析，不过就算是同样的数据输入量，输入数据的不同仍旧会造成算法运行时间的天差地别。</p>
 
@@ -72,14 +67,15 @@ $$</p>
 
 <p>也就是：</p>
 
-<p>$$
+<script type="math/tex; mode=display">% &lt;![CDATA[
+
 \begin{equation}
 \begin{aligned}
-T(n)&amp;=c_1n+c_2(n-1)+c_3(n-1)+c_4(n-1)+c_8(n-1)\
-&amp;=(c_1+c_2+c_3+c_4+c_8)n+(c_2+c_3+c_4+c_8)
+T(n)&=c_1n+c_2(n-1)+c_3(n-1)+c_4(n-1)+c_8(n-1)\\
+&=(c_1+c_2+c_3+c_4+c_8)n+(c_2+c_3+c_4+c_8)
 \end{aligned}
 \end{equation}
-$$</p>
+ %]]&gt;</script>
 
 <p>显然这是个一次多项式，是一个线性方程，也把这时候的时间复杂度称为线性复杂度。</p>
 
@@ -91,14 +87,15 @@ $$</p>
 
 <p>所以：</p>
 
-<p>$$
+<script type="math/tex; mode=display">% &lt;![CDATA[
+
 \begin{equation}
 \begin{aligned}
-T(n)&amp;=c_1n+c_2(n-1)+c_3(n-1)+c_4(\frac{n(n+1)}{2}-1)+c_5\frac{n(n-1)}{2}+c_6\frac{n(n-1)}{2}+c_8(n-1)\
-&amp;=(\frac{c_4}{2}+\frac{c_5}{2}+\frac{c_6}{2})n<sup>2</sup>+(c_1+c_2+c_3+\frac{c_4}{2}&ndash;\frac{c_5}{2}&ndash;\frac{c_6}{2}+c_8)n-(c_2+c_3+c_4+c_8)
+T(n)&=c_1n+c_2(n-1)+c_3(n-1)+c_4(\frac{n(n+1)}{2}-1)+c_5\frac{n(n-1)}{2}+c_6\frac{n(n-1)}{2}+c_8(n-1)\\
+&=(\frac{c_4}{2}+\frac{c_5}{2}+\frac{c_6}{2})n^2+(c_1+c_2+c_3+\frac{c_4}{2}-\frac{c_5}{2}-\frac{c_6}{2}+c_8)n-(c_2+c_3+c_4+c_8)
 \end{aligned}
 \end{equation}
-$$</p>
+ %]]&gt;</script>
 
 <p>嗯，挺长的一串的，其实也就是一个二次多项式而已，也把此时的时间复杂度称为平方复杂度。</p>
 
@@ -106,57 +103,53 @@ $$</p>
 
 <p>Average case的分析方式个人感觉在实际应用中有一定优势，不过书上说这种分析方式比起worst case来说要麻烦太多了，而且对于某些特定问题来说一个”平均“的定义也不是特别的清晰。但是average case对于随机算法来说却是一个很好的分析方法，用概率的方法给出运行时间，比如快速排序算法。</p>
 
-<p>因为比较两个算法时，像上面那样的具体分析往往是不必要的，所以一般用算法运行时间的增长率为标准判断算法优劣。前面插入排序的worst case运行时间就是$Θ(n<sup>2</sup>)$。</p>
+<p>因为比较两个算法时，像上面那样的具体分析往往是不必要的，所以一般用算法运行时间的增长率为标准判断算法优劣。前面插入排序的worst case运行时间就是$Θ(n^2)$。</p>
 
-<p>&mdash;未完待续&mdash;</p>
+<p>–未完待续–</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[CLRS - Ch2.1 - Insertion Sort]]></title>
-    <link href="http://CyberLuc.github.io/blog/2013/07/31/clrs-2-1-note/"/>
+    <link href="http://cyberLuc.github.io/blog/2013/07/31/clrs-2-1-note/"/>
     <updated>2013-07-31T19:49:00+08:00</updated>
-    <id>http://CyberLuc.github.io/blog/2013/07/31/clrs-2-1-note</id>
-    <content type="html"><![CDATA[<h3>1.Insertion Sort &ndash; 插入排序</h3>
-
+    <id>http://cyberLuc.github.io/blog/2013/07/31/clrs-2-1-note</id>
+    <content type="html"><![CDATA[<h3 id="insertion-sort---">1.Insertion Sort - 插入排序</h3>
 <p>插入排序是非常基础的一类排序，它和平时玩扑克牌时摸牌的排序方法几乎一模一样。每当拿到一张牌，我们就从右向左（反向当然也行）依次查看手上的牌的大小，直到找到一张牌比摸到的牌大，就把摸到的牌放到这一张后面。反复摸牌，最后我们就得到了一副从大到小排列的牌。这也符合我个人的打牌习惯。</p>
 
 <p>这个算法非常基础，CLRS本节中也已经对此讲的很清楚了，这里仅仅列出C语言实现。注意书中是从小到大进行的排列。</p>
 
 <!--more-->
 
-
-<p>```c Insertion Sort
-void insertionSort(int A[], int num){</p>
-
-<pre><code>int i, j, key;
-for(i = 2; i &lt;= num; i++){  /* 为了便于理解，这里设数组大小为num+1，数组从1开始计算下标 */
-    key = A[i];
-    j = i - 1;
-    while(j&gt;0 &amp;&amp; A[j]&lt;key){
-        A[j+1] = A[j];      /* 如果前一张牌比当前的牌大则交换两者 */
-        j--;
+<p><code>c Insertion Sort
+void insertionSort(int A[], int num){
+    int i, j, key;
+    for(i = 2; i &lt;= num; i++){  /* 为了便于理解，这里设数组大小为num+1，数组从1开始计算下标 */
+        key = A[i];
+        j = i - 1;
+        while(j&gt;0 &amp;&amp; A[j]&lt;key){
+            A[j+1] = A[j];      /* 如果前一张牌比当前的牌大则交换两者 */
+            j--;
+        }
+        A[j+1] = key;
     }
-    A[j+1] = key;
 }
-</code></pre>
+</code></p>
 
-<p>}
-```</p>
-
-<h3>2.Loop Invariant &ndash; 循环不变式</h3>
-
+<h3 id="loop-invariant---">2.Loop Invariant - 循环不变式</h3>
 <p>有时候为了解决某个问题而设计了某个算法后，虽然直觉上觉得这个算法应该能用，而实际的运行也确实能够正确解决这个问题，不过这个算法到底为什么是正确的呢？严谨一点儿的话，就不能仅仅靠直觉来判断了，所以CLRS中引入了<strong>Loop Invariant</strong>的概念，从数学上对算法中循环的正确性进行证明。</p>
 
 <p><strong>Loop Invariant</strong>是数学归纳法的一种变体，它和数学归纳法几乎完全相同，都是先证明一个初始条件为真，然后逐条递推，唯一的区别在于数学归纳法是将归纳步骤无限进行下去，证明了第n步再继续证明第n+1步，而Loop Invariant则是要在某一步停止，也就是当完成了循环的条件时。</p>
 
 <p>书中列出了应用Loop Invariant的三个步骤：</p>
 
-<blockquote><p><strong>Initialization</strong>: It is true prior to the first iteration of the loop.</p>
+<blockquote>
+  <p><strong>Initialization</strong>: It is true prior to the first iteration of the loop.</p>
 
-<p><strong>Maintenance</strong>: If it is true before an iteration of the loop, it remains true before the next iteration.</p>
+  <p><strong>Maintenance</strong>: If it is true before an iteration of the loop, it remains true before the next iteration.</p>
 
-<p><strong>Termination</strong>: When the loop terminates, the invariant gives us a useful property that hepls show that the algorithm is correct.</p></blockquote>
+  <p><strong>Termination</strong>: When the loop terminates, the invariant gives us a useful property that hepls show that the algorithm is correct.</p>
+</blockquote>
 
 <p>然后这里就用循环不变式对上面提到的Insertion Sort进行检验。</p>
 

@@ -1,78 +1,70 @@
-
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>用Geek的方式来写博客(1)：在Github上搭建Octopress - My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
   
-  <meta name="description" content="听说Octopress还是去年的时候，原因是我宿舍隔壁一哥们买了个域名。因为我一直有开个博客的想法，但不知道哪家提供的服务比较好，于是就去问了一下，没想到他说他把他的博客托管在了Github上。没问明白，我回宿舍后就Google了一下，于是发现了Octopress这个Ruby项目。 &hellip;">
-  <meta name="keywords" content="Octopress">
+    
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>用Geek的方式来写博客(1)：在Github上搭建Octopress - CyberLuc's Blog</title>
+    <meta name="author" content="CyberLuc">
+    
+    <meta name="description" content="用Geek的方式来写博客(1)：在Github上搭建Octopress Aug 1st, 2013 Octopress Comments 听说Octopress还是去年的时候，原因是我宿舍隔壁一哥们买了个域名。因为我一直有开个博客的想法，但不知道哪家提供的服务比较好，于是就去问了一下， &hellip;">
+    <meta name="keywords" content="Octopress">
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://cyberLuc.github.io/blog/2013/08/01/building-octopress-blog">
+    
+    <link href="/favicon.png" rel="icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="CyberLuc's Blog" type="application/atom+xml">
+  </head>
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
-  <link rel="canonical" href="http://CyberLuc.github.io/blog/2013/08/01/building-octopress-blog">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <body >
 
-  
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
 
-</head>
+    <div class="grid__item two-fifths lap-four-sixths palm-one-whole">
+  <a href="/" class="site-title">CyberLuc's Blog</a>
+</div>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">My Octopress Blog</a></h1>
-  
-    <h2>A blogging framework for hackers.</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
+<div class="grid__item three-fifths lap-two-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/">Blog</a></li>
 </ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:CyberLuc.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
+  </nav>
+</div>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="post">
   <header>
+  
+  <h1 class="title indent">用Geek的方式来写博客(1)：在Github上搭建Octopress</h1>
+  
+
+  
+  <div class="meta clearfix">
     
-      <h1 class="entry-title">用Geek的方式来写博客(1)：在Github上搭建Octopress</h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -84,19 +76,37 @@
   
 
 
-<time datetime="2013-08-01T10:45:00+08:00" pubdate data-updated="true">Aug 1<span>st</span>, 2013</time>
-        
-      </p>
+<time class="pull-left" datetime="2013-08-01T10:45:00+08:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 1<span>st</span>, 2013</time>
     
-  </header>
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/octopress/'>Octopress</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
 
 
-<div class="entry-content"><p>听说Octopress还是去年的时候，原因是我宿舍隔壁一哥们买了个域名。因为我一直有开个博客的想法，但不知道哪家提供的服务比较好，于是就去问了一下，没想到他说他把他的博客托管在了Github上。没问明白，我回宿舍后就Google了一下，于是发现了Octopress这个Ruby项目。</p>
+
+
+  <p>听说Octopress还是去年的时候，原因是我宿舍隔壁一哥们买了个域名。因为我一直有开个博客的想法，但不知道哪家提供的服务比较好，于是就去问了一下，没想到他说他把他的博客托管在了Github上。没问明白，我回宿舍后就Google了一下，于是发现了Octopress这个Ruby项目。</p>
 
 <p>这种编写博客的方式立即就吸引了我。那段时间还挣扎在VIM和Emacs之间，对于Markdown也是久闻大名，当即决定，就是这货了！</p>
 
 <!-- more -->
-
 
 <p>当时对于Linux和Github都还算不上熟悉，一切都还在摸索的阶段，折腾了几下发完一篇Hello World之后就放下了。一直到这个暑假，因为各种原因（再次-_-）下定决心要开一个博客，于是顿时回想起了Octopress。做了一个调查后，我决定换用使用Python编写的Pelican来搭建博客，因为相对来说我对Python更有好感，不过用Pelican搭建好博客后在deploy的阶段老是遇到莫名其妙的字符编码错误，Google上搜索不到任何相关的资料，折腾了一天后连第一篇博文都没发到网上。</p>
 
@@ -104,8 +114,7 @@
 
 <p>Octopress的默认主题我觉得很不错，没有什么修改的动力，不过仍旧安装了一些插件，进行了一些小修小补，这里把安装过程记录下来，发到网上，供广大和我一样刚接触Octopress的朋友们参考一下吧。</p>
 
-<h3>1.安装Octopress</h3>
-
+<h3 id="octopress">1.安装Octopress</h3>
 <p>这里给出<a href="http://octopress.org/docs/setup/">官方教程</a>的链接，本博文的教程和官方的几乎一致，不过在一些细节上会进行更详细的解说。</p>
 
 <p>如果你还不知道git是什么的话，那么<a href="http://www.open-open.com/lib/view/open1328069609436.html">这里</a>有一份中文详细教程，可以让你对git有一个大致全面的了解。</p>
@@ -114,153 +123,138 @@
 
 <p>上面已经给出了<code>rbenv</code>和<code>RVM</code>的安装指南链接，不过这里还是稍微讲一下，当然是针对我用的<code>rbenv</code>。</p>
 
-<figure class='code'><figcaption><span>安装rbenv</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span>
-</span><span class='line'>git clone git://github.com/sstephenson/rbenv.git .rbenv
-</span><span class='line'><span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;&#39;</span> &gt;&gt; ~/.zshrc <span class="c">#我使用的是zsh，bash或其他shell的用户需要进行相应更改</span>
-</span><span class='line'><span class="nb">echo</span> <span class="s1">&#39;eval &quot;$(rbenv init -)&quot;&#39;</span> &gt;&gt; ~/.zshrc
-</span><span class='line'>git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-</span><span class='line'><span class="nb">source</span> ~/.zshrc
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>安装rbenv</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nb">cd</span>
+</span><span class="line">git clone git://github.com/sstephenson/rbenv.git .rbenv
+</span><span class="line"><span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;&#39;</span> &gt;&gt; ~/.zshrc <span class="c">#我使用的是zsh，bash或其他shell的用户需要进行相应更改</span>
+</span><span class="line"><span class="nb">echo</span> <span class="s1">&#39;eval &quot;$(rbenv init -)&quot;&#39;</span> &gt;&gt; ~/.zshrc
+</span><span class="line">git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+</span><span class="line"><span class="nb">source</span> ~/.zshrc
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>对于最新版的Octopress来说，使用<code>rbenv</code>进行安装的话需要安装<code>ruby-1.9.3-p194</code>，而不是官方所说的<code>1.9.3-p0</code>。更新版的ruby是否能用，我没有进行过尝试。</p>
 
-<figure class='code'><figcaption><span>安装ruby</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rbenv install 1.9.3-p194
-</span><span class='line'>rbenv rehash
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>安装ruby</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">rbenv install 1.9.3-p194
+</span><span class="line">rbenv rehash
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>运行<code>ruby --version</code>查看是否已经成功安装了指定版本的ruby。</p>
 
-<figure class='code'><figcaption><span>查看ruby版本</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>ruby --version
-</span><span class='line'>rbenv: ruby: <span class="nb">command </span>not found
-</span><span class='line'>
-</span><span class='line'>The <span class="sb">`</span>ruby<span class="err">&#39;</span> <span class="nb">command </span>exists in these Ruby versions:
-</span><span class='line'>  1.9.3-p194
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>查看ruby版本</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nv">$ </span>ruby --version
+</span><span class="line">rbenv: ruby: <span class="nb">command </span>not found
+</span><span class="line">
+</span><span class="line">The <span class="sb">`</span>ruby<span class="err">&#39;</span> <span class="nb">command </span>exists in these Ruby versions:
+</span><span class="line">  1.9.3-p194
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>ruby搞定了，接下来就该把Octopress从Github上拖回来了。</p>
 
-<figure class='code'><figcaption><span>Clone Octopress</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>git clone git://github.com/imathis/octopress.git MyBlog <span class="c">#MyBlog修改为你想要的名字</span>
-</span><span class='line'><span class="nb">cd </span>MyBlog
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Clone Octopress</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">git clone git://github.com/imathis/octopress.git MyBlog <span class="c">#MyBlog修改为你想要的名字</span>
+</span><span class="line"><span class="nb">cd </span>MyBlog
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>然后安装Octopress运行所必需的依赖。</p>
 
-<figure class='code'><figcaption><span>安装Octopress的依赖</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem install bundler
-</span><span class='line'>rbenv rehash
-</span><span class='line'>bundle install
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>安装Octopress的依赖</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">gem install bundler
+</span><span class="line">rbenv rehash
+</span><span class="line">bundle install
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>此时，Octopress的环境已经被安装好了，下面是安装Octopress的默认主题。</p>
 
-<figure class='code'><figcaption><span>安装Octopress主题</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake install
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>安装Octopress主题</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">rake install
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>至此，Octopress就已经被部署好了。</p>
 
 <p>注意上面<code>gem install bundler</code>有时候会遇到<code>Connection Refused</code>的情况，不明原因，不过加上代理服务器后就成功安装了。如果你也遇到了相关的问题，那么就找一个代理服务器，或者自己搭建一个<code>GoAgent</code>科学上网，这里就不详细叙述了，一切请Google吧。</p>
 
-<figure class='code'><figcaption><span>Gem使用代理</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem install bundler --http-proxy http://localhost:8087
-</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Gem使用代理</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">gem install bundler --http-proxy http://localhost:8087
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>### 2.配置Octopress
+<code>Octopress</code>的根目录下有四个配置文件：</p>
 
-
-<h3>2.配置Octopress</h3>
-
-<p><code>Octopress</code>的根目录下有四个配置文件：</p>
-
-<figure class='code'><figcaption><span>Octopress配置文件</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>_config.yml       # Main config (Jekyll&#39;s settings)
-</span><span class='line'>Rakefile          # Configs for deployment
-</span><span class='line'>config.rb         # Compass config
-</span><span class='line'>config.ru         # Rack config
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Octopress配置文件</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="text"><span class="line">_config.yml       # Main config (Jekyll&#39;s settings)
+</span><span class="line">Rakefile          # Configs for deployment
+</span><span class="line">config.rb         # Compass config
+</span><span class="line">config.ru         # Rack config
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>一般来说其中只有两个需要进行更改，那就是<code>_config.yml</code>和<code>Rakefile</code>。</p>
 
 <p>首先我们来看<code>_config.yml</code>，一般来说需要更改的地方如下：</p>
 
-<figure class='code'><figcaption><span>_config.yml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>url: http://yoursite.com
-</span><span class='line'>title: My Octopress Blog
-</span><span class='line'>subtitle: A blogging framework for hackers.
-</span><span class='line'>author: Your Name
-</span><span class='line'>simple_search: http://google.com/search
-</span><span class='line'>description:
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>_config.yml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class="text"><span class="line">url: http://yoursite.com
+</span><span class="line">title: My Octopress Blog
+</span><span class="line">subtitle: A blogging framework for hackers.
+</span><span class="line">author: Your Name
+</span><span class="line">simple_search: http://google.com/search
+</span><span class="line">description:
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>将其中的信息换成你的信息，比如：</p>
 
-<figure class='code'><figcaption><span>_config.yml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>url: http://cryonyx.github.com
-</span><span class='line'>title: Cryonyx
-</span><span class='line'>subtitle: Geek is an attitude.
-</span><span class='line'>author: Cryonyx
-</span><span class='line'>simple_search: http://google.com/search
-</span><span class='line'>description: This is my personal blog.
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>_config.yml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class="text"><span class="line">url: http://cryonyx.github.com
+</span><span class="line">title: Cryonyx
+</span><span class="line">subtitle: Geek is an attitude.
+</span><span class="line">author: Cryonyx
+</span><span class="line">simple_search: http://google.com/search
+</span><span class="line">description: This is my personal blog.
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>要开启博客的评论功能的话，请去<a href="http://disqus.com/">Disqus</a>注册一个帐号，然后把相应的站点<code>shortname</code>填写到相关位置。</p>
 
-<figure class='code'><figcaption><span>disqus</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'># Disqus Comments
-</span><span class='line'>disqus_short_name: Your Site&#39;s Short Name
-</span><span class='line'>disqus_show_comment_count: false
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>disqus</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="text"><span class="line"># Disqus Comments
+</span><span class="line">disqus_short_name: Your Site&#39;s Short Name
+</span><span class="line">disqus_show_comment_count: false
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>更详细（其实也不详细）的介绍请看<a href="http://octopress.org/docs/configuring/">官方文档</a>。</p>
 
-<h3>2.使用搭建好的博客发文</h3>
-
+<h3 id="section">2.使用搭建好的博客发文</h3>
 <p>做好了基础配置，那么下面就该发布一篇新的文章了来试试了，我当初发布了第一篇Hello World。发布新文章的命令是：</p>
 
-<figure class='code'><figcaption><span>发布新文章</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake new_post<span class="o">[</span><span class="s2">&quot;title&quot;</span><span class="o">]</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>发布新文章</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nv">$ </span>rake new_post<span class="o">[</span><span class="s2">&quot;title&quot;</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>这条命令会自动在<code>source/_post</code>里生成一个名为<code>yyyy-mm-dd-post-title.markdown</code>的文件，然后你就可以用自己喜欢的编辑器对其进行修改。</p>
 
@@ -270,22 +264,21 @@
 
 <p>我们打开新建的文件，可以看到如下的被称为<code>yaml front matter</code>内容，它包含了文章的基本信息，可以帮助<code>Jkelly</code>正确生成你的文章页面等信息：</p>
 
-<figure class='code'><figcaption><span>source/_post/2013-08-01-hello-world.markdown</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="nn">---</span>
-</span><span class='line'><span class="l-Scalar-Plain">layout</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">post</span>
-</span><span class='line'><span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="s">&quot;Hello</span><span class="nv"> </span><span class="s">World&quot;</span>
-</span><span class='line'><span class="l-Scalar-Plain">date</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2013-08-01 11:12</span>
-</span><span class='line'><span class="l-Scalar-Plain">comments</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
-</span><span class='line'><span class="l-Scalar-Plain">categories</span><span class="p-Indicator">:</span>
-</span><span class='line'><span class="nn">---</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>source/_post/2013-08-01-hello-world.markdown</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class="yaml"><span class="line"><span class="nn">---</span>
+</span><span class="line"><span class="l-Scalar-Plain">layout</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">post</span>
+</span><span class="line"><span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="s">&quot;Hello</span><span class="nv"> </span><span class="s">World&quot;</span>
+</span><span class="line"><span class="l-Scalar-Plain">date</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2013-08-01 11:12</span>
+</span><span class="line"><span class="l-Scalar-Plain">comments</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
+</span><span class="line"><span class="l-Scalar-Plain">categories</span><span class="p-Indicator">:</span>
+</span><span class="line"><span class="nn">---</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>其中<code>layout: post</code>是指调用<code>source/_layout/post.html</code>作为文章模板，<code>title</code>无疑就是文章的标题，默认值是新建文章填入的字符。如果不想让文章被评论的话，可以设置<code>comments</code>为<code>false</code>。而<code>categories</code>自然就是给文章的分类了。</p>
 
@@ -293,26 +286,25 @@
 
 <p>每次都手动输入略显麻烦，我们可以稍微修改一下<code>Rakefile</code>，找到第106行左右的区域：</p>
 
-<figure class='code'><figcaption><span>Rakefile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;Creating new post: </span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'>  <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
-</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;---&quot;</span>
-</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;layout: post&quot;</span>
-</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;title: </span><span class="se">\&quot;</span><span class="si">#{</span><span class="n">title</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/&amp;/</span><span class="p">,</span><span class="s1">&#39;&amp;amp;&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
-</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;date: </span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-%d %H:%M&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;comments: true&quot;</span>
-</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;categories: &quot;</span>
-</span><span class='line'>    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;---&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Rakefile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+</pre></td><td class="code"><pre><code class="rb"><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;Creating new post: </span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class="line">  <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
+</span><span class="line">    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;---&quot;</span>
+</span><span class="line">    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;layout: post&quot;</span>
+</span><span class="line">    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;title: </span><span class="se">\&quot;</span><span class="si">#{</span><span class="n">title</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/&amp;/</span><span class="p">,</span><span class="s1">&#39;&amp;amp;&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+</span><span class="line">    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;date: </span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-%d %H:%M&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class="line">    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;comments: true&quot;</span>
+</span><span class="line">    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;categories: &quot;</span>
+</span><span class="line">    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;---&quot;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>一目了然，这就是默认的yaml信息模板，相应地进行更改就好，比如加上<code>post.puts "published: true"</code>。</p>
 
@@ -320,57 +312,53 @@
 
 <p>另外需要提醒一下的是，<code>rake_new_post</code>时不能使用中文作为标题：</p>
 
-<figure class='code'><figcaption><span>rake new_post使用中文的错误提示</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake new_post<span class="o">[</span><span class="s2">&quot;测试中文标题&quot;</span><span class="o">]</span>
-</span><span class='line'>rake aborted!
-</span><span class='line'><span class="c">### You haven&#39;t set anything up yet. First run `rake install` to set up an Octopress theme.</span>
-</span><span class='line'>
-</span><span class='line'>Tasks: <span class="nv">TOP</span> <span class="o">=</span>&gt; new_post
-</span><span class='line'><span class="o">(</span>See full trace by running task with --trace<span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>rake new_post使用中文的错误提示</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nv">$ </span>rake new_post<span class="o">[</span><span class="s2">&quot;测试中文标题&quot;</span><span class="o">]</span>
+</span><span class="line">rake aborted!
+</span><span class="line"><span class="c">### You haven&#39;t set anything up yet. First run `rake install` to set up an Octopress theme.</span>
+</span><span class="line">
+</span><span class="line">Tasks: <span class="nv">TOP</span> <span class="o">=</span>&gt; new_post
+</span><span class="line"><span class="o">(</span>See full trace by running task with --trace<span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>那么博客文章能不能使用中文标题呢？当然是可以的，<code>rake new_post</code>的时候给文章起一个英文名，或者用拼音代替，然后修改<code>markdown</code>文件里的<code>title</code>即可以给文章设置中文名了。</p>
 
 <p>另外一个需要注意的地方是，每一个冒号后面都必须要有一个<code>空格</code>，否则会<code>Build Failed</code>。</p>
 
-<p>在<code>---</code>下方写上博客的内容，比如再写一句&#8221;Hello World!&ldquo;，这篇博文就算完成了，保存吧。</p>
+<p>在<code>---</code>下方写上博客的内容，比如再写一句”Hello World!”，这篇博文就算完成了，保存吧。</p>
 
 <p>然后在博客目录<code>rake generate</code>，这条命令会自动将所有<code>markdown</code>文件转换为<code>html</code>文件。转换完成后<code>rake preview</code>，即可用网址<code>http://localhost:4000</code>在浏览器中预览博客的样子。当<code>rake preview</code>运行的时候，可以对文章的<code>markdown</code>文件继续进行修改，不用再次<code>rake generate</code>，几秒钟的延迟后更改就会体现出来。不过新增文章等一部分操作，都需要再次<code>rake generate</code>才能正确预览。</p>
 
-<p>Octopress博客默认有两个页面，一个是&#8221;Blog&#8221;，一个是&#8221;Archive&#8221;，如果想要新增一个页面的话，就需要用<code>rake new_page["page"]</code>命令：</p>
+<p>Octopress博客默认有两个页面，一个是”Blog”，一个是”Archive”，如果想要新增一个页面的话，就需要用<code>rake new_page["page"]</code>命令：</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake new_page<span class="o">[</span>About<span class="o">]</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">rake new_page<span class="o">[</span>About<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>这会在<code>source</code>目录下建立一个<code>About</code>文件夹，其中包含有<code>index.markdown</code>，可以对其进行修改。</p>
 
 <p>但是新增的页面并不会自动地显示到导航栏上去，还需要进行一定的修改。找到<code>source/_includes/custom/navigation.html</code>：</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;main-navigation&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>Blog<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/blog/archives&quot;</span><span class="nt">&gt;</span>Archives<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-</span><span class='line'><span class="nt">&lt;/ul&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="html"><span class="line"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;main-navigation&quot;</span><span class="nt">&gt;</span>
+</span><span class="line">  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>Blog<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+</span><span class="line">  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/blog/archives&quot;</span><span class="nt">&gt;</span>Archives<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+</span><span class="line"><span class="nt">&lt;/ul&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>在合适的位置添加上<code>&lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;</code>即可。</p>
 
 <p>另外博客默认是首页显示每一篇博文所有内容的，如果你不想这么做，那么就需要在博文的合适位置加上<code>&lt;!-- more --&gt;</code>，这可以让首页博文的内容在这里截止，并显示<code>Read On</code>，也就是点击继续阅读。</p>
 
-<h3>3.将博客推送到Github</h3>
-
+<h3 id="github">3.将博客推送到Github</h3>
 <p>我们现在搭建好了博客，也发了一篇文章，不过还没有把博客部署到github上。</p>
 
 <p>首先你需要一个Github的帐号，并且创建一个名为<code>username.github.com</code>的repository。</p>
@@ -379,96 +367,95 @@
 
 <p>然后输入以下命令：</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake setup_github_pages <span class="c">#它会询问信息，并且进行相应的操作。按照提示进行就好。</span>
-</span><span class='line'>rake generate
-</span><span class='line'>rake deploy
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">rake setup_github_pages <span class="c">#它会询问信息，并且进行相应的操作。按照提示进行就好。</span>
+</span><span class="line">rake generate
+</span><span class="line">rake deploy
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p><code>setup_github_pages</code>时会让你输入你的repository的git地址，它给出了一个示例是<code>https://github.com/username/username.github.io</code>，但其实不能这么输入，会报错，你得换成<code>https://github.com/username/username.github.com.git</code>。</p>
 
 <p>这样就把网站文件发送到你的repository了，不过目前仅仅是把生成好的网页文件发送了过去，octopress的一套东西包括markdown文件都还在本地呢，这样可不行。</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>git add .
-</span><span class='line'>git commit -m <span class="s2">&quot;Backup source&quot;</span>
-</span><span class='line'>git push origin <span class="nb">source</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">git add .
+</span><span class="line">git commit -m <span class="s2">&quot;Backup source&quot;</span>
+</span><span class="line">git push origin <span class="nb">source</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>现在就大功告成了，这在你的repository下新建了一个source分支，用来保存你所有的源文件。以后要是本地文件丢失了，恢复就靠它了。</p>
 
 <p>现在，打开浏览器，输入网址<code>http://username.github.com</code>，你应该就能看到你的博客了～欢呼吧。</p>
 
-<p>什么？404？There isn&rsquo;t a GitHub Page here？没关系，一般情况下这是因为延迟，稍等几分钟再看就好了。如果还是不行的话，检查一下上面的步骤，到<code>https://github.com/username/username.github.com</code>看看是否已经deploy成功，然后再<code>rake deploy</code>一次吧。</p>
+<p>什么？404？There isn’t a GitHub Page here？没关系，一般情况下这是因为延迟，稍等几分钟再看就好了。如果还是不行的话，检查一下上面的步骤，到<code>https://github.com/username/username.github.com</code>看看是否已经deploy成功，然后再<code>rake deploy</code>一次吧。</p>
 
 <p>下面一篇博文将会讲到一些插件的使用，为博客添加上更丰富的功能，以及在使用这些插件中所遇到的一些问题和解决方法。</p>
-</div>
 
 
   <footer>
     <p class="meta">
-      
-  
-
-<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
-
-      
-
-
-
-
-
-
-
+            
 
   
 
-
-<time datetime="2013-08-01T10:45:00+08:00" pubdate data-updated="true">Aug 1<span>st</span>, 2013</time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/octopress/'>Octopress</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://CyberLuc.github.io/blog/2013/08/01/building-octopress-blog/" data-via="" data-counturl="http://CyberLuc.github.io/blog/2013/08/01/building-octopress-blog/" >Tweet</a>
-  
-  
-  
+<div class="cryocopyright">
+  <!--<DIV style="MARGIN-TOP: 10px; FLOAT: left; MARGIN-LEFT: 5px; MARGIN-RIGHT: 10px">
+      <IMG alt="" src="http://images.cnblogs.com/cnblogs_com/oec2003/219566/123.jpg" width=90 height=100>
+  </DIV>-->
+  <div id="cryoinfo">
+    作者： <a href="http://cyberLuc.github.io/about">CyberLuc</a> <br/>
+    出处： <a href="http://cyberLuc.github.io">http://cyberLuc.github.io</a><br/>
+    本文基于 <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/" target="_blank">CC 创作共用版权协议(2.5 License)</a> ，要求<font class="cryobold">署名、非商业用途和保持一致</font>。本博未标明[转载]字样的文章均为原创。转载本博原创作品(内容)也必须遵循“署名-非商业用途-保持一致”的创作共用协议，请务必以文字链接的形式标明或保留文章<a href="./" target="_blank" class="cryobold">原始出处</a>和博客作者(<a href="http://cyberLuc.github.io/about" target="_blank"><font class="cryobold">CyberLuc</font></a>)的信息。本博客(原创)内容，一经转载，即表示您已经接受上述声明！
+  </div>
 </div>
 
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2013/07/31/clrs-2-2-analyzing-algorithm/" title="Previous Post: CLRS - Ch2.2 - Analyzing Algorithm">&laquo; CLRS - Ch2.2 - Analyzing Algorithm</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2013/08/07/algo-004-note-week-1/" title="Next Post: Algorithms - Week 1 - Note">Algorithms - Week 1 - Note &raquo;</a>
-      
+
     </p>
   </footer>
 </article>
 
-</div>
 
-<aside class="sidebar">
+<section id="disqus">
+  <h1 class="indent title">Comments</h1>
+  <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
   
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
+<section class="social aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">
+    Follow me!
+  </h1>
+  <ul class="unstyled">
+    
+    
+    <li><a class="github" href="//github.com/CyberLuc"><i class="icon-github"></i> Github</a></li>
+    
+    <li><a class="gplus" href="//plus.google.com/cyberluc29@gmail.com"><i class="icon-google-plus-sign"></i> Google+</a></li>
+    
+    
+    
+    <li><a class="twitter" href="//twitter.com/twi3325831@gmail.com"><i class="icon-twitter"></i> Twitter</a></li>
+    
+  </ul>
+</section>
+
+
+  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
     
       <li class="post">
         <a href="/blog/2013/08/07/algo-004-note-week-2/">Algorithms - Week 2 - Note</a>
@@ -493,43 +480,116 @@
   </ul>
 </section>
 
+<section id="github-repos" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">
+    GitHub Repos
+    
+  </h1>
+  <ul id="gh_repos" class="divided">
+    <li class="loading">
+      <i class="icon-spinner icon-spin"></i>
+    </li>
+  </ul>
+</section>
 
 
 
 
+</div>
+
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [ ['$', '$'] ],
+    displayMath: [ ['$$', '$$']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+
+<p class="copyright" style="text-align:center;">
+  Copyright &copy; 2014
   
-</aside>
+  CyberLuc
+  
 
+</p>
 
     </div>
   </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Your Name -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+</div>
 
-</footer>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+<script defer src="/javascripts/octopress.js"></script>
+
+
+
+
+<script>
+  var disqus_shortname = 'cyberluc29';
   
+    
+    // var disqus_developer = 1;
+    var disqus_identifier = 'http://cyberLuc.github.io/blog/2013/08/01/building-octopress-blog/';
+    var disqus_url = 'http://cyberLuc.github.io/blog/2013/08/01/building-octopress-blog/';
+    var disqus_script = 'embed.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'CyberLuc',
+      count: 0,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
 
 
 
 
 
 
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
+  </body>
 </html>

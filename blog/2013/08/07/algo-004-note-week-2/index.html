@@ -1,78 +1,71 @@
-
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Algorithms - Week 2 - Note - My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
   
-  <meta name="description" content="一、Master Method 前面对算法进行了一定程度的分析，这里要祭出一个分析利器：Master Method。 利用Master Method，可以快速、准确地判断D&amp;C类算法的时间复杂度，不过它的应用也有限制，比如只能用在划分的子问题大小相等的情况下。下面就来详细看看Master &hellip;">
-  <meta name="keywords" content="Algorithm, Coursera">
+    
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Algorithms - Week 2 - Note - CyberLuc's Blog</title>
+    <meta name="author" content="CyberLuc">
+    
+    <meta name="description" content="Algorithms - Week 2 - Note Aug 7th, 2013 Coursera Comments 一、Master Method
+前面对算法进行了一定程度的分析，这里要祭出一个分析利器：Master Method。 利用Master Method，可以快速、准确地判断D& &hellip;">
+    <meta name="keywords" content="Algorithm, Coursera">
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://cyberLuc.github.io/blog/2013/08/07/algo-004-note-week-2">
+    
+    <link href="/favicon.png" rel="icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="CyberLuc's Blog" type="application/atom+xml">
+  </head>
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
-  <link rel="canonical" href="http://CyberLuc.github.io/blog/2013/08/07/algo-004-note-week-2">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <body >
 
-  
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
 
-</head>
+    <div class="grid__item two-fifths lap-four-sixths palm-one-whole">
+  <a href="/" class="site-title">CyberLuc's Blog</a>
+</div>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">My Octopress Blog</a></h1>
-  
-    <h2>A blogging framework for hackers.</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
+<div class="grid__item three-fifths lap-two-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/">Blog</a></li>
 </ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:CyberLuc.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
+  </nav>
+</div>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="post">
   <header>
+  
+  <h1 class="title indent">Algorithms - Week 2 - Note</h1>
+  
+
+  
+  <div class="meta clearfix">
     
-      <h1 class="entry-title">Algorithms - Week 2 - Note</h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -84,129 +77,149 @@
   
 
 
-<time datetime="2013-08-07T21:03:00+08:00" pubdate data-updated="true">Aug 7<span>th</span>, 2013</time>
-        
-      </p>
+<time class="pull-left" datetime="2013-08-07T21:03:00+08:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2013</time>
     
-  </header>
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/coursera/'>Coursera</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
 
 
-<div class="entry-content"><h2>一、Master Method</h2>
 
+
+  <h2 id="master-method">一、Master Method</h2>
 <p>前面对算法进行了一定程度的分析，这里要祭出一个分析利器：<code>Master Method</code>。</p>
 
 <p>利用<code>Master Method</code>，可以快速、准确地判断D&amp;C类算法的时间复杂度，不过它的应用也有限制，比如只能用在划分的子问题大小相等的情况下。下面就来详细看看<code>Master Method</code>：</p>
 
+<!-- more -->
+
 <p>首先设：</p>
 
-<p>$$
+<script type="math/tex; mode=display">
 \begin{equation}
 \begin{aligned}
-T(n)=aT(\frac{n}{b})+O(n<sup>d</sup>)
+T(n)=aT(\frac{n}{b})+O(n^d)
 \end{aligned}
 \end{equation}
-$$</p>
+</script>
 
 <p>然后就能够根据a、b、d的值得到如下式子：</p>
 
-<p>$$
+<script type="math/tex; mode=display">% <![CDATA[
+
 \begin{equation}
 \begin{aligned}
 T(n)=
 \begin{cases}
-O(n<sup>dlogn</sup>) &amp;(a=b<sup>d</sup>)\
-O(n<sup>d</sup>) &amp;(a&lt;b<sup>d</sup>)\
-O(n^{log_ba}) &amp;(a>b<sup>d</sup>)
+O(n^dlogn) &(a=b^d)\\
+O(n^d) &(a<b^d)\\
+O(n^{log_ba}) &(a>b^d)
 \end{cases}
 \end{aligned}
 \end{equation}
-$$</p>
+ %]]></script>
 
 <p>这其中，$a$是每次<code>Divide</code>时划分出的子问题数量，$b$是每次<code>Divide</code>时子问题相对原问题的大小的倒数，<code>d</code>是递归之外的操作的幂。</p>
 
-<p>现在，根据$a$与$b<sup>d</sup>$的关系，我们就能够利用<code>Master Method</code>来进行算法分析了。</p>
+<p>现在，根据$a$与$b^d$的关系，我们就能够利用<code>Master Method</code>来进行算法分析了。</p>
 
 <p>首先来看看<code>Merge Sort</code>，它每次将数组划分为两个原大小二分之一的子数组，所以$a=b=2$，此外可知$d=1$。
-所以$2=2<sup>1</sup>$，即$a=b<sup>d</sup>$。显然，$T(n)=O(nlog_2n)$。</p>
+所以$2=2^1$，即$a=b^d$。显然，$T(n)=O(nlog_2n)$。</p>
 
 <p>对于<code>Karatsuba Multiplication</code>而言，$a=3，b=2，d=0$，所以$T(n)=O(n^{log_23})$。</p>
 
-<p>对于<code>Binary Search</code>而言，$a=1，b=2，d=0$，所以$T(n)=O(n<sup>0log</sup>_2n)=O(log_2n)$。</p>
+<p>对于<code>Binary Search</code>而言，$a=1，b=2，d=0$，所以$T(n)=O(n^0log<em>2n)=O(log</em>2n)$。</p>
 
-<h3>Proof &ndash; 证明</h3>
-
+<h3 id="proof---">Proof - 证明</h3>
 <p>把上面的三种情况给记住就能应付相当一部分的分析了，不过为了更深入的理解<code>Master Method</code>，我们看看这三种情况是怎么来的。</p>
 
 <p>首先我们把$T(n)$改写一下：</p>
 
-<p>$$
+<script type="math/tex; mode=display">
 \begin{equation}
 \begin{aligned}
-T(n)=aT(\frac{n}{b})+cn<sup>d</sup>
+T(n)=aT(\frac{n}{b})+cn^d
 \end{aligned}
 \end{equation}
-$$</p>
+</script>
 
-<p>前面对<code>Merge Sort</code>的分析时已经提到了在<code>Recursion Tree</code>中每一层的节点数与子问题大小以及树的深度的问题，将$2$等数字用对应的字母替换，得到<code>第j层节点数</code>$a<sup>j</sup>$，<code>第j层子问题大小</code>为$\frac{n}{b<sup>j</sup>}$，<code>树的深度</code>也就是层数为$log_bn+1$。</p>
+<p>前面对<code>Merge Sort</code>的分析时已经提到了在<code>Recursion Tree</code>中每一层的节点数与子问题大小以及树的深度的问题，将$2$等数字用对应的字母替换，得到<code>第j层节点数</code>$a^j$，<code>第j层子问题大小</code>为$\frac{n}{b^j}$，<code>树的深度</code>也就是层数为$log_bn+1$。</p>
 
-<p>那么可以得到<code>第j层的操作量</code>$ a<sup>j</sup> \times c(\frac{n}{b<sup>j</sup>})<sup>d</sup>=cn<sup>d</sup>\times (\frac{a}{b<sup>d</sup>})<sup>j</sup>$。</p>
+<p>那么可以得到<code>第j层的操作量</code>$ a^j \times c(\frac{n}{b^j})^d=cn^d\times (\frac{a}{b^d})^j$。</p>
 
-<p>将每一层的操作量加起来，得到<code>总的操作量</code>$cn<sup>d</sup> \sum_{j=0}^{log_bn}{(\frac{a}{b<sup>d</sup>})<sup>j</sup>}$。</p>
+<p>将每一层的操作量加起来，得到<code>总的操作量</code>$cn^d \sum_{j=0}^{log_bn}{(\frac{a}{b^d})^j}$。</p>
 
-<p>很明显，可以看出这个式子右边部分是一个<code>等比数列</code>，公比就为$\frac{a}{b<sup>d</sup>}$，而它的大小对于原式的大小有很大的影响。</p>
+<p>很明显，可以看出这个式子右边部分是一个<code>等比数列</code>，公比就为$\frac{a}{b^d}$，而它的大小对于原式的大小有很大的影响。</p>
 
 <p>Tim教授提到：</p>
 
 <p>$a$ = <code>Rate of Subproblem Proliferation - (RSP)</code>，也就是<code>子问题的增长率</code>，这个数越大当然算法就运行得越慢。</p>
 
-<p>$b<sup>d</sup>$ = <code>Rate of Work Shrinkage - (RWS)</code>，也就是<code>操作量的收缩率</code>，这个数当然越大越好了。至于为什么这个数是$b<sup>d</sup>$而不是$b$，原因是仅知道$b$的大小在这里对于我们用处不大，我们真正需要的不是子问题大小的收缩率，而是解决子问题所需进行的递归操作之外的操作量的收缩率。对于<code>Merge Sort</code>而言，$b=2，d=1$，所以子问题的收缩率为$\frac{1}{2}$，解决子问题的操作量的收缩率也为$\frac{1}{2}$。而假如$b=2，d=2$，那么每次divide后的子问题只有原本的$\frac{1}{2}$大小，而需要进行的操作量为原本的$\frac{1}{4}$。</p>
+<p>$b^d$ = <code>Rate of Work Shrinkage - (RWS)</code>，也就是<code>操作量的收缩率</code>，这个数当然越大越好了。至于为什么这个数是$b^d$而不是$b$，原因是仅知道$b$的大小在这里对于我们用处不大，我们真正需要的不是子问题大小的收缩率，而是解决子问题所需进行的递归操作之外的操作量的收缩率。对于<code>Merge Sort</code>而言，$b=2，d=1$，所以子问题的收缩率为$\frac{1}{2}$，解决子问题的操作量的收缩率也为$\frac{1}{2}$。而假如$b=2，d=2$，那么每次divide后的子问题只有原本的$\frac{1}{2}$大小，而需要进行的操作量为原本的$\frac{1}{4}$。</p>
 
-<p>所以，公比$\frac{a}{b<sup>d</sup>}$就是<code>子问题增长率（RSP）</code>与<code>解决子问题所需操作量的收缩率（RWS）</code>的比值。如果比值<code>大于1</code>，那么增长率大于收缩率，<code>Recursion Tree</code>每一级所需要的操作量处于递增状态；如果比值<code>等于1</code>，那么每一级所要的操作量不变；而如果比值<code>小于1</code>，每一级所需要的操作量处于递减状态。</p>
+<p>所以，公比$\frac{a}{b^d}$就是<code>子问题增长率（RSP）</code>与<code>解决子问题所需操作量的收缩率（RWS）</code>的比值。如果比值<code>大于1</code>，那么增长率大于收缩率，<code>Recursion Tree</code>每一级所需要的操作量处于递增状态；如果比值<code>等于1</code>，那么每一级所要的操作量不变；而如果比值<code>小于1</code>，每一级所需要的操作量处于递减状态。</p>
 
-<p>首先来看第一种情况，<code>RSP=RWS</code>，即$a=b<sup>d</sup>$。此时<code>Recursion Tree</code>各级操作量不变。原式右半部分等比数列的和显然为$log_bn+1$，所以原式等于$cn<sup>d</sup>(log_bn+1)$，即为$O(n<sup>dlog</sup>_2n)$。注意，无论$log_bn$中$b$为多少，它始终为$clog_2n=Θ(log_2n)$，使用换底公式即可推得。</p>
+<p>首先来看第一种情况，<code>RSP=RWS</code>，即$a=b^d$。此时<code>Recursion Tree</code>各级操作量不变。原式右半部分等比数列的和显然为$log_bn+1$，所以原式等于$cn^d(log_bn+1)$，即为$O(n^dlog<em>2n)$。注意，无论$log_bn$中$b$为多少，它始终为$clog</em>2n=Θ(log_2n)$，使用换底公式即可推得。</p>
 
-<p>第二种情况，<code>RSP&lt;RWS</code>，即$a&lt;b<sup>d</sup>$。此时<code>Recursion Tree</code>各级操作量递减。对于原式右边的等比数列，因为a、b、d是与n无关的常数，且$\frac{a}{b<sup>d</sup>}&lt;1$，由求和公式可得：</p>
+<p>第二种情况，<code>RSP&lt;RWS</code>，即$a&lt;b^d$。此时<code>Recursion Tree</code>各级操作量递减。对于原式右边的等比数列，因为a、b、d是与n无关的常数，且$\frac{a}{b^d}&lt;1$，由求和公式可得：</p>
 
-<p>$$
+<script type="math/tex; mode=display">% <![CDATA[
+
 \begin{equation}
 \begin{aligned}
-\sum_{j=0}^{log_bn}{(\frac{a}{b<sup>d</sup>})<sup>j</sup>}&amp;=\frac{1-{\frac{a}{b<sup>d</sup>}}^{log_bn+1}}{1-\frac{a}{b<sup>d</sup>}}\
-&amp; \leqslant \frac{1}{1-\frac{a}{b<sup>d</sup>}}
+\sum_{j=0}^{log_bn}{(\frac{a}{b^d})^j}&=\frac{1-{\frac{a}{b^d}}^{log_bn+1}}{1-\frac{a}{b^d}}\\
+& \leqslant \frac{1}{1-\frac{a}{b^d}}
 \end{aligned}
 \end{equation}
-$$</p>
+ %]]></script>
 
-<p>等比数列和小于等于一个常数，所以时间复杂度为$O(cn<sup>d</sup>\times \frac{1}{1-\frac{a}{b<sup>d</sup>}})=O(n<sup>d</sup>)$。在整个递归调用的过程中，根一级的操作数量最大，为$cn<sup>d</sup>$，因为各级操作量呈等比递减，其它各级相加无非是增加了$cn<sup>d</sup>$的常数项系数，即为$O(n<sup>d</sup>)$。</p>
+<p>等比数列和小于等于一个常数，所以时间复杂度为$O(cn^d\times \frac{1}{1-\frac{a}{b^d}})=O(n^d)$。在整个递归调用的过程中，根一级的操作数量最大，为$cn^d$，因为各级操作量呈等比递减，其它各级相加无非是增加了$cn^d$的常数项系数，即为$O(n^d)$。</p>
 
-<p>第三种情况，<code>RSP&gt;RWS</code>，即$a>b<sup>d</sup>$。此时<code>Recursion Tree</code>各级操作量递增。对于原式右边的等比数列，因为a、b、d是与n无关的常数，且$\frac{a}{b<sup>d</sup>}>1$，由求和公式可得：</p>
+<p>第三种情况，<code>RSP&gt;RWS</code>，即$a&gt;b^d$。此时<code>Recursion Tree</code>各级操作量递增。对于原式右边的等比数列，因为a、b、d是与n无关的常数，且$\frac{a}{b^d}&gt;1$，由求和公式可得：</p>
 
-<p>$$
+<script type="math/tex; mode=display">% <![CDATA[
+
 \begin{equation}
 \begin{aligned}
-\sum_{j=0}^{log_bn}{(\frac{a}{b<sup>d</sup>})<sup>j</sup>}&amp;=\frac{ {\frac{a}{b<sup>d</sup>}}^{log_bn+1}-1}{\frac{a}{b<sup>d</sup>}-1}\
-&amp; \leqslant \frac{ {\frac{a}{b<sup>d</sup>}}^{log_bn+1}}{\frac{a}{b<sup>d</sup>}-1}\
-&amp; = {\frac{a}{b<sup>d</sup>}}^{log_bn}\times \frac{\frac{a}{b<sup>d</sup>}}{\frac{a}{b<sup>d</sup>}-1}\</p>
+\sum_{j=0}^{log_bn}{(\frac{a}{b^d})^j}&=\frac{ {\frac{a}{b^d}}^{log_bn+1}-1}{\frac{a}{b^d}-1}\\
+& \leqslant \frac{ {\frac{a}{b^d}}^{log_bn+1}}{\frac{a}{b^d}-1}\\
+& = {\frac{a}{b^d}}^{log_bn}\times \frac{\frac{a}{b^d}}{\frac{a}{b^d}-1}\\
 
-<p>∵\frac{\frac{a}{b<sup>d</sup>}}{\frac{a}{b<sup>d</sup>}-1}为常数\
-∴O(cn<sup>d</sup> \sum_{j=0}^{log_bn}{(\frac{a}{b<sup>d</sup>})<sup>j</sup>})&amp;=O(n<sup>d</sup>\times {\frac{a}{b<sup>d</sup>}}^{log_bn})\
-&amp;=O(n<sup>d</sup> \times \frac{n^{log_ba}}{n<sup>d</sup>})\
-&amp;=O(n^{log_ba})
+∵\frac{\frac{a}{b^d}}{\frac{a}{b^d}-1}为常数\\
+∴O(cn^d \sum_{j=0}^{log_bn}{(\frac{a}{b^d})^j})&=O(n^d\times {\frac{a}{b^d}}^{log_bn})\\
+&=O(n^d \times \frac{n^{log_ba}}{n^d})\\
+&=O(n^{log_ba})
 \end{aligned}
 \end{equation}
-$$</p>
+ %]]></script>
 
 <p>这种情况下，在整个递归调用的过程中，叶子一级的操作量最大，因为各级操作量呈等比递增，其它各级相加也无非是增加了叶子节点操作量的常数项系数。又因为每个叶子节点的操作量为常数$c$，所以时间复杂度为$O(c\times叶子节点数)=O(a^{log_bn})=O(n^{log_ba})$。</p>
 
 <p>了解了上面的过程后，我们就可以方便地使用<code>Master Method</code>来分析算法的复杂度了～</p>
 
-<h2>二、Quick Sort &ndash; 快速排序</h2>
-
+<h2 id="quick-sort---">二、Quick Sort - 快速排序</h2>
 <p>快速排序是在实际情况中较常使用的一种排序算法，在C++的STL中就提供了qsort函数。不过我们还是来看看快速排序算法究竟是如何实现的。</p>
 
-<p><code>Quick Sort</code>算法同样采用了D&amp;C的设计思路，不过它的排序方法相较<code>Merge Sort</code>来说更为奇特。在<code>Worst Case</code>下，快速排序算法的算法时间复杂度为$Θ(n<sup>2</sup>)$，而在<code>Best Case</code>下为$Θ(n)$，平均复杂度为$Θ(nlog_2n)$。虽然它的平均运行时间才为$Θ(nlog_2n)$，而归并排序的<code>Worst Case</code>下运行时间就为$Θ(nlog_2n)$，但是快排在实际中一般仍然优于归并，这是因为算法时间复杂度并不能直接代表算法运行的快慢——只能表示运行时间增长的速度而已，毕竟常数项系数已经被隐去了。而快排在排序中是<code>In-Place</code>的，不需要额外建立数组并且复制回原数组，所以它的常数项系数要比归并小，总的来说仍然比归并快。</p>
+<p><code>Quick Sort</code>算法同样采用了D&amp;C的设计思路，不过它的排序方法相较<code>Merge Sort</code>来说更为奇特。在<code>Worst Case</code>下，快速排序算法的算法时间复杂度为$Θ(n^2)$，而在<code>Best Case</code>下为$Θ(n)$，平均复杂度为$Θ(nlog<em>2n)$。虽然它的平均运行时间才为$Θ(nlog</em>2n)$，而归并排序的<code>Worst Case</code>下运行时间就为$Θ(nlog_2n)$，但是快排在实际中一般仍然优于归并，这是因为算法时间复杂度并不能直接代表算法运行的快慢——只能表示运行时间增长的速度而已，毕竟常数项系数已经被隐去了。而快排在排序中是<code>In-Place</code>的，不需要额外建立数组并且复制回原数组，所以它的常数项系数要比归并小，总的来说仍然比归并快。</p>
 
-<h3>算法实现</h3>
-
+<h3 id="section">算法实现</h3>
 <p>快速排序算法的思路也很清晰，如下：</p>
 
 <p><strong><em>Divide：</em></strong>选定<code>pivot</code>，将比<code>pivot</code>小的元素排列在<code>pivot</code>左边，比<code>pivot</code>大的元素排列在其右边。</p>
@@ -217,163 +230,164 @@ $$</p>
 
 <p>下面给出具体的C语言实现代码：</p>
 
-<figure class='code'><figcaption><span>Quick Sort.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">b</span><span class="p">){</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="o">*</span><span class="n">a</span><span class="p">;</span>
-</span><span class='line'>    <span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="o">*</span><span class="n">b</span><span class="p">;</span>
-</span><span class='line'>    <span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="kt">int</span> <span class="nf">partition</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">left</span><span class="p">,</span> <span class="kt">int</span> <span class="n">right</span><span class="p">){</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">pivot</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">pivot</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">];</span>          <span class="cm">/* 选择数组第一个元素作为pivot */</span>
-</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="n">left</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>  <span class="cm">/* i指向当前元素，j指向大于pivot的第一个元素 */</span>
-</span><span class='line'>        <span class="k">if</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">){</span>
-</span><span class='line'>            <span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span> <span class="cm">/* 若当前元素小于pivot，则将其与大于pivot的第一个元素交换 */</span>
-</span><span class='line'>            <span class="n">j</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>    <span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span> <span class="cm">/* 将pivot放到合适的位置 */</span>
-</span><span class='line'>    <span class="k">return</span> <span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="kt">void</span> <span class="nf">quickSort</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">left</span><span class="p">,</span> <span class="kt">int</span> <span class="n">right</span><span class="p">){</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">left</span> <span class="o">&gt;=</span> <span class="n">right</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">pivot</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">quickSort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">quickSort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">right</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Quick Sort.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">b</span><span class="p">){</span>
+</span><span class="line">    <span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="o">*</span><span class="n">a</span><span class="p">;</span>
+</span><span class="line">    <span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="o">*</span><span class="n">b</span><span class="p">;</span>
+</span><span class="line">    <span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line"><span class="kt">int</span> <span class="nf">partition</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">left</span><span class="p">,</span> <span class="kt">int</span> <span class="n">right</span><span class="p">){</span>
+</span><span class="line">    <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">pivot</span><span class="p">;</span>
+</span><span class="line">    <span class="n">pivot</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">];</span>          <span class="cm">/* 选择数组第一个元素作为pivot */</span>
+</span><span class="line">    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="n">left</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>  <span class="cm">/* i指向当前元素，j指向大于pivot的第一个元素 */</span>
+</span><span class="line">        <span class="k">if</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">){</span>
+</span><span class="line">            <span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span> <span class="cm">/* 若当前元素小于pivot，则将其与大于pivot的第一个元素交换 */</span>
+</span><span class="line">            <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+</span><span class="line">        <span class="p">}</span>
+</span><span class="line">    <span class="p">}</span>
+</span><span class="line">    <span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span> <span class="cm">/* 将pivot放到合适的位置 */</span>
+</span><span class="line">    <span class="k">return</span> <span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line"><span class="kt">void</span> <span class="nf">quickSort</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">left</span><span class="p">,</span> <span class="kt">int</span> <span class="n">right</span><span class="p">){</span>
+</span><span class="line">    <span class="k">if</span><span class="p">(</span><span class="n">left</span> <span class="o">&gt;=</span> <span class="n">right</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+</span><span class="line">    <span class="kt">int</span> <span class="n">pivot</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">);</span>
+</span><span class="line">    <span class="n">quickSort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span><span class="line">    <span class="n">quickSort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">right</span><span class="p">);</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-<h3>算法分析</h3>
-
+<h3 id="section-1">算法分析</h3>
 <p>由上面的算法描述可知，每一次partition时，都将选定的pivot排到了正确的位置，并进一步缩小待排序的数组大小，减少可能的比较次数。</p>
 
 <p>快速排序的运行时间取决于partition的步骤时分出的左右两个数组是否平衡。分析时的情况时选取pivot为数组第一个元素。</p>
 
-<h4>Worst Case</h4>
-
+<h4 id="worst-case">Worst Case</h4>
 <p><code>Worst Case</code>是快速排序算法Partition时最不平衡的一种情况，在这种情况下，每次partition都将现有n个元素的数组分为大小为0和n-1的两个数组，于是这个算法的运行时间递推式就和线性搜索的递归实现的分析类似了，不同的是快速排序算法每一次partition是线性复杂度。所以可以得到：</p>
 
-<p>$$
+<script type="math/tex; mode=display">% <![CDATA[
+
 \begin{equation}
 \begin{aligned}
-T(n)&amp;=T(n-1)+T(0)+Θ(n)\
-&amp;=T(n-1)+Θ(n)\
-&amp;=Θ(n<sup>2</sup>)
+T(n)&=T(n-1)+T(0)+Θ(n)\\
+&=T(n-1)+Θ(n)\\
+&=Θ(n^2)
 \end{aligned}
 \end{equation}
-$$</p>
+ %]]></script>
 
-<p>这个时候数组的元素为已经排好序的状态，不过进一步可以验证得到，无论输入数组是正向排好序还是逆向排好序，快速排序的运行时间均为$Θ(n<sup>2</sup>)$，这一点和插入排序等算法存在差异，后者此时对于按要求排好序的数组的运行时间反而仅为$Θ(n)$。所以，当需要排序的元素已经一定程度上排好序的时候，选择快排还需谨慎啊。</p>
+<p>这个时候数组的元素为已经排好序的状态，不过进一步可以验证得到，无论输入数组是正向排好序还是逆向排好序，快速排序的运行时间均为$Θ(n^2)$，这一点和插入排序等算法存在差异，后者此时对于按要求排好序的数组的运行时间反而仅为$Θ(n)$。所以，当需要排序的元素已经一定程度上排好序的时候，选择快排还需谨慎啊。</p>
 
-<h4>Best Case</h4>
-
+<h4 id="best-case">Best Case</h4>
 <p>最为理想的平衡情况就是每次pivot都选取到中间大小的元素，所以每一次partition都将数组分为两个近似$\frac{n}{2}$大小的子数组（要排除pivot这个元素）。我们忽略一些细节，可以得到：</p>
 
-<p>$$
+<script type="math/tex; mode=display">% <![CDATA[
+
 \begin{equation}
 \begin{aligned}
-T(n)&amp;=2T(\frac{n}{2})+Θ(n)\
-&amp;=Θ(nlog_2n)
+T(n)&=2T(\frac{n}{2})+Θ(n)\\
+&=Θ(nlog_2n)
 \end{aligned}
 \end{equation}
-$$</p>
+ %]]></script>
 
-<h4>Balenced Partitioning</h4>
-
+<h4 id="balenced-partitioning">Balenced Partitioning</h4>
 <p>如果不按照$1:1$的比例划分数组而是按照其它的比例划分，那么partition还是平衡的吗？</p>
 
 <p>下面假设每次partition将数组划分为$\frac{1}{10}$和$\frac{9}{10}$的两个部分，我们可以得到递推式：</p>
 
-<p>$$
+<script type="math/tex; mode=display">% <![CDATA[
+
 \begin{equation}
 \begin{aligned}
-T(n)&amp;=T(\frac{9n}{10})+T(\frac{n}{10})+cn
+T(n)&=T(\frac{9n}{10})+T(\frac{n}{10})+cn
 \end{aligned}
 \end{equation}
-$$</p>
+ %]]></script>
 
 <p>粗看上去是一个极不平衡的划分，不过我们可以来仔细的看一下，用<code>Recursion Tree</code>进行分析。因为每次将数组划分为9:1的比例，所以划分为$\frac{1}{10}$的数组肯定比另一部分要先到达叶子部分，此时每一层的消耗均为cn，从这一层开始，因为不再是满二叉树了，每一层节点数减少，所以每一层的消耗已经小于cn，综合起来每一层消耗即$O(n)$。</p>
 
-<p>所以Recursion Tree的<code>Minimum Depth</code>为$log_{10}n=Θ(log_2n)$。</p>
+<p>所以Recursion Tree的<code>Minimum Depth</code>为$log<em>{10}n=Θ(log</em>2n)$。</p>
 
-<p>而<code>Maximum Depth</code>则为$log_{\frac{10}{9}}n=Θ(log_2n)$。</p>
+<p>而<code>Maximum Depth</code>则为$log<em>{\frac{10}{9}}n=Θ(log</em>2n)$。</p>
 
 <p>综上可得，$T(n)=O(nlog_2n)$，可见这仍旧是一个平衡的划分。</p>
 
 <p>我们将其一般化，假设常数$0&lt;α\leqslant\frac{1}{2}$作为左子数组的划分大小，那么右子数组则划分为$1-α$，可得：</p>
 
-<p>$$
+<script type="math/tex; mode=display">% <![CDATA[
+
 \begin{equation}
 \begin{aligned}
-T(n)&amp;=T(αn)+T((1-α)n)+cn
+T(n)&=T(αn)+T((1-α)n)+cn
 \end{aligned}
 \end{equation}
-$$</p>
+ %]]></script>
 
 <p><code>Minimum Depth</code>为：</p>
 
-<p>$$
+<script type="math/tex; mode=display">% <![CDATA[
+
 \begin{equation}
 \begin{aligned}
-log_{\frac{1}{α}}n&amp;=\frac{log_2n}{log_2{\frac{1}{α}}}\
-&amp;=Θ(log_2n)
+log_{\frac{1}{α}}n&=\frac{log_2n}{log_2{\frac{1}{α}}}\\
+&=Θ(log_2n)
 \end{aligned}
 \end{equation}
-$$</p>
+ %]]></script>
 
 <p><code>Maximum Depth</code>则为：</p>
 
-<p>$$
+<script type="math/tex; mode=display">% <![CDATA[
+
 \begin{equation}
 \begin{aligned}
-log_{\frac{1}{1-α}}n&amp;=\frac{log_2n}{log_2{\frac{1}{1-α}}}\
-&amp;=Θ(log_2n)
+log_{\frac{1}{1-α}}n&=\frac{log_2n}{log_2{\frac{1}{1-α}}}\\
+&=Θ(log_2n)
 \end{aligned}
 \end{equation}
-$$</p>
+ %]]></script>
 
 <p>可知每层的消耗还是不变，仍旧为$O(n)$，所以这几个量没有任何变化，$T(n)$仍旧为$O(nlog_2n)$。</p>
 
 <p>所以，无关划分的大小，只要每一次partition时进行的划分是<code>固定比例</code>的，运行时间总是$O(nlog_2n)$，只是被Big-Oh隐藏住的常数项系数可能会大一点。</p>
 
-<h3>Random Pivots</h3>
-
+<h3 id="random-pivots">Random Pivots</h3>
 <p>上面分析了各种比例下的时间复杂度，不过在实际的情况中几乎不可能每一次partition都是固定比例。为了使算法的复杂度充分靠近$(nlog_2n)$，我们采用随机的方法选取pivot。</p>
 
-<h2>Correctness of Quick Sort</h2>
-
+<h2 id="correctness-of-quick-sort">Correctness of Quick Sort</h2>
 <p>前面我们已经学习了归并和快速排序算法，通常情况下从算法的实现原理与步骤上我们就能看出算法可以正确无误地运行，事实上这两个算法也确实如此。不过这两个算法到底为什么是正确的呢？如果严谨一点儿的话，就不能仅仅凭借直觉来判断算法正确与否了，所以<code>Professor Tim</code>介绍了使用归纳法来进行正确性证明的方法。</p>
 
 <p>数学归纳法可以概括为以下三步：</p>
 
-<blockquote><p>(1)归纳奠基：证明n=1时命题成立；</p>
+<blockquote>
+  <p>(1)归纳奠基：证明n=1时命题成立；</p>
 
-<p>(2)归纳假设：假设n=k时命题成立；</p>
+  <p>(2)归纳假设：假设n=k时命题成立；</p>
 
-<p>(3)归纳递推：由归纳假设推出n=k+1时命题也成立。</p></blockquote>
+  <p>(3)归纳递推：由归纳假设推出n=k+1时命题也成立。</p>
+</blockquote>
 
 <p>当用它来进行算法正确性证明的时候，也是采用类似的步骤，但是稍有不同。</p>
 
@@ -389,19 +403,20 @@ $$</p>
 
 <p>因为<code>Quick Sort</code>的实质是用partition对数组进行划分，每次将数组划分为左右两个数组，因为<code>pivot</code>元素不被包括在其中，所以两个数组的大小都严格小于n。由<code>Inductive Hypothesis</code>（$p(k)对于所有k&lt;n$均成立）可得，划分的两个子数组都能够被正确排列，继而整个数组处于排好序的状态。还可以继续对这两个子数组进行归纳证明，直到<code>base case</code>。不过根据<code>Inductive Hypothesis</code>，<code>Quick Sort</code>的正确性已经被证明了。</p>
 
-<h3>Loop Invariant &ndash; 循环不变式</h3>
-
+<h3 id="loop-invariant---">Loop Invariant - 循环不变式</h3>
 <p>在CLRS中还提出了<strong>Loop Invariant</strong>的概念，从数学上对算法中循环的正确性进行证明。</p>
 
 <p><strong>Loop Invariant</strong>是数学归纳法的一种变体，它和数学归纳法几乎完全相同，都是先证明一个初始条件为真，然后逐条递推，唯一的区别在于数学归纳法是将归纳步骤无限进行下去，证明了第n步再继续证明第n+1步，而Loop Invariant则是要在某一步停止，也就是当完成了循环的条件时。</p>
 
 <p>书中列出了应用Loop Invariant的三个步骤：</p>
 
-<blockquote><p><strong>Initialization</strong>: It is true prior to the first iteration of the loop.</p>
+<blockquote>
+  <p><strong>Initialization</strong>: It is true prior to the first iteration of the loop.</p>
 
-<p><strong>Maintenance</strong>: If it is true before an iteration of the loop, it remains true before the next iteration.</p>
+  <p><strong>Maintenance</strong>: If it is true before an iteration of the loop, it remains true before the next iteration.</p>
 
-<p><strong>Termination</strong>: When the loop terminates, the invariant gives us a useful property that hepls show that the algorithm is correct.</p></blockquote>
+  <p><strong>Termination</strong>: When the loop terminates, the invariant gives us a useful property that hepls show that the algorithm is correct.</p>
+</blockquote>
 
 <p>然后这里就用循环不变式对上面提到的Insertion Sort进行检验。</p>
 
@@ -412,65 +427,68 @@ $$</p>
 <p><strong>Termination：</strong>最后就是循环结束了。当循环结束时<code>i=num+1</code>，此时<code>A[1...i-1]</code>就是<code>A[1...num]</code>，也就是整个数组，可知是处于排好序的状态。</p>
 
 <p>至此，就用类似数学归纳法的Loop Invariant将完全由循环构成的Insertion Sort的算法正确性给证明了。</p>
-</div>
 
 
   <footer>
     <p class="meta">
-      
-  
-
-<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
-
-      
-
-
-
-
-
-
-
+            
 
   
 
-
-<time datetime="2013-08-07T21:03:00+08:00" pubdate data-updated="true">Aug 7<span>th</span>, 2013</time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/coursera/'>Coursera</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://CyberLuc.github.io/blog/2013/08/07/algo-004-note-week-2/" data-via="" data-counturl="http://CyberLuc.github.io/blog/2013/08/07/algo-004-note-week-2/" >Tweet</a>
-  
-  
-  
+<div class="cryocopyright">
+  <!--<DIV style="MARGIN-TOP: 10px; FLOAT: left; MARGIN-LEFT: 5px; MARGIN-RIGHT: 10px">
+      <IMG alt="" src="http://images.cnblogs.com/cnblogs_com/oec2003/219566/123.jpg" width=90 height=100>
+  </DIV>-->
+  <div id="cryoinfo">
+    作者： <a href="http://cyberLuc.github.io/about">CyberLuc</a> <br/>
+    出处： <a href="http://cyberLuc.github.io">http://cyberLuc.github.io</a><br/>
+    本文基于 <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/" target="_blank">CC 创作共用版权协议(2.5 License)</a> ，要求<font class="cryobold">署名、非商业用途和保持一致</font>。本博未标明[转载]字样的文章均为原创。转载本博原创作品(内容)也必须遵循“署名-非商业用途-保持一致”的创作共用协议，请务必以文字链接的形式标明或保留文章<a href="./" target="_blank" class="cryobold">原始出处</a>和博客作者(<a href="http://cyberLuc.github.io/about" target="_blank"><font class="cryobold">CyberLuc</font></a>)的信息。本博客(原创)内容，一经转载，即表示您已经接受上述声明！
+  </div>
 </div>
 
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2013/08/07/algo-004-note-week-1/" title="Previous Post: Algorithms - Week 1 - Note">&laquo; Algorithms - Week 1 - Note</a>
-      
-      
+
     </p>
   </footer>
 </article>
 
-</div>
 
-<aside class="sidebar">
+<section id="disqus">
+  <h1 class="indent title">Comments</h1>
+  <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
   
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
+<section class="social aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">
+    Follow me!
+  </h1>
+  <ul class="unstyled">
+    
+    
+    <li><a class="github" href="//github.com/CyberLuc"><i class="icon-github"></i> Github</a></li>
+    
+    <li><a class="gplus" href="//plus.google.com/cyberluc29@gmail.com"><i class="icon-google-plus-sign"></i> Google+</a></li>
+    
+    
+    
+    <li><a class="twitter" href="//twitter.com/twi3325831@gmail.com"><i class="icon-twitter"></i> Twitter</a></li>
+    
+  </ul>
+</section>
+
+
+  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
     
       <li class="post">
         <a href="/blog/2013/08/07/algo-004-note-week-2/">Algorithms - Week 2 - Note</a>
@@ -495,43 +513,116 @@ $$</p>
   </ul>
 </section>
 
+<section id="github-repos" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">
+    GitHub Repos
+    
+  </h1>
+  <ul id="gh_repos" class="divided">
+    <li class="loading">
+      <i class="icon-spinner icon-spin"></i>
+    </li>
+  </ul>
+</section>
 
 
 
 
+</div>
+
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [ ['$', '$'] ],
+    displayMath: [ ['$$', '$$']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+
+<p class="copyright" style="text-align:center;">
+  Copyright &copy; 2014
   
-</aside>
+  CyberLuc
+  
 
+</p>
 
     </div>
   </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Your Name -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+</div>
 
-</footer>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+<script defer src="/javascripts/octopress.js"></script>
+
+
+
+
+<script>
+  var disqus_shortname = 'cyberluc29';
   
+    
+    // var disqus_developer = 1;
+    var disqus_identifier = 'http://cyberLuc.github.io/blog/2013/08/07/algo-004-note-week-2/';
+    var disqus_url = 'http://cyberLuc.github.io/blog/2013/08/07/algo-004-note-week-2/';
+    var disqus_script = 'embed.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'CyberLuc',
+      count: 0,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
 
 
 
 
 
 
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
+  </body>
 </html>

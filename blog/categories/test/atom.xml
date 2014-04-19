@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Test | My Octopress Blog]]></title>
-  <link href="http://CyberLuc.github.io/blog/categories/test/atom.xml" rel="self"/>
-  <link href="http://CyberLuc.github.io/"/>
-  <updated>2014-04-19T09:56:51+08:00</updated>
-  <id>http://CyberLuc.github.io/</id>
+  <title><![CDATA[Category: Test | CyberLuc's Blog]]></title>
+  <link href="http://cyberLuc.github.io/blog/categories/test/atom.xml" rel="self"/>
+  <link href="http://cyberLuc.github.io/"/>
+  <updated>2014-04-19T11:39:40+08:00</updated>
+  <id>http://cyberLuc.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[CyberLuc]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,66 +15,60 @@
   
   <entry>
     <title type="html"><![CDATA[测试001]]></title>
-    <link href="http://CyberLuc.github.io/blog/2013/07/31/test001/"/>
+    <link href="http://cyberLuc.github.io/blog/2013/07/31/test001/"/>
     <updated>2013-07-31T12:52:00+08:00</updated>
-    <id>http://CyberLuc.github.io/blog/2013/07/31/test001</id>
+    <id>http://cyberLuc.github.io/blog/2013/07/31/test001</id>
     <content type="html"><![CDATA[<p>这是Octopress部分功能的测试</p>
 
 <!--more-->
 
+<p>This is some text.<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. Other text.<sup id="fnref:footnote"><a href="#fn:footnote" rel="footnote">2</a></sup>.</p>
 
-<p>This is some text.<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. Other text.<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
-
-<p><del>
-Here comes some code.
-</del></p>
+<pre><code>Here comes some code.
+</code></pre>
 
 <p>测试一下数学公式</p>
 
-<p>$X_1, X_2, X_3$</p>
+<p>$X<em>1, X</em>2, X_3$</p>
 
-<p>$$
+<script type="math/tex; mode=display">% &lt;![CDATA[
+
 \begin{align*}
-  &amp; \phi(x,y) = \phi \left(\sum<em>{i=1}^n x_ie_i, \sum</em>{j=1}^n y_je_j \right)
-  = \sum<em>{i=1}^n \sum</em>{j=1}^n x_i y_j \phi(e_i, e_j) = \
-  &amp; (x_1, \ldots, x_n) \left( \begin{array}{ccc}</p>
+  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
+  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
+      \vdots & \ddots & \vdots \\
+      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
+    \end{array} \right)
+  \left( \begin{array}{c}
+      y_1 \\
+      \vdots \\
+      y_n
+    \end{array} \right)
+\end{align*}
+ %]]&gt;</script>
 
-<pre><code>  \phi(e_1, e_1) &amp; \cdots &amp; \phi(e_1, e_n) \\
-  \vdots &amp; \ddots &amp; \vdots \\
-  \phi(e_n, e_1) &amp; \cdots &amp; \phi(e_n, e_n)
-\end{array} \right)
-</code></pre>
+<script type="math/tex; mode=display">% &lt;![CDATA[
 
-<p>  \left( \begin{array}{c}</p>
-
-<pre><code>  y_1 \\
-  \vdots \\
-  y_n
-\end{array} \right)
-</code></pre>
-
-<p>\end{align*}
-$$</p>
-
-<p>$$
 \begin{align}
-\mbox{Union: } &amp; A\cup B = {x\mid x\in A \mbox{ or } x\in B} \
-\mbox{Concatenation: } &amp; A\circ B  = {xy\mid x\in A \mbox{ and } y\in B} \
-\mbox{Star: } &amp; A^\star  = {x_1x_2\ldots x_k \mid  k\geq 0 \mbox{ and each } x_i\in A} \
+\mbox{Union: } & A\cup B = \{x\mid x\in A \mbox{ or } x\in B\} \\
+\mbox{Concatenation: } & A\circ B  = \{xy\mid x\in A \mbox{ and } y\in B\} \\
+\mbox{Star: } & A^\star  = \{x_1x_2\ldots x_k \mid  k\geq 0 \mbox{ and each } x_i\in A\} \\
 \end{align}
-$$</p>
+ %]]&gt;</script>
 
-<p>段内插入LaTeX代码是这样的：$\exp(&ndash;\frac{x<sup>2</sup>}{2})$，试试看看吧</p>
+<p>段内插入LaTeX代码是这样的：$\exp(-\frac{x^2}{2})$，试试看看吧</p>
 <div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>test<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>必须被引用到才能实现上标<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-</ol>
+  <ol>
+    <li id="fn:1">
+      <p>test<a href="#fnref:1" rel="reference">&#8617;</a></p>
+    </li>
+    <li id="fn:footnote">
+      <p>必须被引用到才能实现上标<a href="#fnref:footnote" rel="reference">&#8617;</a></p>
+    </li>
+  </ol>
 </div>
-
 ]]></content>
   </entry>
   

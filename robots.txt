@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://CyberLuc.github.io/sitemap.xml 
+Sitemap: http://cyberLuc.github.io/sitemap.xml 
