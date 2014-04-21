@@ -4,7 +4,7 @@
   <title><![CDATA[Tag:ACM | CyberLuc's Blog]]></title>
   <link href="http://blog.cyberluc29.tk/tags/acm/atom.xml" rel="self"/>
   <link href="http://blog.cyberluc29.tk/"/>
-  <updated>2014-04-21T16:37:16+08:00</updated>
+  <updated>2014-04-21T16:45:59+08:00</updated>
   <id>http://blog.cyberluc29.tk/</id>
   <author>
     <name><![CDATA[CyberLuc]]></name>
@@ -21,14 +21,26 @@
     <content type="html"><![CDATA[<h2 id="section">题目题型总结</h2>
 
 <ol>
-  <li>动态规划
+  <li>解题策略
     <ul>
-      <li>双线程DP</li>
-    </ul>
-  </li>
-  <li>搜索
-    <ul>
-      <li>xxx</li>
+      <li>动态规划
+        <ul>
+          <li>双线程DP</li>
+          <li>背包问题</li>
+          <li>区间问题</li>
+        </ul>
+      </li>
+      <li>贪心
+        <ul>
+          <li>枚举</li>
+          <li>二分</li>
+        </ul>
+      </li>
+      <li>模拟
+        <ul>
+          <li>过河问题</li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li>数据结构
@@ -67,8 +79,22 @@
       </li>
     </ul>
   </li>
+  <li>查找
+    <ul>
+      <li>二分查找</li>
+      <li>哈希表</li>
+      <li>STL map</li>
+    </ul>
+  </li>
   <li>图论
     <ul>
+      <li>图的表示
+        <ul>
+          <li>邻接表</li>
+          <li>邻接矩阵</li>
+          <li>十字链表</li>
+        </ul>
+      </li>
       <li>图的遍历
         <ul>
           <li>DFS</li>
@@ -130,7 +156,6 @@
   </li>
   <li>排序算法
     <ul>
-      <li>二分搜索</li>
       <li>堆排序</li>
       <li>桶排序</li>
       <li>希尔排序</li>
