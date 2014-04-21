@@ -4,7 +4,7 @@
   <title><![CDATA[CyberLuc's Blog]]></title>
   <link href="http://blog.cyberluc29.tk/atom.xml" rel="self"/>
   <link href="http://blog.cyberluc29.tk/"/>
-  <updated>2014-04-21T16:22:30+08:00</updated>
+  <updated>2014-04-21T16:37:16+08:00</updated>
   <id>http://blog.cyberluc29.tk/</id>
   <author>
     <name><![CDATA[CyberLuc]]></name>
@@ -12,6 +12,143 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ACM题型模板总结]]></title>
+    <link href="http://blog.cyberluc29.tk/blog/2014/04/19/acm-problem-type-summary/"/>
+    <updated>2014-04-19T20:06:30+08:00</updated>
+    <id>http://blog.cyberluc29.tk/blog/2014/04/19/acm-problem-type-summary</id>
+    <content type="html"><![CDATA[<h2 id="section">题目题型总结</h2>
+
+<ol>
+  <li>动态规划
+    <ul>
+      <li>双线程DP</li>
+    </ul>
+  </li>
+  <li>搜索
+    <ul>
+      <li>xxx</li>
+    </ul>
+  </li>
+  <li>数据结构
+    <ul>
+      <li>队列
+        <ul>
+          <li>优先级队列
+            <ul>
+              <li>STL</li>
+              <li>二叉堆实现</li>
+            </ul>
+          </li>
+          <li>双向队列</li>
+        </ul>
+      </li>
+      <li>栈
+        <ul>
+          <li>STL</li>
+        </ul>
+      </li>
+      <li>堆
+        <ul>
+          <li>STL</li>
+          <li>堆排序</li>
+        </ul>
+      </li>
+      <li>树
+        <ul>
+          <li>线段树</li>
+          <li>字典树</li>
+          <li>搜索树</li>
+          <li>表达式树</li>
+          <li>并查集</li>
+          <li>树状数组</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>图论
+    <ul>
+      <li>图的遍历
+        <ul>
+          <li>DFS</li>
+          <li>BFS</li>
+        </ul>
+      </li>
+      <li>
+        <p>哈密顿路与欧拉路</p>
+      </li>
+      <li>最短路径
+        <ul>
+          <li>Dijkstra</li>
+          <li>Floyd</li>
+          <li>Bellman-Ford</li>
+          <li>SPFA</li>
+        </ul>
+      </li>
+      <li>连通性
+        <ul>
+          <li>强连通分量
+            <ul>
+              <li>Tarjan</li>
+              <li>缩点</li>
+              <li>二连通分量</li>
+            </ul>
+          </li>
+          <li>割点</li>
+          <li>桥</li>
+        </ul>
+      </li>
+      <li>最小生成树
+        <ul>
+          <li>Prim</li>
+          <li>Kruskal</li>
+          <li>次小生成树</li>
+        </ul>
+      </li>
+      <li>二分图匹配
+        <ul>
+          <li>最大匹配
+            <ul>
+              <li>Hungary</li>
+              <li>Hungary的Vector邻接表实现（简单、更快）</li>
+              <li>Hopcroft-Carp</li>
+            </ul>
+          </li>
+          <li>最大权匹配</li>
+          <li>稳定婚姻问题</li>
+        </ul>
+      </li>
+      <li>网络流
+        <ul>
+          <li>最大流</li>
+          <li>费用流</li>
+        </ul>
+      </li>
+      <li>关键路径</li>
+    </ul>
+  </li>
+  <li>排序算法
+    <ul>
+      <li>二分搜索</li>
+      <li>堆排序</li>
+      <li>桶排序</li>
+      <li>希尔排序</li>
+      <li>快速排序</li>
+    </ul>
+  </li>
+  <li>数学
+    <ul>
+      <li>代数</li>
+      <li>组合学</li>
+      <li>博弈论</li>
+      <li>数论</li>
+      <li>计算几何</li>
+    </ul>
+  </li>
+</ol>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Algorithms - Week 2 - Note]]></title>
