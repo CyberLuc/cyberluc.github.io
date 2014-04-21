@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Archlinux | CyberLuc's Blog]]></title>
   <link href="http://blog.cyberluc29.tk/blog/categories/archlinux/atom.xml" rel="self"/>
   <link href="http://blog.cyberluc29.tk/"/>
-  <updated>2014-04-19T20:09:33+08:00</updated>
+  <updated>2014-04-21T16:22:30+08:00</updated>
   <id>http://blog.cyberluc29.tk/</id>
   <author>
     <name><![CDATA[CyberLuc]]></name>
@@ -235,13 +235,12 @@ banshee                    //听歌还不错，不过ncmpcpp作为字符下的�
 mplayer
 smplayer
 chmsee
-foxitreader                     //比evince好用
-gthumb                          //不错的看图软件
-bc                              //命令行下的计算器
+foxitreader                //比evince好用
+eof,gthumb                 //不错的看图软件
+bc                         //命令行下的计算器
 emacs
 xbacklight    //可以设置笔记本的亮度，对于无法保存亮度的笔记本来说很方便
 numlockx      //自动打开小键盘
-ibus,ibus-sunpinyin             //挺不错的，个人觉得比ibus好用
 </code></p>
 
 <p>已经安装了好久了，当时也没记录多详细，就这些内容了。</p>
