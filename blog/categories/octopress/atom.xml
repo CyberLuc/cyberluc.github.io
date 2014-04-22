@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Octopress | CyberLuc's Blog]]></title>
-  <link href="http://blog.cyberluc29.tk/blog/categories/octopress/atom.xml" rel="self"/>
-  <link href="http://blog.cyberluc29.tk/"/>
-  <updated>2014-04-21T17:03:17+08:00</updated>
-  <id>http://blog.cyberluc29.tk/</id>
+  <link href="http://www.cyberluc29.tk/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://www.cyberluc29.tk/"/>
+  <updated>2014-04-22T11:37:33+08:00</updated>
+  <id>http://www.cyberluc29.tk/</id>
   <author>
     <name><![CDATA[CyberLuc]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[用Geek的方式来写博客(1)：在Github上搭建Octopress]]></title>
-    <link href="http://blog.cyberluc29.tk/blog/2013/08/01/building-octopress-blog/"/>
+    <link href="http://www.cyberluc29.tk/blog/2013/08/01/building-octopress-blog/"/>
     <updated>2013-08-01T10:45:00+08:00</updated>
-    <id>http://blog.cyberluc29.tk/blog/2013/08/01/building-octopress-blog</id>
+    <id>http://www.cyberluc29.tk/blog/2013/08/01/building-octopress-blog</id>
     <content type="html"><![CDATA[<p>听说Octopress还是去年的时候，原因是我宿舍隔壁一哥们买了个域名。因为我一直有开个博客的想法，但不知道哪家提供的服务比较好，于是就去问了一下，没想到他说他把他的博客托管在了Github上。没问明白，我回宿舍后就Google了一下，于是发现了Octopress这个Ruby项目。</p>
 
 <p>这种编写博客的方式立即就吸引了我。那段时间还挣扎在VIM和Emacs之间，对于Markdown也是久闻大名，当即决定，就是这货了！</p>

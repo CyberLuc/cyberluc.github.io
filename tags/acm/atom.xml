@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Tag:ACM | CyberLuc's Blog]]></title>
-  <link href="http://blog.cyberluc29.tk/tags/acm/atom.xml" rel="self"/>
-  <link href="http://blog.cyberluc29.tk/"/>
-  <updated>2014-04-21T17:03:17+08:00</updated>
-  <id>http://blog.cyberluc29.tk/</id>
+  <link href="http://www.cyberluc29.tk/tags/acm/atom.xml" rel="self"/>
+  <link href="http://www.cyberluc29.tk/"/>
+  <updated>2014-04-22T11:37:33+08:00</updated>
+  <id>http://www.cyberluc29.tk/</id>
   <author>
     <name><![CDATA[CyberLuc]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[ACM题型模板总结]]></title>
-    <link href="http://blog.cyberluc29.tk/blog/2014/04/19/acm-problem-type-summary/"/>
+    <link href="http://www.cyberluc29.tk/blog/2014/04/19/acm-problem-type-summary/"/>
     <updated>2014-04-19T20:06:30+08:00</updated>
-    <id>http://blog.cyberluc29.tk/blog/2014/04/19/acm-problem-type-summary</id>
+    <id>http://www.cyberluc29.tk/blog/2014/04/19/acm-problem-type-summary</id>
     <content type="html"><![CDATA[<h2 id="section">题目题型总结</h2>
 
 <ol>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Tag:Algorithm | CyberLuc's Blog]]></title>
-  <link href="http://blog.cyberluc29.tk/tags/algorithm/atom.xml" rel="self"/>
-  <link href="http://blog.cyberluc29.tk/"/>
-  <updated>2014-04-21T17:03:17+08:00</updated>
-  <id>http://blog.cyberluc29.tk/</id>
+  <link href="http://www.cyberluc29.tk/tags/algorithm/atom.xml" rel="self"/>
+  <link href="http://www.cyberluc29.tk/"/>
+  <updated>2014-04-22T11:37:33+08:00</updated>
+  <id>http://www.cyberluc29.tk/</id>
   <author>
     <name><![CDATA[CyberLuc]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[ACM题型模板总结]]></title>
-    <link href="http://blog.cyberluc29.tk/blog/2014/04/19/acm-problem-type-summary/"/>
+    <link href="http://www.cyberluc29.tk/blog/2014/04/19/acm-problem-type-summary/"/>
     <updated>2014-04-19T20:06:30+08:00</updated>
-    <id>http://blog.cyberluc29.tk/blog/2014/04/19/acm-problem-type-summary</id>
+    <id>http://www.cyberluc29.tk/blog/2014/04/19/acm-problem-type-summary</id>
     <content type="html"><![CDATA[<h2 id="section">题目题型总结</h2>
 
 <ol>
@@ -177,9 +177,9 @@
   
   <entry>
     <title type="html"><![CDATA[Algorithms - Week 2 - Note]]></title>
-    <link href="http://blog.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-2/"/>
+    <link href="http://www.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-2/"/>
     <updated>2013-08-07T21:03:00+08:00</updated>
-    <id>http://blog.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-2</id>
+    <id>http://www.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-2</id>
     <content type="html"><![CDATA[<h2 id="master-method">一、Master Method</h2>
 <p>前面对算法进行了一定程度的分析，这里要祭出一个分析利器：<code>Master Method</code>。</p>
 
@@ -487,9 +487,9 @@ log_{\frac{1}{1-α}}n&=\frac{log_2n}{log_2{\frac{1}{1-α}}}\\
   
   <entry>
     <title type="html"><![CDATA[Algorithms - Week 1 - Note]]></title>
-    <link href="http://blog.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-1/"/>
+    <link href="http://www.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-1/"/>
     <updated>2013-08-07T21:03:00+08:00</updated>
-    <id>http://blog.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-1</id>
+    <id>http://www.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-1</id>
     <content type="html"><![CDATA[<h2 id="section">零、写在算法学习之前</h2>
 <p>可能对于一名普通的软件编程人员，对于算法的深入学习不是一件特别必要的事情。不过要是想要提升自己，更深程度的理解计算机的世界，那么算法的学习是必不可少的。作为一名计算机科学与技术的本科生，我以后并不准备当一名算法专家，冗长的数学证明也并不合我口味，不过这并不妨碍我深入了解一下算法分析的应用，这无疑会给我能力的提升带来莫大的好处。</p>
 
@@ -860,9 +860,9 @@ int MergeSortAndCountInversion(int A[], int p,int r){
   
   <entry>
     <title type="html"><![CDATA[CLRS - Ch2.2 - Analyzing Algorithm]]></title>
-    <link href="http://blog.cyberluc29.tk/blog/2013/07/31/clrs-2-2-analyzing-algorithm/"/>
+    <link href="http://www.cyberluc29.tk/blog/2013/07/31/clrs-2-2-analyzing-algorithm/"/>
     <updated>2013-07-31T22:07:00+08:00</updated>
-    <id>http://blog.cyberluc29.tk/blog/2013/07/31/clrs-2-2-analyzing-algorithm</id>
+    <id>http://www.cyberluc29.tk/blog/2013/07/31/clrs-2-2-analyzing-algorithm</id>
     <content type="html"><![CDATA[<p>前面的介绍略过不再记录，直接来看对于Insertion Sort的分析。</p>
 
 <h3 id="analysis-of-insertion-sort---">1.Analysis of insertion sort - 对插入排序的分析</h3>
@@ -956,9 +956,9 @@ T(n)&=c_1n+c_2(n-1)+c_3(n-1)+c_4(\frac{n(n+1)}{2}-1)+c_5\frac{n(n-1)}{2}+c_6\fra
   
   <entry>
     <title type="html"><![CDATA[CLRS - Ch2.1 - Insertion Sort]]></title>
-    <link href="http://blog.cyberluc29.tk/blog/2013/07/31/clrs-2-1-note/"/>
+    <link href="http://www.cyberluc29.tk/blog/2013/07/31/clrs-2-1-note/"/>
     <updated>2013-07-31T19:49:00+08:00</updated>
-    <id>http://blog.cyberluc29.tk/blog/2013/07/31/clrs-2-1-note</id>
+    <id>http://www.cyberluc29.tk/blog/2013/07/31/clrs-2-1-note</id>
     <content type="html"><![CDATA[<h3 id="insertion-sort---">1.Insertion Sort - 插入排序</h3>
 <p>插入排序是非常基础的一类排序，它和平时玩扑克牌时摸牌的排序方法几乎一模一样。每当拿到一张牌，我们就从右向左（反向当然也行）依次查看手上的牌的大小，直到找到一张牌比摸到的牌大，就把摸到的牌放到这一张后面。反复摸牌，最后我们就得到了一副从大到小排列的牌。这也符合我个人的打牌习惯。</p>
 

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Tag:Misc | CyberLuc's Blog]]></title>
-  <link href="http://blog.cyberluc29.tk/tags/misc/atom.xml" rel="self"/>
-  <link href="http://blog.cyberluc29.tk/"/>
-  <updated>2014-04-21T17:03:17+08:00</updated>
-  <id>http://blog.cyberluc29.tk/</id>
+  <link href="http://www.cyberluc29.tk/tags/misc/atom.xml" rel="self"/>
+  <link href="http://www.cyberluc29.tk/"/>
+  <updated>2014-04-22T11:37:33+08:00</updated>
+  <id>http://www.cyberluc29.tk/</id>
   <author>
     <name><![CDATA[CyberLuc]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[测试001]]></title>
-    <link href="http://blog.cyberluc29.tk/blog/2013/07/31/test001/"/>
+    <link href="http://www.cyberluc29.tk/blog/2013/07/31/test001/"/>
     <updated>2013-07-31T12:52:00+08:00</updated>
-    <id>http://blog.cyberluc29.tk/blog/2013/07/31/test001</id>
+    <id>http://www.cyberluc29.tk/blog/2013/07/31/test001</id>
     <content type="html"><![CDATA[<p>这是Octopress部分功能的测试</p>
 
 <!--more-->
@@ -74,9 +74,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hello World]]></title>
-    <link href="http://blog.cyberluc29.tk/blog/2013/07/29/hello-world/"/>
+    <link href="http://www.cyberluc29.tk/blog/2013/07/29/hello-world/"/>
     <updated>2013-07-29T20:12:00+08:00</updated>
-    <id>http://blog.cyberluc29.tk/blog/2013/07/29/hello-world</id>
+    <id>http://www.cyberluc29.tk/blog/2013/07/29/hello-world</id>
     <content type="html"><![CDATA[<p>Hello World!</p>
 
 <p>好吧，这是我用Octopress在Github上搭建好博客的第一篇文章。</p>

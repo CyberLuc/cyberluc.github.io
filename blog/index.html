@@ -12,10 +12,29 @@
     <title>CyberLuc's Blog</title>
     <meta name="author" content="CyberLuc">
     
-    <meta name="description" content="ACM题型模板总结 Apr 19th, 2014 ACM ACM, Algorithm Comments 题目题型总结 解题策略 动态规划 双线程DP 背包问题 区间问题 贪心 枚举 二分 模拟 过河问题 数据结构 队列 优先级队列 STL 二叉堆实现 双向队列 栈 STL 堆 STL 堆排序 &hellip;">
+    <meta name="description" content="NYOJ-115-城市平乱 - 最短路径 Apr 22nd, 2014 NYOJ Dijkstra, NYOJ, 最短路径 Comments BFS (4.115.bfs.cpp) download
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19 &hellip;">
     
     <meta name="viewport" content="width=device-width">
-    <link rel="canonical" href="http://blog.cyberluc29.tk/blog">
+    <link rel="canonical" href="http://www.cyberluc29.tk/blog">
     
     <link href="/favicon.png" rel="icon">
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
@@ -61,6 +80,320 @@
           
 
   
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/04/22/nyoj-115-cheng-shi-ping-luan-zui-duan-lu-jing/">NYOJ-115-城市平乱 - 最短路径</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-04-22T11:19:13+08:00" pubdate data-updated="true"><i class="icon-calendar"></i> Apr 22<span>nd</span>, 2014</time>
+    
+
+  <div class="pull-left marginright">
+    <i class="icon-folder-open"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/nyoj/'>NYOJ</a></li>
+      
+    
+    </ul>
+  </div>
+
+
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+        <a class='tag' href='/tags/dijkstra/'>Dijkstra</a>, <a class='tag' href='/tags/nyoj/'>NYOJ</a>, <a class='tag' href='/tags/zui-duan-lu-jing/'>最短路径</a>
+    
+    </ul>
+  </div>
+
+
+    
+      <a class="pull-right" href="http://www.cyberluc29.tk/blog/2014/04/22/nyoj-115-cheng-shi-ping-luan-zui-duan-lu-jing/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <figure class='code'><figcaption><span>BFS  (4.115.bfs.cpp)</span> <a href='/downloads/code/ACM/NYOJ/4.115.bfs.cpp'>download</a></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="cp">#include &lt;cstdio&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;cstring&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;queue&gt;</span>
+</span><span class='line'><span class="cp">#define INF 0x7FFFFFFF</span>
+</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">;</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">City</span><span class="p">[</span><span class="mi">1001</span><span class="p">][</span><span class="mi">1001</span><span class="p">],</span> <span class="n">troop</span><span class="p">[</span><span class="mi">101</span><span class="p">];</span>
+</span><span class='line'><span class="kt">bool</span> <span class="n">vis</span><span class="p">[</span><span class="mi">1001</span><span class="p">];</span>
+</span><span class='line'><span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">que</span><span class="p">;</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">bfs</span><span class="p">(){</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">q</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">i</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">memset</span><span class="p">(</span><span class="n">vis</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">vis</span><span class="p">));</span>
+</span><span class='line'>    <span class="n">vis</span><span class="p">[</span><span class="n">cur</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">que</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">cur</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">que</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
+</span><span class='line'>        <span class="n">cur</span> <span class="o">=</span> <span class="n">que</span><span class="p">.</span><span class="n">front</span><span class="p">();</span> <span class="n">que</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span><span class='line'>        <span class="c1">//printf(&quot;Checking %d.\n&quot;, cur);</span>
+</span><span class='line'>        <span class="n">time</span> <span class="o">=</span> <span class="n">City</span><span class="p">[</span><span class="n">cur</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+</span><span class='line'>        <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span><span class='line'>            <span class="k">if</span><span class="p">(</span><span class="n">City</span><span class="p">[</span><span class="n">cur</span><span class="p">][</span><span class="n">i</span><span class="p">]){</span>
+</span><span class='line'>                <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">vis</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span>
+</span><span class='line'>                    <span class="n">City</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">time</span> <span class="o">+</span> <span class="n">City</span><span class="p">[</span><span class="n">cur</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+</span><span class='line'>                    <span class="n">vis</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'>                    <span class="n">que</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span><span class='line'>                <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">time</span> <span class="o">+</span> <span class="n">City</span><span class="p">[</span><span class="n">cur</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">City</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]){</span>
+</span><span class='line'>                    <span class="n">City</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">time</span> <span class="o">+</span> <span class="n">City</span><span class="p">[</span><span class="n">cur</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+</span><span class='line'>                <span class="p">}</span>
+</span><span class='line'>                <span class="c1">//printf(&quot;\tAccessing %d-&gt;%d (%d).\n&quot;, cur, i, City[i][0]);</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="n">INF</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span><span class='line'>        <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">City</span><span class="p">[</span><span class="n">troop</span><span class="p">[</span><span class="n">i</span><span class="p">]][</span><span class="mi">0</span><span class="p">];</span>
+</span><span class='line'>        <span class="n">min</span> <span class="o">=</span> <span class="n">tmp</span> <span class="o">&lt;</span> <span class="n">min</span> <span class="o">?</span> <span class="n">tmp</span> <span class="o">:</span> <span class="n">min</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">min</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">t</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">freopen</span><span class="p">(</span><span class="s">&quot;data.in&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">,</span> <span class="n">stdin</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">k</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">while</span><span class="p">(</span><span class="n">k</span><span class="o">--</span><span class="p">){</span>
+</span><span class='line'>        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">q</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">memset</span><span class="p">(</span><span class="n">troop</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">troop</span><span class="p">));</span>
+</span><span class='line'>        <span class="n">memset</span><span class="p">(</span><span class="n">City</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">City</span><span class="p">));</span>
+</span><span class='line'>        <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">troop</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span class='line'>        <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">p</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span><span class='line'>            <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
+</span><span class='line'>            <span class="n">City</span><span class="p">[</span><span class="n">b</span><span class="p">][</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="n">City</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">bfs</span><span class="p">());</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+<figure class='code'><figcaption><span>Dijkstra的Vector邻接表实现  (4.115.dijkstra.cpp)</span> <a href='/downloads/code/ACM/NYOJ/4.115.dijkstra.cpp'>download</a></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="cp">#include&lt;cstdio&gt;</span>
+</span><span class='line'><span class="cp">#include&lt;cstring&gt;</span>
+</span><span class='line'><span class="cp">#include&lt;vector&gt;</span>
+</span><span class='line'><span class="cp">#define N 1001</span>
+</span><span class='line'><span class="cp">#define INF 0x7FFFFFFF</span>
+</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class='line'><span class="k">struct</span> <span class="n">node</span><span class="p">{</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">node</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">){</span>
+</span><span class='line'>        <span class="n">v</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span> <span class="n">w</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'><span class="n">vector</span><span class="o">&lt;</span><span class="n">node</span><span class="o">*&gt;</span> <span class="n">G</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">dist</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">Army</span><span class="p">[</span><span class="mi">101</span><span class="p">];</span>
+</span><span class='line'><span class="kt">bool</span> <span class="n">vis</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="n">dijkstra</span><span class="p">(){</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">q</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">dist</span><span class="p">[</span><span class="n">cur</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">vis</span><span class="p">[</span><span class="n">cur</span><span class="p">]){</span>           <span class="c1">// 当还有节点没有被访问时</span>
+</span><span class='line'>        <span class="n">vis</span><span class="p">[</span><span class="n">cur</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">G</span><span class="p">[</span><span class="n">cur</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span> <span class="c1">// 遍历cur节点的邻接点</span>
+</span><span class='line'>            <span class="n">u</span> <span class="o">=</span> <span class="n">G</span><span class="p">[</span><span class="n">cur</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">v</span><span class="p">;</span>               <span class="c1">// 邻接点的节点号</span>
+</span><span class='line'>            <span class="n">w</span> <span class="o">=</span> <span class="n">G</span><span class="p">[</span><span class="n">cur</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">w</span><span class="p">;</span>               <span class="c1">// 权重</span>
+</span><span class='line'>            <span class="k">if</span><span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="n">cur</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span> <span class="o">&lt;</span> <span class="n">dist</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>     <span class="c1">// 更新邻接点最短路径权值</span>
+</span><span class='line'>                <span class="n">dist</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">dist</span><span class="p">[</span><span class="n">cur</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="kt">int</span> <span class="n">min_cost</span> <span class="o">=</span> <span class="n">INF</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span> <span class="c1">// 查找未访问的最短路径节点</span>
+</span><span class='line'>            <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">vis</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">min_cost</span><span class="p">){</span>
+</span><span class='line'>                <span class="n">min_cost</span> <span class="o">=</span> <span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span class='line'>                <span class="n">cur</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">freopen</span><span class="p">(</span><span class="s">&quot;data.in&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">,</span> <span class="n">stdin</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">k</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">while</span><span class="p">(</span><span class="n">k</span><span class="o">--</span><span class="p">){</span>
+</span><span class='line'>        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">q</span><span class="p">);</span>
+</span><span class='line'>        <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span> <span class="c1">// 初始化</span>
+</span><span class='line'>            <span class="n">G</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">clear</span><span class="p">();</span>
+</span><span class='line'>            <span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">INF</span><span class="p">;</span>
+</span><span class='line'>            <span class="n">vis</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">Army</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span class='line'>        <span class="k">while</span><span class="p">(</span><span class="n">p</span><span class="o">--</span><span class="p">){</span>
+</span><span class='line'>            <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
+</span><span class='line'>            <span class="n">G</span><span class="p">[</span><span class="n">a</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="k">new</span> <span class="n">node</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">));</span>
+</span><span class='line'>            <span class="n">G</span><span class="p">[</span><span class="n">b</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="k">new</span> <span class="n">node</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">));</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="n">dijkstra</span><span class="p">();</span>
+</span><span class='line'>        <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">INF</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span><span class='line'>            <span class="k">if</span><span class="p">(</span><span class="n">ans</span> <span class="o">&gt;</span> <span class="n">dist</span><span class="p">[</span><span class="n">Army</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+</span><span class='line'>                <span class="n">ans</span> <span class="o">=</span> <span class="n">dist</span><span class="p">[</span><span class="n">Army</span><span class="p">[</span><span class="n">i</span><span class="p">]];</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+  </article>
+  <hr>
+
   
   <article class="listing">
     <header>
@@ -112,7 +445,7 @@
 
 
     
-      <a class="pull-right" href="http://blog.cyberluc29.tk/blog/2014/04/19/acm-problem-type-summary/#disqus_thread">
+      <a class="pull-right" href="http://www.cyberluc29.tk/blog/2014/04/19/acm-problem-type-summary/#disqus_thread">
         Comments <i class="icon-comment"></i>
       </a>
     
@@ -334,7 +667,7 @@
 
 
     
-      <a class="pull-right" href="http://blog.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-2/#disqus_thread">
+      <a class="pull-right" href="http://www.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-2/#disqus_thread">
         Comments <i class="icon-comment"></i>
       </a>
     
@@ -410,7 +743,7 @@
 
 
     
-      <a class="pull-right" href="http://blog.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-1/#disqus_thread">
+      <a class="pull-right" href="http://www.cyberluc29.tk/blog/2013/08/07/algo-004-note-week-1/#disqus_thread">
         Comments <i class="icon-comment"></i>
       </a>
     
@@ -488,7 +821,7 @@
 
 
     
-      <a class="pull-right" href="http://blog.cyberluc29.tk/blog/2013/08/01/building-octopress-blog/#disqus_thread">
+      <a class="pull-right" href="http://www.cyberluc29.tk/blog/2013/08/01/building-octopress-blog/#disqus_thread">
         Comments <i class="icon-comment"></i>
       </a>
     
@@ -563,7 +896,7 @@
 
 
     
-      <a class="pull-right" href="http://blog.cyberluc29.tk/blog/2013/07/31/clrs-2-2-analyzing-algorithm/#disqus_thread">
+      <a class="pull-right" href="http://www.cyberluc29.tk/blog/2013/07/31/clrs-2-2-analyzing-algorithm/#disqus_thread">
         Comments <i class="icon-comment"></i>
       </a>
     
@@ -639,7 +972,7 @@
 
 
     
-      <a class="pull-right" href="http://blog.cyberluc29.tk/blog/2013/07/31/clrs-2-1-note/#disqus_thread">
+      <a class="pull-right" href="http://www.cyberluc29.tk/blog/2013/07/31/clrs-2-1-note/#disqus_thread">
         Comments <i class="icon-comment"></i>
       </a>
     
@@ -784,7 +1117,7 @@
 
 
     
-      <a class="pull-right" href="http://blog.cyberluc29.tk/blog/2013/07/31/archlinux-installation/#disqus_thread">
+      <a class="pull-right" href="http://www.cyberluc29.tk/blog/2013/07/31/archlinux-installation/#disqus_thread">
         Comments <i class="icon-comment"></i>
       </a>
     
@@ -859,7 +1192,7 @@
 
 
     
-      <a class="pull-right" href="http://blog.cyberluc29.tk/blog/2013/07/29/hello-world/#disqus_thread">
+      <a class="pull-right" href="http://www.cyberluc29.tk/blog/2013/07/29/hello-world/#disqus_thread">
         Comments <i class="icon-comment"></i>
       </a>
     
@@ -923,6 +1256,10 @@
   <ul class="divided">
     
       <li class="post">
+        <a href="/blog/2014/04/22/nyoj-115-cheng-shi-ping-luan-zui-duan-lu-jing/">NYOJ-115-城市平乱 - 最短路径</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/19/acm-problem-type-summary/">ACM题型模板总结</a>
       </li>
     
@@ -938,10 +1275,6 @@
         <a href="/blog/2013/08/01/building-octopress-blog/">用Geek的方式来写博客(1)：在Github上搭建Octopress</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/07/31/clrs-2-2-analyzing-algorithm/">CLRS - Ch2.2 - Analyzing Algorithm</a>
-      </li>
-    
   </ul>
 </section>
 <section class="aside-module grid__item one-whole lap-one-half">
@@ -953,16 +1286,19 @@
 <a style="font-size: 60%" href="/tags/blog/">Blog</a>
 <a style="font-size: 105%" href="/tags/clrs/">CLRS</a>
 <a style="font-size: 105%" href="/tags/coursera/">Coursera</a>
+<a style="font-size: 60%" href="/tags/dijkstra/">Dijkstra</a>
 <a style="font-size: 105%" href="/tags/hello-world/">Hello World</a>
 <a style="font-size: 105%" href="/tags/misc/">Misc</a>
+<a style="font-size: 60%" href="/tags/nyoj/">NYOJ</a>
 <a style="font-size: 60%" href="/tags/octopress/">Octopress</a>
 <a style="font-size: 60%" href="/tags/test/">Test</a>
+<a style="font-size: 60%" href="/tags/zui-duan-lu-jing/">最短路径</a>
 
   </ul>
 </section>
 <section class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Categories</h1>
-    <ul id="category-list" class="unstyled"><li><a href='/blog/categories/acm'>ACM (1)</a></li><li><a href='/blog/categories/archlinux'>Archlinux (1)</a></li><li><a href='/blog/categories/clrsdu-shu-bi-ji'>CLRS读书笔记 (2)</a></li><li><a href='/blog/categories/coursera'>Coursera (2)</a></li><li><a href='/blog/categories/hello-world'>Hello World (1)</a></li><li><a href='/blog/categories/octopress'>Octopress (1)</a></li><li><a href='/blog/categories/test'>Test (1)</a></li></ul>
+    <ul id="category-list" class="unstyled"><li><a href='/blog/categories/acm'>ACM (1)</a></li><li><a href='/blog/categories/archlinux'>Archlinux (1)</a></li><li><a href='/blog/categories/clrsdu-shu-bi-ji'>CLRS读书笔记 (2)</a></li><li><a href='/blog/categories/coursera'>Coursera (2)</a></li><li><a href='/blog/categories/hello-world'>Hello World (1)</a></li><li><a href='/blog/categories/nyoj'>NYOJ (1)</a></li><li><a href='/blog/categories/octopress'>Octopress (1)</a></li><li><a href='/blog/categories/test'>Test (1)</a></li></ul>
 </section>
 <section class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Comments</h1>
