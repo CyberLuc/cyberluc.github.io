@@ -118,6 +118,7 @@ task :new_post, :title do |t, args|
     post.puts "categories: []"
     post.puts "tags: []"
     post.puts "published: false"
+    post.puts ""
     post.puts "---"
   end
 end

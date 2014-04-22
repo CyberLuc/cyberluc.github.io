@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Archlinux | CyberLuc's Blog]]></title>
-  <link href="http://blog.cyberluc29.tk/blog/categories/archlinux/atom.xml" rel="self"/>
-  <link href="http://blog.cyberluc29.tk/"/>
-  <updated>2014-04-19T20:40:56+08:00</updated>
-  <id>http://blog.cyberluc29.tk/</id>
+  <link href="http://www.cyberluc29.tk/blog/categories/archlinux/atom.xml" rel="self"/>
+  <link href="http://www.cyberluc29.tk/"/>
+  <updated>2014-04-22T11:39:21+08:00</updated>
+  <id>http://www.cyberluc29.tk/</id>
   <author>
     <name><![CDATA[CyberLuc]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Archlinux安装小记]]></title>
-    <link href="http://blog.cyberluc29.tk/blog/2013/07/31/archlinux-installation/"/>
+    <link href="http://www.cyberluc29.tk/blog/2013/07/31/archlinux-installation/"/>
     <updated>2013-07-31T10:07:00+08:00</updated>
-    <id>http://blog.cyberluc29.tk/blog/2013/07/31/archlinux-installation</id>
+    <id>http://www.cyberluc29.tk/blog/2013/07/31/archlinux-installation</id>
     <content type="html"><![CDATA[<p>不知不觉已经使用了Archlinux好几个月的时间了，期间也记录了一些安装使用中遇到的问题，最近又把arch重新装了一遍，这里把整理后的安装记录发上来。</p>
 
 <p>Arch的安装过程是全命令行的，连Debian那样的字符模拟图形界面也不会提供，不过安装过程还是相当简单的。</p>

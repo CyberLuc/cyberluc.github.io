@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Test | CyberLuc's Blog]]></title>
-  <link href="http://blog.cyberluc29.tk/blog/categories/test/atom.xml" rel="self"/>
-  <link href="http://blog.cyberluc29.tk/"/>
-  <updated>2014-04-19T20:40:56+08:00</updated>
-  <id>http://blog.cyberluc29.tk/</id>
+  <link href="http://www.cyberluc29.tk/blog/categories/test/atom.xml" rel="self"/>
+  <link href="http://www.cyberluc29.tk/"/>
+  <updated>2014-04-22T11:39:21+08:00</updated>
+  <id>http://www.cyberluc29.tk/</id>
   <author>
     <name><![CDATA[CyberLuc]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[测试001]]></title>
-    <link href="http://blog.cyberluc29.tk/blog/2013/07/31/test001/"/>
+    <link href="http://www.cyberluc29.tk/blog/2013/07/31/test001/"/>
     <updated>2013-07-31T12:52:00+08:00</updated>
-    <id>http://blog.cyberluc29.tk/blog/2013/07/31/test001</id>
+    <id>http://www.cyberluc29.tk/blog/2013/07/31/test001</id>
     <content type="html"><![CDATA[<p>这是Octopress部分功能的测试</p>
 
 <!--more-->
