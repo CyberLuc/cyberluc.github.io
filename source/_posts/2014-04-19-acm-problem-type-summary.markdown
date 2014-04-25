@@ -68,6 +68,7 @@ published: true
       * Floyd
       * Bellman-Ford
       * SPFA
+      * 差分约束系统
 
     * 连通性
       * 强连通分量
